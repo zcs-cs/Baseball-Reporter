@@ -13,7 +13,7 @@ javac Program.java
 java Program
 ```
 
-Program can take 1 argument that is a path to a .csv file to pull the data from: `java Program data/baseball.csv'
+Program can take 1 argument that is a path to a .csv file to pull the data from: `java Program data/baseball.csv`
 
 ##Git Quick Reference
 ###Command reference
@@ -29,8 +29,6 @@ Program can take 1 argument that is a path to a .csv file to pull the data from:
 ###To clone this repository
 Navigate to a directory using `cd` and execute `git clone https://github.com/zcs-cs/Baseball-Reporter.git`
 
-You will also need to initialize and update all submodules (sub-repositories) in order to get everyone else's work.
-
 ```
 $ cd C:/Users/Elliot/Development
 
@@ -40,19 +38,19 @@ $ cd Baseball-Reporter
 ```
 
 ###To update the repository from GitHub
-You will need to execute from the Baseball-Reporter directory (.../Baseball-Reporter):
+You will need to execute from the Baseball-Reporter directory (`.../Baseball-Reporter`):
 
 ```
 $ git pull
 ```
 
-This command will go through each registered submodule and pull the latest changes from the appropriate GitHub url.
-
 ###To save and push changes to your module
-To begin, navigate to to your modules folder. The following example starts from `.../Baseball-Reporter` and will update the `converter` submodule. Your user password is not displayed when typing it in.
+You will need to execute from the Baseball-Reporter directory (`.../Baseball-Reporter`):
 
 ```
 $ git commit -m "Updated CSV deserialiation to work with team,player,key,value format"
 
 $ git push
 ```
+
+Note: Your user password is not displayed when typing it in.
