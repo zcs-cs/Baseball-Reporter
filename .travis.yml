@@ -1,0 +1,8 @@
+language: java
+
+jdk:
+ - oraclejdk8
+
+script:
+ - javac Program.java
+ - java -enableassertions -server Program
