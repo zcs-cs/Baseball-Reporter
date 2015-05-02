@@ -1,0 +1,19 @@
+#BlueJ package file
+objectbench.height=76
+objectbench.width=2860
+package.editor.height=1358
+package.editor.width=2762
+package.editor.x=2889
+package.editor.y=-1293
+package.numDependencies=0
+package.numTargets=1
+package.showExtends=true
+package.showUses=true
+target1.height=50
+target1.name=Converter
+target1.showInterface=false
+target1.type=AbstractTarget
+target1.typeParameters=
+target1.width=80
+target1.x=160
+target1.y=10
