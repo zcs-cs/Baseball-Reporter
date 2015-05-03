@@ -3,15 +3,19 @@ package reporter;
 /**
  * A pluggable module that generates some text about a ReportData object
  */
-public abstract class ReportModule
+public abstract class Module
 {
-	protected ReportData data;
-	protected String output;
+	protected ReportData data = null;
+	protected String output = null;
 	
+	/**
+	 * Create a plain ol' Module.
+	 */
+	public Module() {}
 	/** 
 	 * Instantiates a ReportModule with specified ReportData.
 	 */
-	public ReportModule(ReportData data)
+	public Module(ReportData data)
 	{
 		this.data = data;
 	}
@@ -22,8 +26,7 @@ public abstract class ReportModule
 	public String generate(ReportData data)
 	{
 		this.data = data;
-		generate();
-		return output;
+		return generate();
 	}
 	
 	/**
@@ -36,12 +39,13 @@ public abstract class ReportModule
 	public abstract String generate();
 	
 	/** 
-	 * Returns the output string. If the module has not generated output, it will be generated
+	 * Returns the output string. If the module has not generated output,
+	 * it will be generated and returned.
 	 */
 	public String getOutput()
 	{
 		if(output == null) {
-			generate();
+			return generate();
 		}
 		return output;
 	}
