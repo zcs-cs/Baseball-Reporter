@@ -22,11 +22,16 @@ public abstract class ReportModule
 	public String generate(ReportData data)
 	{
 		this.data = data;
-		return output = generate();
+		generate();
+		return output;
 	}
 	
 	/**
-	 * Generates text from the modules' ReportData object and returns the text
+	 * Generates a String from the modules' ReportData object. The string
+	 * generated is stored in the instance data 'output'. A pointer to
+	 * 'output' is returned.
+	 * @note One does not have to store the String returned by this method;
+	 * 	it is stored in 'output' in addition to being returned.
 	 */
 	public abstract String generate();
 	
@@ -35,8 +40,9 @@ public abstract class ReportModule
 	 */
 	public String getOutput()
 	{
-		if(output == null)
-			output = generate();
+		if(output == null) {
+			generate();
+		}
 		return output;
 	}
 }
