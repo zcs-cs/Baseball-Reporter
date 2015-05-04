@@ -4,16 +4,33 @@
 
 The 2014-2015 AP Computer Science A class's final project that analyzes baseball statistics and compiles an automated news report.
 
-##Compilation instructions
-This project contains BlueJ project files and can be compiled from within BlueJ.
-
-To do so from command line, run the following commands from the root directory of this repository:
+##1. Cloning the Baseball-Reporter Repository
+To clone this repository, navigate to a directory by using `cd` and use the `git clone` command to clone this repository on to your computer.
 ```
-javac Program.java
-java Program
+$ cd C:\Users\My-Username\My-Path
+
+$ git clone https://github.com/zcs-cs/Baseball-Reporter.git
 ```
 
-Program can take 1 argument that is a path to a .csv file to pull the data from: `java Program data/baseball.csv`
+##2. Opening in BlueJ
+The repository already contains the necessary files to open in BlueJ, and you can open it like you would any other BlueJ project.
+
+##3. Making Changes
+You can make changes like you would any other project and Git will keep track of what you have changed. When you wish to push changes to GitHub so others can view, you will need to use `git add`, `git commit`, and `git push`. You will need to have navigated into the `*\Baseball-Reporter` directory by using `cd`
+```
+$ git add . 
+
+$ git commit -m "Updated CSVConverter to read values as key,value,player,team"
+
+$ git push
+```
+Note that when pushing, Git will hide your password and will not display how many characters you've entered in your password.
+
+##4. Pulling changes from GitHub
+You may wish to pull changes that other developers have pushed to repository. To do this, you will need to use the `git pull` command.
+```
+$ git pull
+```
 
 ##Git Quick Reference
 ###Command reference
@@ -25,32 +42,3 @@ Program can take 1 argument that is a path to a .csv file to pull the data from:
 |`git add .`| Stages all changed files |
 |`git commit -m "<message>"` | Creates a new commit with message |
 |`git push`| Pushes all new local commits to the repository |
-
-###To clone this repository
-Navigate to a directory using `cd` and execute `git clone https://github.com/zcs-cs/Baseball-Reporter.git`
-
-```
-$ cd C:/Users/Elliot/Development
-
-$ git clone https://github.com/zcs-cs/Baseball-Reporter.git
-
-$ cd Baseball-Reporter
-```
-
-###To update the repository from GitHub
-You will need to execute from the Baseball-Reporter directory (`.../Baseball-Reporter`):
-
-```
-$ git pull
-```
-
-###To save and push changes to your module
-You will need to execute from the Baseball-Reporter directory (`.../Baseball-Reporter`):
-
-```
-$ git commit -m "Updated CSV deserialiation to work with team,player,key,value format"
-
-$ git push
-```
-
-Note: Your user password is not displayed when typing it in.
