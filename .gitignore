@@ -14,3 +14,4 @@ hs_err_pid*
 # Custom exclusions #
 Test.java
 \doc
+*.bluej
