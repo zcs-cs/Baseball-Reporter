@@ -18,7 +18,7 @@ The repository already contains the necessary files to open in BlueJ, and you ca
 ##3. Making Changes
 You can make changes like you would any other project and Git will keep track of what you have changed. When you wish to push changes to GitHub so others can view, you will need to use `git add`, `git commit`, and `git push`. You will need to have navigated into the `*\Baseball-Reporter` directory by using `cd`
 ```
-$ git add . 
+$ git add <modified files> 
 
 $ git commit -m "Updated CSVConverter to read values as key,value,player,team"
 
@@ -39,6 +39,7 @@ $ git pull
 |`cd <directory>` | Changes working location to specified directory. May be a subdirectory or an absolute path |
 |`git clone <url>` | Clones a git repository at the specified URL |
 |`git pull origin master` | Pulls the latest commits from the master branch |
+|`git add <modified files>`| Stages the specified modified file |
 |`git add .`| Stages all changed files |
 |`git commit -m "<message>"` | Creates a new commit with message |
 |`git push`| Pushes all new local commits to the repository |
