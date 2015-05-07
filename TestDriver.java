@@ -2,7 +2,8 @@ import java.io.FileReader;
 import reporter.*;
 
 /**
- * Test Driver class.
+ * Test Driver class. Changes to this file will be ignored by Git. 
+ * This class may be updated as the the main driver from the Program class is developed. 
  */
 public class TestDriver 
 {
