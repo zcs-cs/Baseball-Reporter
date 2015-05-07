@@ -1,4 +1,4 @@
-package reporter;
+package modules;
 
 /**
  * A pluggable module that generates some text about a ReportData object
