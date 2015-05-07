@@ -49,6 +49,8 @@ public abstract class Converter
 	/** 
 	 * Converts the data contained in the reader to a ReportData
 	 * object representation of file read by the BufferedReader.
+	 * Stashes the convered data in the variable 'data' while 
+	 * returning a pointer to it.
 	 * @return A pointer to the object created.
 	 */
 	public abstract ReportData convertData();
@@ -58,6 +60,9 @@ public abstract class Converter
 	 */
 	public ReportData getData()
 	{
+		if(data == null) {
+			return convertData();
+		}
 		return data;
 	}
 }
