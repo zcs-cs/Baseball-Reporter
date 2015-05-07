@@ -65,4 +65,12 @@ public abstract class Converter
 		}
 		return data;
 	}
+	
+	/**
+	 * Create a string containing information regarding the state of the
+	 * instance data (if pointers are null)
+	 * Textual representation of the reader (file path to loaded file?)
+	 * Call toString of ReportData.
+	 */
+	public abstract String toString();
 }
