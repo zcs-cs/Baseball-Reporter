@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 
 //our libraries
 import reporter.ReportData;
+import org.json.*;
 
 /**
  * Abstract class representing an object that reads a file and
@@ -17,7 +18,8 @@ public abstract class Converter
 {
 	//see: http://www.homeandlearn.co.uk/java/read_a_textfile_in_java.html
 	protected BufferedReader reader = null;
-	protected ReportData data = null;
+	protected JSONObject data = null;
+	protected String filePath;
 	
 	public Converter() 
 	{
@@ -44,6 +46,7 @@ public abstract class Converter
 	public Converter(String fileName) throws FileNotFoundException
 	{
 		this( new BufferedReader( new FileReader(fileName) ) );
+	    this.filePath = fileName;
 	}
 
 	/** 
@@ -53,12 +56,12 @@ public abstract class Converter
 	 * returning a pointer to it.
 	 * @return A pointer to the object created.
 	 */
-	public abstract ReportData convertData();
+	public abstract JSONObject convertData();
 	
 	/**
 	 * Returns the current ReportData representation of the converted data.
 	 */
-	public ReportData getData()
+	public JSONObject getData()
 	{
 		if(data == null) {
 			return convertData();
