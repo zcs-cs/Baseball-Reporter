@@ -1,0 +1,40 @@
+gameStats
+ - weather (String)
+ - time played (String)
+ - length of game in minutes? (int)
+ - location of game (String)
+ - innings played (int)
+
+teamA
+ - teamStandings (object)
+  - winRecord (int)
+  - lossRecord (int)
+  - winStreak (int)
+
+ - players (object)
+  - playerName (object)
+   - hits (int)
+   - battingAverage (double)
+   - runs (int)
+   - outs (int)
+   - position (String)
+   - injuries (Object)
+    - injuryDescription (String)
+    - inningsOut (int)
+    - leftGame (boolean)
+
+ - runs
+  - hitterName (object)
+   - inning (int)
+   - points scored (int)
+   - overfence (boolean)
+
+ - pitchers
+  - pitcherName
+   - inningsPitched (int)
+   - save (boolean)
+   - era (double)
+   - walks (int)
+
+teamB
+ - identical to TeamA
