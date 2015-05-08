@@ -14,23 +14,17 @@ import org.json.*;
  */
 public class Program 
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
-        System.out.println("hello world");
         // Determine file path: either default or from args
         String filePath = "data/data.json";
         if(args.length != 0 && args[0].length() > 0)
             filePath = args[0];
         System.out.println("Reading from "+filePath);
         
-        JSONObject data;
-        try{
-            JSONConverter conv = new JSONConverter(filePath);
-            data = conv.getData();
-            System.out.println(conv.toString());
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+        JSONConverter conv = new JSONConverter(filePath);
+        JSONObject data = conv.getData();
+        System.out.println(conv.toString());
         
         String output = "";
         // TODO: Create modules and concatenate to output
