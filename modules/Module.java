@@ -1,5 +1,7 @@
 package modules;
 
+import reporter.ReportData;
+
 /**
  * A pluggable module that generates some text about a ReportData object
  */
