@@ -41,5 +41,6 @@ $ git pull
 |`git pull origin master` | Pulls the latest commits from the master branch |
 |`git add <modified files>`| Stages the specified modified file |
 |`git add .`| Stages all changed files |
+|`git commit`| Opens vim text editor within the terminal for adding commit messages |
 |`git commit -m "<message>"` | Creates a new commit with message |
 |`git push`| Pushes all new local commits to the repository |
