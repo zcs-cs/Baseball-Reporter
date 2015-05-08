@@ -1,40 +1,52 @@
+Objects can contain other Objects, Strings, doubles, booleans, ints
+
 gameStats
  - weather (String)
  - time played (String)
- - length of game in minutes? (int)
+ - length of game in minutes (int)
  - location of game (String)
  - innings played (int)
 
 teamA
- - teamStandings (object)
+ - teamName (String) "Indianapolis Indians"
+ - teamDemonym (String) "the Indians"
+ - homeCity (String)
+ - wonGame (boolean)
+ - totalScore (int)
+
+ - teamStandings (Object)
   - winRecord (int)
   - lossRecord (int)
   - winStreak (int)
+  - position (int)
 
- - players (object)
-  - playerName (object)
-   - hits (int)
-   - battingAverage (double)
-   - runs (int)
-   - outs (int)
-   - position (String)
-   - injuries (Object)
-    - injuryDescription (String)
-    - inningsOut (int)
-    - leftGame (boolean)
+ - players (Array)
+  - playerName (Object)
+  - hits (int)
+  - battingAverage (double)
+  - runs (int)
+  - outs (int)
+  - position (String)
+  - injuries (Array)
+   - injuryDescription (String)
+   - inningsOut (int)
+   - returnedToGame (boolean)
 
- - runs
-  - hitterName (object)
-   - inning (int)
-   - points scored (int)
-   - overfence (boolean)
+ - runs (array)
+  - hitterName (String)
+  - inning (int)
+  - points scored (int)
+  - overfence (boolean)
 
- - pitchers
-  - pitcherName
-   - inningsPitched (int)
-   - save (boolean)
-   - era (double)
-   - walks (int)
+ - pitchers (Array)
+  - pitcherName (String)
+  - inningsPitched (int)
+  - save (boolean)
+  - era (double)
+  - walks (int)
+  - outs (int)
+  - runsAllowed (int)
+  - pitches (int)
 
 teamB
- - identical to TeamA
+ - identical to teamA
