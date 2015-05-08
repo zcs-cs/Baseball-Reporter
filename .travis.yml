@@ -4,5 +4,5 @@ jdk:
  - oraclejdk8
 
 script:
- - javac Program.java
- - java -enableassertions -server -cp ".;+libs/json.jar" Program.java
+ - javac -cp ".;+libs/json.jar" Program.java
+ - java -enableassertions -server Program.java
