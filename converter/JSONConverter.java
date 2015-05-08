@@ -7,8 +7,8 @@ import java.io.FileNotFoundException;
 /**
  * Write a description of class JSONConverter here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Daniel Wesenberg
+ * @version v1.0
  */
 public class JSONConverter extends Converter
 {

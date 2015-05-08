@@ -5,4 +5,4 @@ jdk:
 
 script:
  - javac -cp ".:+libs/json.jar" Program.java
- - java -enableassertions -server Program.java
+ - java -enableassertions -server Program
