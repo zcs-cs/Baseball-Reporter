@@ -83,6 +83,14 @@ public class ReportData
         else        teamLabel = "TeamB";
         return data.getJSONObject(teamLabel).getInt(key);
     }
+    // = team primary statistics - booleans [precondition: key 'key' is present and primary and corresponds to a boolean] //
+    public boolean getTeamPrimaryStatisticBoolean(boolean teamA, String key)
+    {
+        String teamLabel;
+        if (teamA)      teamLabel = "TeamA";
+        else        teamLabel = "TeamB";
+        return data.getJSONObject(teamLabel).getBoolean(key);
+    }
     // + team name //
     public String getTeamName(boolean teamA)
     {
@@ -99,9 +107,9 @@ public class ReportData
         return getTeamPrimaryStatistic(teamA, "homeCity");
     }
     // + team result //
-    public String getTeamResult(boolean teamA)
+    public boolean getTeamResult(boolean teamA)
     {
-        return getTeamPrimaryStatistic(teamA, "wonGame");
+        return getTeamPrimaryStatisticBoolean(teamA, "wonGame");
     }
     // + team total score (integer) //
     public int getTeamTotalScore(boolean teamA)
@@ -117,7 +125,7 @@ public class ReportData
         else        teamLabel = "TeamB";
         int index = -1;
         String foundPlayerName = "";
-        while (foundPlayerName != playerName)
+        while (!foundPlayerName.equals(playerName))
         {
             index++;
             foundPlayerName = data.getJSONObject(teamLabel).getJSONArray("players").getJSONObject(index).getString("name");
@@ -132,9 +140,10 @@ public class ReportData
         else        teamLabel = "TeamB";
         int index = -1;
         String foundPlayerName = "";
-        while (foundPlayerName != playerName)
+        while (!foundPlayerName.equals(playerName))
         {
             index++;
+            System.out.println(index);
             foundPlayerName = data.getJSONObject(teamLabel).getJSONArray("players").getJSONObject(index).getString("name");
         }
         return data.getJSONObject(teamLabel).getJSONArray("players").getJSONObject(index).getInt(key);
@@ -258,7 +267,7 @@ public class ReportData
         else        teamLabel = "TeamB";
         int index = -1;
         String foundPitcherName = "";
-        while (foundPitcherName != pitcherName)
+        while (!foundPitcherName.equals(pitcherName))
         {
             index++;
             foundPitcherName = data.getJSONObject(teamLabel).getJSONArray("pitchers").getJSONObject(index).getString("name");
@@ -273,7 +282,7 @@ public class ReportData
         else        teamLabel = "TeamB";
         int index = -1;
         String foundPitcherName = "";
-        while (foundPitcherName != pitcherName)
+        while (!foundPitcherName.equals(pitcherName))
         {
             index++;
             foundPitcherName = data.getJSONObject(teamLabel).getJSONArray("pitchers").getJSONObject(index).getString("name");
@@ -288,7 +297,7 @@ public class ReportData
         else        teamLabel = "TeamB";
         int index = -1;
         String foundPitcherName = "";
-        while (foundPitcherName != pitcherName)
+        while (!foundPitcherName.equals(pitcherName))
         {
             index++;
             foundPitcherName = data.getJSONObject(teamLabel).getJSONArray("pitchers").getJSONObject(index).getString("name");

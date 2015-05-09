@@ -1,0 +1,557 @@
+package utilities;
+
+public class Array
+{
+	public static int[] copy(int[] integer_array)
+	{
+		int[] copy = new int[integer_array.length];
+		for (int i = 0; i < integer_array.length; i++)
+		{
+			copy[i] = integer_array[i];
+		}
+		return copy;
+	}
+	
+	public static double[] copy(double[] decimal_array)
+	{
+		double[] copy = new double[decimal_array.length];
+		for (int i = 0; i < decimal_array.length; i++)
+		{
+			copy[i] = decimal_array[i];
+		}
+		return copy;
+	}
+	
+	public static String[] copy(String[] text_array)
+	{
+		String[] copy = new String[text_array.length];
+		for (int i = 0; i < text_array.length; i++)
+		{
+			copy[i] = text_array[i];
+		}
+		return copy;
+	}
+	
+	public static char[] copy(char[] character_array)
+	{
+		char[] copy = new char[character_array.length];
+		for (int i = 0; i < character_array.length; i++)
+		{
+			copy[i] = character_array[i];
+		}
+		return copy;
+	}
+	
+	
+	
+	public static int[] combine(int[] integer_array_1, int[] integer_array_2)
+	{
+		int integer_array_1_length, integer_array_2_length;
+		if (integer_array_1 != null)	integer_array_1_length = integer_array_1.length;
+		else	integer_array_1_length = 0;
+		if (integer_array_2 != null)	integer_array_2_length = integer_array_2.length;
+		else	integer_array_2_length = 0;
+		int[] combined_integer_arrays = new int[integer_array_1_length + integer_array_2_length];
+		if (integer_array_1 != null)
+		{
+			for (int i = 0; i < integer_array_1.length; i++)
+			{
+				combined_integer_arrays[i] = integer_array_1[i];
+			}
+		}
+		if (integer_array_2 != null)
+		{
+			for (int i = 0; i < integer_array_2.length; i++)
+			{
+				combined_integer_arrays[integer_array_1_length + i] = integer_array_2[i];
+			}
+		}
+		return combined_integer_arrays;
+	}
+	
+	public static double[] combine(double[] decimal_array_1, double[] decimal_array_2)
+	{
+		int decimal_array_1_length, decimal_array_2_length;
+		if (decimal_array_1 != null)	decimal_array_1_length = decimal_array_1.length;
+		else	decimal_array_1_length = 0;
+		if (decimal_array_2 != null)	decimal_array_2_length = decimal_array_2.length;
+		else	decimal_array_2_length = 0;
+		double[] combined_decimal_arrays = new double[decimal_array_1_length + decimal_array_2_length];
+		if (decimal_array_1 != null)
+		{
+			for (int i = 0; i < decimal_array_1.length; i++)
+			{
+				combined_decimal_arrays[i] = decimal_array_1[i];
+			}
+		}
+		if (decimal_array_2 != null)
+		{
+			for (int i = 0; i < decimal_array_2.length; i++)
+			{
+				combined_decimal_arrays[decimal_array_1_length + i] = decimal_array_2[i];
+			}
+		}
+		return combined_decimal_arrays;
+	}
+	
+	public static String[] combine(String[] text_array_1, String[] text_array_2)
+	{
+		int text_array_1_length, text_array_2_length;
+		if (text_array_1 != null)		text_array_1_length = text_array_1.length;
+		else	text_array_1_length = 0;
+		if (text_array_2 != null)	text_array_2_length = text_array_2.length;
+		else	text_array_2_length = 0;
+		String[] combined_text_arrays = new String[text_array_1_length + text_array_2_length];
+		if (text_array_1 != null)
+		{
+			for (int i = 0; i < text_array_1.length; i++)
+			{
+				combined_text_arrays[i] = text_array_1[i];
+			}
+		}
+		if (text_array_2 != null)
+		{
+			for (int i = 0; i < text_array_2.length; i++)
+			{
+				combined_text_arrays[text_array_1_length + i] = text_array_2[i];
+			}
+		}
+		return combined_text_arrays;
+	}
+	
+	public static char[] combine(char[] character_array_1, char[] character_array_2)
+	{
+		int character_array_1_length, character_array_2_length;
+		if (character_array_1 != null)		character_array_1_length = character_array_1.length;
+		else	character_array_1_length = 0;
+		if (character_array_2 != null)		character_array_2_length = character_array_2.length;
+		else	character_array_2_length = 0;
+		char[] combined_character_arrays = new char[character_array_1_length + character_array_2_length];
+		if (character_array_1 != null)
+		{
+			for (int i = 0; i < character_array_1.length; i++)
+			{
+				combined_character_arrays[i] = character_array_1[i];
+			}
+		}
+		if (character_array_2 != null)
+		{
+			for (int i = 0; i < character_array_2.length; i++)
+			{
+				combined_character_arrays[character_array_1_length + i] = character_array_2[i];
+			}
+		}
+		return combined_character_arrays;
+	}
+	
+	public static Object[] combine(Object[] object_array_1, Object[] object_array_2)
+	{
+		int object_array_1_length, object_array_2_length;
+		if (object_array_1 != null)		object_array_1_length = object_array_1.length;
+		else	object_array_1_length = 0;
+		if (object_array_2 != null)		object_array_2_length = object_array_2.length;
+		else	object_array_2_length = 0;
+		Object[] combined_object_arrays = new Object[object_array_1_length + object_array_2_length];
+		if (object_array_1 != null)
+		{
+			for (int i = 0; i < object_array_1.length; i++)
+			{
+				combined_object_arrays[i] = object_array_1[i];
+			}
+		}
+		if (object_array_2 != null)
+		{
+			for (int i = 0; i < object_array_2.length; i++)
+			{
+				combined_object_arrays[object_array_1_length + i] = object_array_2[i];
+			}
+		}
+		return combined_object_arrays;
+	}
+	
+	
+	public static int[][] combine(int[][] integer_array_array_1, int[][] integer_array_array_2)
+	{
+		int integer_array_array_1_length, integer_array_array_2_length;
+		if (integer_array_array_1 != null)	integer_array_array_1_length = integer_array_array_1.length;
+		else	integer_array_array_1_length = 0;
+		if (integer_array_array_2 != null)	integer_array_array_2_length = integer_array_array_2.length;
+		else	integer_array_array_2_length = 0;
+		int[][] combined_integer_array_arrays = new int[integer_array_array_1_length + integer_array_array_2_length][];
+		if (integer_array_array_1 != null)
+		{
+			for (int i = 0; i < integer_array_array_1.length; i++)
+			{
+				combined_integer_array_arrays[i] = integer_array_array_1[i];
+			}
+		}
+		if (integer_array_array_2 != null)
+		{
+			for (int i = 0; i < integer_array_array_2.length; i++)
+			{
+				combined_integer_array_arrays[integer_array_array_1_length + i] = integer_array_array_2[i];
+			}
+		}
+		return combined_integer_array_arrays;
+	}
+	
+	public static double[][] combine(double[][] decimal_array_array_1, double[][] decimal_array_array_2)
+	{
+		int decimal_array_array_1_length, decimal_array_array_2_length;
+		if (decimal_array_array_1 != null)	decimal_array_array_1_length = decimal_array_array_1.length;
+		else	decimal_array_array_1_length = 0;
+		if (decimal_array_array_2 != null)	decimal_array_array_2_length = decimal_array_array_2.length;
+		else	decimal_array_array_2_length = 0;
+		double[][] combined_decimal_array_arrays = new double[decimal_array_array_1_length + decimal_array_array_2_length][];
+		if (decimal_array_array_1 != null)
+		{
+			for (int  i = 0; i < decimal_array_array_1.length; i++)
+			{
+				combined_decimal_array_arrays[i] = decimal_array_array_1[i];
+			}
+		}
+		if (decimal_array_array_2 != null)
+		{
+			for (int i = 0; i < decimal_array_array_2.length; i++)
+			{
+				combined_decimal_array_arrays[decimal_array_array_1_length + i] = decimal_array_array_2[i];
+			}
+		}
+		return combined_decimal_array_arrays;
+	}
+	
+	public static String[][] combine(String[][] text_array_array_1, String[][] text_array_array_2)
+	{
+		int text_array_array_1_length, text_array_array_2_length;
+		if (text_array_array_1 != null)	text_array_array_1_length = text_array_array_1.length;
+		else	text_array_array_1_length = 0;
+		if (text_array_array_2 != null)	text_array_array_2_length = text_array_array_2.length;
+		else	text_array_array_2_length = 0;
+		String[][] combined_text_array_arrays = new String[text_array_array_1_length + text_array_array_2_length][];
+		if (text_array_array_1 != null)
+		{
+			for (int  i = 0; i < text_array_array_1.length; i++)
+			{
+				combined_text_array_arrays[i] = text_array_array_1[i];
+			}
+		}
+		if (text_array_array_2 != null)
+		{
+			for (int i = 0; i < text_array_array_2.length; i++)
+			{
+				combined_text_array_arrays[text_array_array_1_length + i] = text_array_array_2[i];
+			}
+		}
+		return combined_text_array_arrays;
+	}
+	
+	public static char[][] combine(char[][] character_array_array_1, char[][] character_array_array_2)
+	{
+		int character_array_array_1_length, character_array_array_2_length;
+		if (character_array_array_1 != null)	character_array_array_1_length = character_array_array_1.length;
+		else	character_array_array_1_length = 0;
+		if (character_array_array_2 != null)	character_array_array_2_length = character_array_array_2.length;
+		else	character_array_array_2_length = 0;
+		char[][] combined_character_array_arrays = new char[character_array_array_1_length + character_array_array_2_length][];
+		if (character_array_array_1 != null)
+		{
+			for (int  i = 0; i < character_array_array_1.length; i++)
+			{
+				combined_character_array_arrays[i] = character_array_array_1[i];
+			}
+		}
+		if (character_array_array_2 != null)
+		{
+			for (int i = 0; i < character_array_array_2.length; i++)
+			{
+				combined_character_array_arrays[character_array_array_1_length + i] = character_array_array_2[i];
+			}
+		}
+		return combined_character_array_arrays;
+	}
+	
+	
+	
+	public static String[] permute(String[] text_array_1, String[] text_array_2)
+	{
+		if (text_array_1 == null  ||  text_array_1.length == 0  || text_array_2 == null  ||  text_array_2.length == 0)		return null;
+		String[] permuted_text_arrays = new String[text_array_1.length * text_array_2.length];
+		for (int text_array_1_index = 0; text_array_1_index < text_array_1.length; text_array_1_index++)
+		{
+			for (int text_array_2_index = 0; text_array_2_index < text_array_2.length; text_array_2_index++)
+			{
+				permuted_text_arrays[text_array_1_index * text_array_2.length  +  text_array_2_index] = text_array_1[text_array_1_index]+text_array_2[text_array_2_index];
+			}
+		}
+		return permuted_text_arrays;
+	}
+	
+	
+	
+	
+	
+	
+	public static boolean containment(int[] integer_array, int integer) 
+	{
+		for (int element : integer_array)
+		{
+			if (element == integer)		return true;
+		}
+		return false;
+	}
+	
+	public static boolean containment(double[] decimal_array, double decimal) 
+	{
+		for (double element : decimal_array)
+		{
+			if (element == decimal)		return true;
+		}
+		return false;
+	}
+	
+	public static boolean containment(String[] text_array, String text)
+	{
+		for (String element : text_array)
+		{
+			if (element.equals(text))		return true;
+		}
+		return false;
+	}
+	public static boolean containment_capitalization_ignored(String[] text_array, String text)
+	{
+		return containment(Array.combine(text_array, Text.capitalize(text_array)), text);
+	}
+	
+	public static boolean containment(char[] character_array, char character)
+	{
+		for (char element : character_array)
+		{
+			if (element == character)		return true;
+		}
+		return false;
+	}
+	
+	
+	public static boolean containment(int[][] integer_array_array, int integer) 
+	{
+		for (int[] element : integer_array_array)
+		{
+			if (containment(element, integer))		return true;
+		}
+		return false;
+	}
+	
+	public static boolean containment(double[][] decimal_array_array, double decimal) 
+	{
+		for (double[] element : decimal_array_array)
+		{
+			if (containment(element, decimal))		return true;
+		}
+		return false;
+	}
+	
+	public static boolean containment(String[][] text_array_array, String text)
+	{
+		for (String[] element : text_array_array)
+		{
+			if (containment(element, text))		return true;
+		}
+		return false;
+	}
+	public static boolean containment_capitalization_ignored(String[][] text_array_array, String text)
+	{
+		return containment(Array.combine(text_array_array, Text.capitalize(text_array_array)), text);
+	}
+	
+	public static boolean containment(char[][] character_array_array, char character)
+	{
+		for (char[] element : character_array_array)
+		{
+			if (containment(element, character))	return true;
+		}
+		return false;
+	}
+	
+	
+	
+	public static boolean subcontainment(String text, String[] text_array)
+	{
+		for (String element : text_array)
+		{
+			if (text.contains(element))		return true;
+		}
+		return false;
+	}
+	public static boolean subcontainment_capitalization_ignored(String text, String[] text_array)
+	{
+		return subcontainment(text, Array.combine(text_array, Text.capitalize(text_array)));
+	}
+	public static boolean subcontainment_ignoring(String text, String[] text_array, String[] ignoreds)
+	{
+		Text.remove(ignoreds, text);
+		Text.remove(ignoreds, text_array);
+		return subcontainment(text, text_array);
+	}
+	
+	
+	public static boolean subcontainment(String text, String[][] text_array_array)
+	{
+		for (String[] array_element : text_array_array)
+		{
+			for (String element : array_element)
+			{
+				if (text.contains(element))		return true;
+			}
+		}
+		return false;
+	}
+	public static boolean subcontainment_capitalization_ignored(String text, String[][] text_array_array)
+	{
+		return subcontainment(text, Array.combine(text_array_array, Text.capitalize(text_array_array)));
+	}
+	
+	
+	public static int subcontainment_index(String text, String[] text_array)
+	{
+		for (int i = 0; i < text_array.length; i++)
+		{
+			if (text.contains(text_array[i]))	return i;
+		}
+		return -1;
+	}
+	public static int subcontainment_index_ignoring(String text, String[] text_array, String[] ignoreds)
+	{
+		Text.remove(ignoreds, text);
+		Text.remove(ignoreds, text_array);
+		return subcontainment_index(text, text_array);
+	}
+	
+	
+	
+	public static int index(int[] integer_array, int integer)
+	{
+		for (int i = 0; i < integer_array.length; i++)
+		{
+			if (integer_array[i] == integer)	return i;
+		}
+		return -1;
+	}
+	
+	public static int index(double[] decimal_array, double decimal)
+	{
+		for (int i = 0; i < decimal_array.length; i++)
+		{
+			if (decimal_array[i] == decimal)	return i;
+		}
+		return -1;
+	}
+	
+	public static int index(String[] text_array, String text)
+	{
+		for (int i = 0; i < text_array.length; i++)
+		{
+			if (text_array[i].equals(text))	return i;
+		}
+		return -1;
+	}
+	
+	public static int index(char[] character_array, char character)
+	{
+		for (int i = 0; i < character_array.length; i++)
+		{
+			if (character_array[i] == character)	return i;
+		}
+		return -1;
+	}
+	
+	
+	public static int[] index(int[][] integer_array_array, int integer)
+	{
+		int[] indexes = new int[2];
+		for (int i = 0; i < integer_array_array.length; i++)
+		{
+			if (containment(integer_array_array[i], integer))
+			{
+				indexes[0] = i;
+				indexes[1] = index(integer_array_array[indexes[0]], integer);
+				return indexes;
+			}
+		}
+		indexes[0] = -1;
+		indexes[1] = -1;
+		return indexes;
+	}
+	
+	public static int[] index(double[][] decimal_array_array, double decimal)
+	{
+		int[] indexes = new int[2];
+		for (int i = 0; i < decimal_array_array.length; i++)
+		{
+			if (containment(decimal_array_array[i], decimal))
+			{
+				indexes[0] = i;
+				indexes[1] = index(decimal_array_array[indexes[0]], decimal);
+				return indexes;
+			}
+		}
+		indexes[0] = -1;
+		indexes[1] = -1;
+		return indexes;
+	}
+	
+	public static int[] index(String[][] text_array_array, String text)
+	{
+		int[] indexes = new int[2];
+		for (int i = 0; i < text_array_array.length; i++)
+		{
+			if (containment(text_array_array[i], text))
+			{
+				indexes[0] = i;
+				indexes[1] = index(text_array_array[indexes[0]], text);
+				return indexes;
+			}
+		}
+		indexes[0] = -1;
+		indexes[1] = -1;
+		return indexes;
+	}
+	
+	public static int[] index(char[][] character_array_array, char character)
+	{
+		int[] indexes = new int[2];
+		for (int i = 0; i < character_array_array.length; i++)
+		{
+			if (containment(character_array_array[i], character))
+			{
+				indexes[0] = i;
+				indexes[1] = index(character_array_array[indexes[0]], character);
+				return indexes;
+			}
+		}
+		indexes[0] = -1;
+		indexes[1] = -1;
+		return indexes;
+	}
+	
+	
+	
+    public static int minimum(int[] integer_array)
+	{
+		int minimum = integer_array[0];
+		for (int element : integer_array)
+		{
+			if (element < integer_array[0])    minimum = element;
+		}
+		return minimum;
+    }
+	
+    public static double minimum(double[] decimal_array)
+	{
+		double minimum = decimal_array[0];
+		for (double element : decimal_array)
+		{
+			if (element < decimal_array[0])    minimum = element;
+		}
+		return minimum;
+    }
+}
