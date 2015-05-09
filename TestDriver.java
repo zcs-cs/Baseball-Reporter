@@ -3,9 +3,9 @@ import reporter.*;
 
 /**
  * Test Driver class. Changes to this file will be ignored by Git. 
- * This class may be updated as the main driver from the Program class is developed. 
+ * This class may be updated as the main driver from the BaseballReporter class is developed. 
  */
-public class TestDriver 
+public class TestDriver
 {
 	public static void main(String[] args)
 	{
