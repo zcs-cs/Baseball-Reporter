@@ -17,19 +17,17 @@ public class BaseballReporter
         String filePath = "data/data.json";
         if(args.length != 0 && args[0].length() > 0)
             filePath = args[0];
-        System.out.println("Reading from "+filePath);
+        System.out.println("Reading from " + filePath + "\n");
         
         // conversion //
-        JSONConverter conv = new JSONConverter(filePath);
-        JSONObject objectifiedData = conv.getData();
-        System.out.println(conv.toString());
+        Converter<BaseballData> converter = new BaseballJSONConverter(filePath);
+        BaseballData data = converter.convert();
         
-        // data preparation //
-        ReportData finalData = new ReportData(objectifiedData);
         
         // modules creation and output //
-        Modules modules = new Modules(finalData);
-        String output = modules.generate();
+        String output = "";
+        output += (new TitleModule()).generate(data);
+        
         System.out.println(output);
     }
 }
