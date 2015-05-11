@@ -2,6 +2,10 @@ package modules;
 
 import data.ReportData;
 
+/**
+ * Represents a specific generated component of a sports report.
+ * Components can be titles, paragraphs, sentences, or entire reports.
+ */
 public abstract class ReportModule<T extends ReportData>
 {
 	protected T data;

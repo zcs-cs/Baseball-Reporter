@@ -1,5 +1,8 @@
 package data;
 
+/**
+ * Contains a collection of data to be accessed by ReportModules
+ */
 public interface ReportData
 {
 	public abstract String getGameStatistic(String key);

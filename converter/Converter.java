@@ -46,19 +46,42 @@ public abstract class Converter<T extends ReportData>
 		this( new BufferedReader( new FileReader(fileName) ) );
 	    this.filePath = fileName;
 	}
-
+	
+	/**
+	 * Converts the reader into a ReportData-like object
+	 * @param reader
+	 *		A BufferedReader to parse.
+	 * @throws Exception
+	 *		May throw an exception if something goes wrong during parse (Implementation specific).
+	 * @note
+	 *		The reader specified in the paramter becomes the converter's new reader.
+	 *		Any future calls to convert() will utilize this reader.
+	 */
 	public T convert(BufferedReader reader) throws Exception
 	{
 		this.reader = reader;
 		return convert();
 	}
 	
+	/**
+	 * Converts the file into a ReportData-like object
+	 * @param fileName
+	 *		A valid URI path
+	 * @throws Exception
+	 *		May throw an exception if something goes wrong during parse (Implementation specific).
+	 * @note
+	 *		The file specified in the paramter becomes the converter's new data store.
+	 *		Any future calls to convert() will utilize this file.
+	 */
 	public T convert(String fileName) throws FileNotFoundException, Exception
 	{
 		this.reader = new BufferedReader(new FileReader(fileName));
 		return convert();
 	}
 	
+	/**
+	 * Converts the data store into a ReportData-like object
+	 */
 	public abstract T convert() throws Exception;
 	
 	/**
