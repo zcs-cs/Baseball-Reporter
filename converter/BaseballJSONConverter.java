@@ -3,6 +3,7 @@ package converter;
 import org.json.*;
 import java.io.FileNotFoundException;
 
+import data.BaseballData;
 
 /**
  * Write a description of class JSONConverter here.
@@ -10,27 +11,31 @@ import java.io.FileNotFoundException;
  * @author Daniel Wesenberg
  * @version v1.0
  */
-public class JSONConverter extends Converter
+public class BaseballJSONConverter extends Converter<BaseballData>
 {
-    public JSONConverter(String filePath) throws FileNotFoundException
+    private JSONObject data;
+    
+    public BaseballJSONConverter(String filePath) throws FileNotFoundException
     {
         super(filePath);
-        convertData();
     }
-    public JSONObject convertData() {
+    
+    public BaseballData convert() throws Exception
+    {
+        return new BaseballData(convertData());
+    }
+    
+    public JSONObject convertData() throws Exception {
         String jsonInput = "";
         String lastLine;
-        try{
-            while ( ( lastLine = reader.readLine() ) != null){
-                jsonInput += lastLine;
-            }
-            reader.close();
-        } catch (Exception e){
-            e.printStackTrace();
+        while ( ( lastLine = reader.readLine() ) != null){
+            jsonInput += lastLine;
         }
+        reader.close();
         data = new JSONObject(jsonInput);
         return data;
     }
+    
     public String toString(){
         String out = "";
         out += filePath + "\n Contains: ";

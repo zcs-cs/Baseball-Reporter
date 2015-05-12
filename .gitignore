@@ -15,4 +15,5 @@ hs_err_pid*
 TestDriver.java
 \doc
 *.bluej
+*.ini
 TestDriver.java
