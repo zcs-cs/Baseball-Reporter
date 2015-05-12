@@ -1,66 +1,328 @@
 {
-  "GameStats": {
-    "innings": 9,
-    "length": 210,
-    "location": "Indianapolis",
-    "startTime": "5:20",
-    "weather": "fair"
-  },
-  "TeamA": {
-    "teamName": "Indianapolis Indians",
-    "teamDemonym": "the Indians",
-    "homeCity": "Indianapolis",
-    "wonGame": true,
-    "totalScore": 5,
-    "players": [
-      {
-        "name": "S. Pitch",
-        "hits": 1,
-        "atBats": 5,
-        "battingAverage": ".201",
-        "runs": 0,
-        "out": 5,
-        "outs": 8,
-        "position": "pitcher",
-        "injuries": [
+  "game": {
+    "location": "Victory Field",
+    "city": "Indianapolis, Indiana",
+    "temperature": 0.1,
+    "rainfall": 0.1,
+    "date": "04-29-2015",
+    "startTime": 1105,
+    "length": 0,
+    "innings": 0,
+    "teams": {
+      "teamA": {
+        "name": "Indianapolis Indians",
+        "demonym": "the Indians",
+        "homeCity": "Indianapolis, Indiana",
+        "standings": {
+          "position": 0,
+          "winRecord": 0,
+          "winStreak": 0,
+          "lossRecord": 0
+        },
+        "score": 0,
+        "result": false,
+        "players": [
           {
-            "description": "winded by line drive",
-            "inningsOut": 3,
-            "returnedToGame": false
+            "name": "A. Hanson",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "P. Florimon",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "S. Lombardozzi",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "T. Sanchez",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "D. Romero",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "B. Morel",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "M. Rojas Jr.",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "G. Hernandez",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "N. Kingham",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+          },
+          {
+            "name": "G. Nunez",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "N. Kingham",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "H. Morris",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "B. LaFromboise",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          }
+        ]
+      },
+      "teamB": {
+        "name": "Louisville Bats",
+        "demonym": "the Bats",
+        "homeCity": "Louisville, Kentucky",
+        "standings": {
+          "position": 0,
+          "winRecord": 0,
+          "winStreak": 0,
+          "lossRecord": 0
+        },
+        "score": 0,
+        "result": true,
+        "players": [
+          {
+            "name": "aa",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "aa",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "aa",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "aa",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "aa",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "aa",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "aa",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "aa",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "aa",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "aa",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "aa",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "aa",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
+          },
+          {
+            "name": "aa",
+            "bats": 0,
+            "hits": [
+              "aa"
+            ],
+            "RBI": 0,
+            "runs": 0
+            "injuries": [
+            ]
           }
         ]
       }
-    ],
-    "teamStandings": {
-      "winRecord": 3,
-      "lossRecord": 2,
-      "winStreak": 1,
-      "position": 6
-    },
-    "runs": [
-      {
-        "hitter": "A. Run",
-        "inning": 3,
-        "pointsScored": 1,
-        "overFence": false
-      },
-      {
-        "hitter": "G. Slamm",
-        "inning": 6,
-        "pointsScored": 4,
-        "overFence": true
-      }
-    ],
-    "pitchers": [
-      {
-        "name": "S. Pitch",
-        "inningsPitched": 6,
-        "era": 0.12,
-        "walks": 2,
-        "outs": 18,
-        "runsAllowed": 2,
-        "pitches": 65
-      }
-    ]
+    }
   }
 }
