@@ -15,7 +15,7 @@ public abstract class ReportModule<T extends ReportData>
 		this.data = data;
 	}
 	
-	public ReportModule() { } 
+	public ReportModule() { }
 	
 	public String generate(T data)
 	{

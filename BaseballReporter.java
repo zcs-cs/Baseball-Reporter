@@ -23,10 +23,9 @@ public class BaseballReporter
         Converter<BaseballData> converter = new BaseballJSONConverter(filePath);
         BaseballData data = converter.convert();
         
-        
         // modules creation and output //
         String output = "";
-        output += (new TitleModule()).generate(data);
+        output += (new ExamplesModule()).generate(data);
         
         System.out.println(output);
     }
