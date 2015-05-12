@@ -19,7 +19,7 @@ public class BestPlayerModule extends ReportModule<BaseballData>
     String name = "", team = "";
     int hits, atbats, hr, rbi;
     double rating = 0.0;
-    ArrayList<String> typeofhits = new ArrayList();    
+    //Not used - ArrayList<String> typeofhits = new ArrayList();    
 
     public Player()
     {
@@ -97,7 +97,7 @@ public class BestPlayerModule extends ReportModule<BaseballData>
      
      intros[0] = getTeamName() + "'s " + getName() + " played well, ";
      //Example Cubs's Alfonso Soriano played well, 
-     intros[1] = "The " + getTeamName() + " " + getName() + " had a good day "; 
+     intros[1] = "The " + getTeamName() + " " + getName() + " had a good day, "; 
      //Example The Cubs Alfonso Soriano had a good day 
      
      
@@ -106,9 +106,9 @@ public class BestPlayerModule extends ReportModule<BaseballData>
      infos[1] = "going " + getHits() + "-" + getAtBats() + " while bringing in " + getRBI() + " RBIs. He also hit " + getHR() + "HRs. ";
      //Example going 4-5 while bringing in 5 RBIs. He also hit 2 HRs.
      
-     rand = (int)(Math.random());
+     rand = (int)(Math.random()*2);
      intro = intros[rand];
-     rand = (int)(Math.random());
+     rand = (int)(Math.random()*2);
      info = infos[rand];
      return intro + info;
    }
