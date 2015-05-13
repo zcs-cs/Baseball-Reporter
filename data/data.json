@@ -18,7 +18,10 @@
         "winStreak": 0,
         "lossRecord": 0
       },
-      "score": 0,
+      "inningScores": [
+        0
+      ],
+      "scoreTotal": 0,
       "result": false,
       "players": [
         {
@@ -28,7 +31,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              inning: 0,
+              ballsRuns: 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -38,7 +46,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -46,9 +59,14 @@
           "bats": 0,
           "hits": [
             "aa"
-          ],
+          ],s
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -58,7 +76,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -68,7 +91,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -78,7 +106,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -88,7 +121,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -98,7 +136,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -108,7 +151,13 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
+          "injuries": []
         },
         {
           "name": "G. Nunez",
@@ -117,7 +166,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -127,7 +181,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -137,7 +196,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -147,7 +211,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         }
       ]
@@ -162,7 +231,10 @@
         "winStreak": 0,
         "lossRecord": 0
       },
-      "score": 0,
+      "inningScores": [
+        0
+      ],
+      "scoreTotal": 0,
       "result": true,
       "players": [
         {
@@ -172,7 +244,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -182,7 +259,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -192,7 +274,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -202,7 +289,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -212,7 +304,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -222,7 +319,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -232,7 +334,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -242,7 +349,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -252,7 +364,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -262,7 +379,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -272,7 +394,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -282,7 +409,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         },
         {
@@ -292,7 +424,12 @@
             "aa"
           ],
           "RBI": 0,
-          "runs": 0,
+          "runs": [
+            {
+              "inning": 0,
+              "ballsRuns": 0
+            }
+          ],
           "injuries": []
         }
       ]
