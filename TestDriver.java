@@ -9,7 +9,7 @@ import data.*;
  */
 public class TestDriver
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws Exception
 	{
 		// Determine file path: either default or from args
         String filePath = "data/data.json";
