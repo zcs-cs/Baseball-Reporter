@@ -1,8 +1,6 @@
 /* Progress..
   * there is old importation and calling of this class in Converter of the converters package that should probably get removed
-  * we don't need injury data in the input JSON 'data.json', as there were no injuries at the game we attended
-  * include data for Team B (functionality for such retrieval is already developed)
-  * include additional data and include functionality for its retrieval
+  * include additional data, including functionality for its retrieval
   * how should the index for a team run statistic be determined?
  */
 
@@ -29,6 +27,62 @@ public class BaseballData implements ReportData
      
      
      
+     // += data retrieval methods /////////////////////////////////////////////////////////////////////
+     // = primary statistics [precondition: key 'key' is present and corresponds to text] //
+     public String primaryStatistic(String key)
+     {
+     	return data.getString(key);
+     }
+     // = primary statistics - decimals [precondition: key 'key' is present and corresponds to text] //
+     public double primaryStatisticDouble(String key)
+     {
+     	return data.getDouble(key);
+     }
+     // = primary statistics - integers [precondition: key 'key' is present and corresponds to text] //
+     public int primaryStatisticInt(String key)
+     {
+     	return data.getInt(key);
+     }
+     // + location //
+     public String location()
+     {
+     	return primaryStatistic("location");
+     }
+     // + city //
+     public String city()
+     {
+     	return primaryStatistic("city");
+     }
+     // + temperature //
+     public double temperature()
+     {
+     	return primaryStatisticDouble("temperature");
+     }
+     // + rainfall //
+     public double rainfall()
+     {
+     	return primaryStatisticDouble("rainfall");
+     }
+     // + date //
+     public String temperature()
+     {
+     	return primaryStatistic("date");
+     }
+     // + start time //
+     public int startTime()
+     {
+     	return primaryStatisticInt("startTime");
+     }
+     // + minutes //
+     public int minutes()
+     {
+     	return primaryStatisticInt("minutes");
+     }
+     /////////////////////////////////////////////////////////////////////////////////////////////////
+
+     
+     
+     /************************************************************************************************/
      // += data retrieval methods /////////////////////////////////////////////////////////////////////
      // = game statistics [precondition: key 'key' is present and corresponds to text] //
      public String getGameStatistic(String key)
