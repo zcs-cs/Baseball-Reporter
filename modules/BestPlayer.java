@@ -7,13 +7,16 @@ public class BestPlayer extends ReportModule<BaseballData>
     
       public String generate()
      {
-         return "Lebron James is the king and therefore the best player of all time.";
+         Player bestplayerA = new Player();
+         Player bestplayerB = new Player();
+         bestplayerA = BestPlayer(TeamA);
+         bestplayerB = BestPlayer(TeamB);
+         return bestplayerA.toString() + " meanwhile, " + bestplayerB.toString();
      }
-     
      
   class Player
    {
-    String name = "";
+    String name = "", team = "";
     int hits, atbats, hr, rbi;
     double rating = 0.0;
     ArrayList<String> typeofhits = new ArrayList();    
@@ -25,19 +28,7 @@ public class BestPlayer extends ReportModule<BaseballData>
         atbats = 0;
         hr = 0;
         rbi = 0; 
-        /*
-        * The Player Rating class takes the data from the player and determines their rating. The points are taken accordingly
-        * 
-        * HR = 1.00
-        * RBI = .25
-        * HIT = .5
-        * ATBAT = .1
-        * 
-        */
-       rating += hr * 1;
-       rating += rbi* .25;
-       rating += hits * .5;
-       rating += atbats * .1;
+        rating = 0.0;
     }
 
     public Player(String playerName, int numHits, int numAtBats, int numHr, int numRbi)
@@ -91,6 +82,36 @@ public class BestPlayer extends ReportModule<BaseballData>
     {
        return rating;
    }  
+   
+   public String getTeamName()
+   {
+       return team;
+    }
+    
+   public String toString()
+   {
+     String intro = "", info = "";
+     int rand;
+     String intros[] = new String[2];
+     String infos[] = new String[2];
+     
+     intros[0] = getTeamName() + "'s " + getName() + " played well, ";
+     //Example Cubs's Alfonso Soriano played well, 
+     intros[1] = "The " + getTeamName() + " " + getName() + " had a good day "; 
+     //Example The Cubs Alfonso Soriano had a good day 
+     
+     
+     infos[0] = "contributing " + getHR() + " HRs and " + getRBI() + " RBIs. He went " + getHits() + "-" + getAtBats() + " for the day.";
+     //Example contributing 2 HRs and 5 RBIs. He went 4-5 for the day.
+     infos[1] = "going " + getHits() + "-" + getAtBats() + " while bringing in " + getRBI() + " RBIs. He also hit " + getHR() + "HRs. ";
+     //Example going 4-5 while bringing in 5 RBIs. He also hit 2 HRs.
+     
+     rand = (int)(Math.random());
+     intro = intros[rand];
+     rand = (int)(Math.random());
+     info = infos[rand];
+     return intro + info;
+   }
   }
    
       public Player BestPlayer(ArrayList<Player> team)
