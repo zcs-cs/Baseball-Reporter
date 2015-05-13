@@ -25,7 +25,11 @@ public class BaseballReporter
         
         // modules creation and output //
         String output = "";
-        output += (new ExamplesModule()).generate(data);
+        output += (new TitleModule()).generate(data);
+        output += (new BestPlayer()).generate(data);
+        output += (new ExtraInnings()).generate(data);
+        output += (new InjuryModule()).generate(data);
+        //output += (new ExamplesModule()).generate(data);
         
         System.out.println(output);
     }
