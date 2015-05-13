@@ -1,5 +1,7 @@
 import java.io.FileReader;
-import reporter.*;
+import modules.*;
+import converter.*;
+import data.*;
 
 /**
  * Test Driver class. Changes to this file will be ignored by Git. 
