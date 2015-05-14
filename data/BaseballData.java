@@ -6,6 +6,7 @@
 package data;
 
 import org.json.*;
+import java.util.ArrayList;
 
 // ReportData:
 //
@@ -89,15 +90,22 @@ public class BaseballData implements ReportData
     //     key 'key' is present and corresponds to (parallel) texts
     private String[][] arrayForParallelParallel(JSONArray arrayJSON, String arrayKey, String key)
     {
-        String[][] array = new String[][arrayJSON.length()];
-        for (int i = 0; i < array.length; i++)
+        ArrayList<ArrayList<String>> array = new ArrayList<ArrayList<String>>();
+        for (int i = 0; i < arrayJSON.length(); i++)
         {
-            for (int j = 0; j < array[i].length; j++)
+            array.add(new ArrayList<String>());
+            for (int j = 0; j < arrayJSON.getJSONArray(i).length(); j++)
             {
-                array[i][j] = arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getString(key);
+                array.get(i).add( arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getString(key) );
             }
         }
-        return array;
+        
+        //extract the elements from the array and spit them out as a String[][]
+        String[][] output = new String[array.size()][];
+        for(int k = 0; k < array.size(); k++) {
+            output[k] = (String[])(array.get(k).toArray());
+        }
+        return output;
     }
     // [>] array converter - integers across parallel containers across parallel containers
     // [preconditions]:
@@ -106,15 +114,28 @@ public class BaseballData implements ReportData
     //     key 'key' is present and corresponds to (parallel) integers
     private int[][] arrayForParallelParallelInts(JSONArray arrayJSON, String arrayKey, String key)
     {
-        int[][] array = new int[][arrayJSON.length()];
-        for (int i = 0; i < array.length; i++)
+        ArrayList<ArrayList<Integer>> array = new ArrayList<ArrayList<Integer>>();
+        //int[][] array = new int[][arrayJSON.length()];
+        for (int i = 0; i < arrayJSON.length(); i++)
         {
-            for (int j = 0; j < array[i].length; j++)
+            array.add( new ArrayList<Integer>() );
+            for (int j = 0; j < arrayJSON.getJSONArray(i).length(); j++)
             {
-                array[i][j] = arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getInt(key);
+                array.get(i).add( arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getInt(key) );
             }
         }
-        return array;
+        
+        int[][] output = new int[array.size()][];
+        for(int k = 0; k < array.size(); k++) {
+            Integer[] tmp = (Integer[])(array.get(k).toArray());
+            int[] blah = new int[tmp.length];
+            for(int l = 0; l < tmp.length; l++) {
+                blah[l] = tmp[l];
+            }
+            
+            output[k] = blah;
+        }
+        return output;
     }
 
     // [>] array converter - text arrays across parallel containers
@@ -123,7 +144,7 @@ public class BaseballData implements ReportData
     //     key 'key' is present and corresponds to (parallel) text arrays
     private String[][] arrayForParallelArrays(JSONArray arrayJSON, String key)
     {
-        String[][] array = new String[][arrayJSON.length()];
+        String[][] array = new String[arrayJSON.length()][];
         for (int i = 0; i < array.length; i++)
         {
             array[i] = arrayFor(arrayJSON.getJSONObject(i).getJSONArray(key));
@@ -136,10 +157,10 @@ public class BaseballData implements ReportData
     //     key 'key' is present and corresponds to (parallel) integer arrays
     private int[][] arrayForParallelIntArrays(JSONArray arrayJSON, String key)
     {
-        int[][] array = new int[][arrayJSON.length()];
+        int[][] array = new int[arrayJSON.length()][];
         for (int i = 0; i < array.length; i++)
         {
-            array[i] = arrayFor(arrayJSON.getJSONObject(i).getJSONArray(key));
+            array[i] = arrayForInts(arrayJSON.getJSONObject(i).getJSONArray(key));
         }
         return array;
     }
@@ -260,8 +281,8 @@ public class BaseballData implements ReportData
     {
         return teamPrimaryStatisticInt(teamA, "score");
     }
-    // [+] team result - integer //
-    public int teamResult(boolean teamA)
+    // [+] team result - boolean //
+    public boolean teamResult(boolean teamA)
     {
         return teamPrimaryStatisticBoolean(teamA, "result");
     }
@@ -317,6 +338,13 @@ public class BaseballData implements ReportData
     {
         return arrayForParallelArrays(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), key);
     }
+    // [=] team players statistics - integer array arrays
+    // (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively)
+    // [precondition: key 'key' is present and corresponds to (parallel) text arrays] //
+    private int[][] teamPlayersPrimaryStatisticsIntArrayArrays(boolean teamA, String key)
+    {
+        return arrayForParallelIntArrays(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), key);
+    }
     // [+] team players names - arrays //
     public String[] teamPlayersNames(boolean teamA)
     {
@@ -338,9 +366,9 @@ public class BaseballData implements ReportData
         return teamPlayersPrimaryStatisticsIntArrays(teamA, "RBI");
     }
     // [+] team players innings pitched - integer array arrays //
-    public int[][] teamPlayersHitsDescriptions(boolean teamA)
+    public int[][] teamPlayersInningsPitched(boolean teamA)
     {
-        return teamPlayersPrimaryStatisticsIntegerArrayArrays(teamA, "inningsPitched");
+        return teamPlayersPrimaryStatisticsIntArrayArrays(teamA, "inningsPitched");
     }
 
     // [=] team players runs statistics - integer array arrays
@@ -400,18 +428,18 @@ public class BaseballData implements ReportData
     public int[] teamPlayersHits(boolean teamA)
     {
         String[][] teamPlayersHitsDescriptions = teamPlayersHitsDescriptions(teamA);
-        int[] teamPlayersHits = new int[teamPlayersHitsDescriptions.length]
+        int[] teamPlayersHits = new int[teamPlayersHitsDescriptions.length];
         for (int i = 0; i < teamPlayersHits.length; i++)
         {
             teamPlayersHits[i] = teamPlayersHitsDescriptions[i].length;
         }
-        return teamPlayerHits;
+        return teamPlayersHits;
     }
     // [+] team players runs - integer arrays //
     public int[] teamPlayersRuns(boolean teamA)
     {
         int[][] teamPlayersRunsInnings = teamPlayersRunsInnings(teamA);        // could have used 'balls' runs too' //
-        int[] teamPlayersRuns = new int[teamPlayersRunsInnings.length]
+        int[] teamPlayersRuns = new int[teamPlayersRunsInnings.length];
         for (int i = 0; i < teamPlayersRuns.length; i++)
         {
             teamPlayersRuns[i] = teamPlayersRunsInnings[i].length;
