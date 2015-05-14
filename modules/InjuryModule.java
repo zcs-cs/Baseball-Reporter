@@ -5,7 +5,9 @@ public class InjuryModule extends ReportModule<BaseballData>
 {
     public String generate()
     {
-        return reportInjury();
+        end = "";
+        //This will cycle through the arrays and call reportInjury for each instance of an injury
+        return end;
     }
     private static String randomName(String first, String last, boolean capital)
     {
@@ -34,12 +36,8 @@ public class InjuryModule extends ReportModule<BaseballData>
             }
         }
     }
-    public static String reportInjury()
+    public static String reportInjury(String name, String type, String location, int timeOut)
     {
-        String name; //data.getInjuredName()
-        String type; //data.getInjuryType()
-        String location; //data.getInjuryLocation()
-        int timeOut; //data.getNumGamesOut()
         String first = name.substring(0, name.indexOf(" "));
         String last = name.substring(name.indexOf(" ") + 1, name.length());
         String end = "";
