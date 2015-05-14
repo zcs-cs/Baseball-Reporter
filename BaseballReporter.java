@@ -19,7 +19,7 @@ public class BaseballReporter
         String filePath = "data/data.json";
         if(args.length != 0 && args[0].length() > 0)
             filePath = args[0];
-        System.out.println("Reading from " + filePath + "\n");
+        System.out.println("The following article is being generated from: " + filePath + "\n");
         
         // conversion //
         Converter<BaseballData> converter = new BaseballJSONConverter(filePath);

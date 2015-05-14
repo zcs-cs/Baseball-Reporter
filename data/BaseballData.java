@@ -103,10 +103,10 @@ public class BaseballData implements ReportData
         }
         // convert 'arraylist' to a text array array //
         String[][] array = new String[arraylist.size()][];
-        for(int i = 0; i < arraylist.size(); i++)
+        for (int i = 0; i < arraylist.size(); i++)
         {
             String[] arrayComponent = new String[arraylist.get(i).size()];
-            for(int j = 0; j < arraylist.get(i).size(); j++)
+            for (int j = 0; j < arraylist.get(i).size(); j++)
             {
                 arrayComponent[j] = arraylist.get(i).get(j);
             }
@@ -124,7 +124,7 @@ public class BaseballData implements ReportData
         ArrayList<ArrayList<Integer>> arraylist = new ArrayList<ArrayList<Integer>>();
         for (int i = 0; i < arrayJSON.length(); i++)
         {
-            arraylist.add( new ArrayList<Integer>() );
+            arraylist.add(new ArrayList<Integer>());
             for (int j = 0; j < arrayJSON.getJSONObject(i).getJSONArray(arrayKey).length(); j++)
             {
                 arraylist.get(i).add(arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getInt(key));
