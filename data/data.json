@@ -29,15 +29,18 @@
           "name": "A. Hanson",
           "bats": 0,
           "hits": [
-            "aa",
-            "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -50,15 +53,18 @@
           "name": "P. Florimon",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -71,15 +77,18 @@
           "name": "S. Lombardozzi",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -92,15 +101,18 @@
           "name": "T. Sanchez",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -113,15 +125,18 @@
           "name": "D. Romero",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -134,15 +149,18 @@
           "name": "B. Morel",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -155,15 +173,18 @@
           "name": "M. Rojas Jr.",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -176,15 +197,18 @@
           "name": "G. Hernandez",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -197,15 +221,18 @@
           "name": "N. Kingham",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -218,15 +245,18 @@
           "name": "G. Nunez",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -239,15 +269,18 @@
           "name": "N. Kingham",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -260,15 +293,18 @@
           "name": "H. Morris",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -281,15 +317,18 @@
           "name": "B. LaFromboise",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -321,15 +360,18 @@
           "name": "aa",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -342,15 +384,18 @@
           "name": "aa",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -363,15 +408,18 @@
           "name": "aa",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -384,15 +432,18 @@
           "name": "aa",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -405,15 +456,18 @@
           "name": "aa",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -426,15 +480,18 @@
           "name": "aa",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -447,15 +504,18 @@
           "name": "aa",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -468,15 +528,18 @@
           "name": "aa",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -489,15 +552,18 @@
           "name": "aa",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -510,15 +576,18 @@
           "name": "aa",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -531,15 +600,18 @@
           "name": "aa",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -552,15 +624,18 @@
           "name": "aa",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
@@ -573,15 +648,18 @@
           "name": "aa",
           "bats": 0,
           "hits": [
-            "aa",
-	    "aa"
-          ],
-          "RBI": 0,
-          "runs": [
             {
-              "inning": 0,
-              "ballsRuns": 0
+              "description": "aa",
+              "RBI": 0
+            },
+            {
+              "description": "aa",
+              "RBI": 0
             }
+          ],
+          "runsInnings": [
+            0,
+            0
           ],
           "inningsPitched": [
             0,
