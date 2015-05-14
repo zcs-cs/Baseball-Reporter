@@ -9,7 +9,7 @@ import utilities.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class PitchAvB extends ReportModule<BaseballData>
+public class PitchAvBModule extends ReportModule<BaseballData>
 {
     int runs1, runs2, strikeouts1, strikeouts2, battersFaced1, battersFaced2;
     String Name1, Name2, Team1, Team2, Output;
