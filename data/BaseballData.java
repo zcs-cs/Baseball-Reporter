@@ -6,13 +6,18 @@
 package data;
 
 import org.json.*;
-
-// ReportData:
-//  [>] intended to provide resource methods for modules' generation methods
-//  [>] capable of interpreting a JSON object
-//  [>] created by being fed the intended JSON object
-//  [=] contains [private] general methods for accessing each data category
-//  [+] provides [public] specific and boolean-specified methods for accessing each JSON value (datum) using corresponding keys of the JSON object (container)
+/**
+ * ReportData:
+ *
+ *  [>] intended to provide resource methods for modules' generation methods
+ *  [>] capable of interpreting a JSON object
+ *  [>] created by being fed the intended JSON object
+ *
+ *  [=] contains [private] general methods for accessing each data category
+ *
+ *  [+] provides [public] specific and boolean-specified methods for accessing
+ *      each JSON value (datum) using corresponding keys of the JSON object (container)
+ */
 public class BaseballData implements ReportData
 {
     // [>] each BaseballData object requires a JSON object to reference ///////////////////////////////////
@@ -28,10 +33,12 @@ public class BaseballData implements ReportData
     
     
     
-
-    // data retrieval methods (the assumed data type is text) ///////////////////////////////////////////
-    // [>] array conversion utilities  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    // [>] array converter [precondition: 'arrayJSON' is a text array] //
+    /**
+     * data retrieval methods (the assumed data type is text) ///////////////////////////////////////////
+     *
+     *  [>] array conversion utilities  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+     *  [>] array converter [precondition: 'arrayJSON' is a text array] //
+     */
     private String[] arrayFor(JSONArray arrayJSON)
     {
         String[] array = new String[arrayJSON.length()];
@@ -41,7 +48,9 @@ public class BaseballData implements ReportData
         }
         return array;
     }
-    // [>] array converter - integers [precondition: 'arrayJSON' is an integer array] //
+    /**
+     * [>] array converter - integers [precondition: 'arrayJSON' is an integer array] //
+     */
     private int[] arrayForInts(JSONArray arrayJSON)
     {
         int[] array = new int[arrayJSON.length()];
@@ -52,7 +61,11 @@ public class BaseballData implements ReportData
         return array;
     }
 
-    // [>] array converter - across parallel containers [preconditions: 'arrayJSON' is a text array; key 'key' is present and corresponds to (parallel) texts] //
+    /**
+     * [>] array converter - across parallel containers [preconditions: 'arrayJSON'
+     *                       is a text array; key 'key' is present and corresponds
+     *                       to (parallel) texts] //
+     */
     private String[] arrayForParallel(JSONArray arrayJSON, String key)
     {
         String[] array = new String[arrayJSON.length()];
@@ -62,7 +75,12 @@ public class BaseballData implements ReportData
         }
         return array;
     }
-    // [>] array converter - integers across parallel containers [preconditions: 'arrayJSON' is an integer array; key 'key' is present and corresponds to (parallel) integers] //
+    /**
+     * [>] array converter - integers across parallel containers 
+     *                       [preconditions: 'arrayJSON' is an integer array;
+     *                       key 'key' is present and corresponds to (parallel)
+     *                       integers] //
+     */
     private int[] arrayForParallelInts(JSONArray arrayJSON, String key)
     {
         int[] array = new int[arrayJSON.length()];
@@ -73,7 +91,13 @@ public class BaseballData implements ReportData
         return array;
     }
 
-    // [>] array converter - across parallel containers across parallel containers [preconditions: 'arrayJSON' is a container array; (array) key 'arrayKey' is present and corresponds to (parallel) arrays; key 'key' is present and corresponds to (parallel) texts] //
+    /**
+     * [>] array converter - across parallel containers across parallel containers
+     *                       [preconditions: 'arrayJSON' is a container array; 
+     *                       (array) key 'arrayKey' is present and corresponds to
+     *                       (parallel) arrays; key 'key' is present and corresponds
+     *                       to (parallel) texts] //
+     */
     private String[][] arrayForParallelParallel(JSONArray arrayJSON, String arrayKey, String key)
     {
         String[][] array = new String[][arrayJSON.length()];
@@ -86,7 +110,13 @@ public class BaseballData implements ReportData
         }
         return array;
     }
-    // [>] array converter - integers across parallel containers across parallel containers [preconditions: 'arrayJSON' is a container array; (array) key 'arrayKey' is present and corresponds to (parallel) arrays; key 'key' is present and corresponds to (parallel) integers] //
+    /**
+     * [>] array converter - integers across parallel containers across parallel
+     *                       containers [preconditions: 'arrayJSON' is a container
+     *                       array; (array) key 'arrayKey' is present and corresponds
+     *                       to (parallel) arrays; key 'key' is present and corresponds
+     *                       to (parallel) integers] //
+     */
     private int[][] arrayForParallelParallelInts(JSONArray arrayJSON, String arrayKey, String key)
     {
         int[][] array = new int[][arrayJSON.length()];
@@ -100,7 +130,11 @@ public class BaseballData implements ReportData
         return array;
     }
 
-    // [>] array converter - text arrays across parallel containers [preconditions: 'arrayJSON' is a text array; key 'key' is present and corresponds to (parallel) text arrays] //
+    /**
+     * [>] array converter - text arrays across parallel containers [preconditions:
+     *                       'arrayJSON' is a text array; key 'key' is present and
+     *                       corresponds to (parallel) text arrays] //
+     */
     private String[][] arrayForParallelArrays(JSONArray arrayJSON, String key)
     {
         String[][] array = new String[][arrayJSON.length()];
@@ -110,7 +144,12 @@ public class BaseballData implements ReportData
         }
         return array;
     }
-    // [>] array converter - integer arrays across parallel containers [preconditions: 'arrayJSON' is an integer array; key 'key' is present and corresponds to (parallel) integer arrays] //
+    /**
+     * [>] array converter - integer arrays across parallel containers 
+     *                       [preconditions: 'arrayJSON' is an integer array;
+     *                       key 'key' is present and corresponds to (parallel)
+     *                       integer arrays] //
+     */
     private int[][] arrayForParallelIntArrays(JSONArray arrayJSON, String key)
     {
         int[][] array = new int[][arrayJSON.length()];
@@ -191,12 +230,20 @@ public class BaseballData implements ReportData
         if (teamA)     return "teamA";
         else    return "teamB";
     }
-    // [=] team primary statistics (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to text] //
+    /**
+     * [=] team primary statistics (for this and each of its implementations,
+     *     'teamA' equals true or false designating Team A or Team B respectively)
+     *     [precondition: key 'key' is present and corresponds to text] //
+     */
     private String teamPrimaryStatistic(boolean teamA, String key)
     {
         return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getString(key);
     }
-    // [=] team primary statistics - integers (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to an integer] //
+    /**
+     * [=] team primary statistics - integers (for this and each of its implementations,
+     *     'teamA' equals true or false designating Team A or Team B respectively) 
+     *     [precondition: key 'key' is present and corresponds to an integer] //
+     */
     private int teamPrimaryStatisticInt(boolean teamA, String key)
     {
         return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getInt(key);
@@ -238,7 +285,13 @@ public class BaseballData implements ReportData
     }
     
 
-    // [=] team standings statistics - integers (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to an integer] //
+    /**
+     * [=] team standings statistics - integers (for this and each of its 
+     *                                 implementations, 'teamA' equals true or
+     *                                 false designating Team A or Team B respectively)
+     *                                 [precondition: key 'key' is present and
+     *                                 corresponds to an integer] //
+     */
     private int teamStandingsStatisticInt(boolean teamA, String key)
     {
         return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONObject("standings").getInt(key);
