@@ -1,9 +1,35 @@
 package utilities;
 
+import java.util.*;
+
 public class Array
 {
+	public static String text(int[] integer_array)
+	{
+		return ""+Arrays.asList(integer_array);
+	}
+	
+	public static String text(double[] decimal_array)
+	{
+		return ""+Arrays.asList(decimal_array);
+	}
+	
+	public static String text(String[] text_array)
+	{
+		return ""+Arrays.asList(text_array);
+	}
+	
+	public static String text(char[] character_array)
+	{
+		return ""+Arrays.asList(character_array);
+	}
+	
+	
+	
+	
 	public static int[] copy(int[] integer_array)
 	{
+		if (integer_array == null)		return new int[] {};
 		int[] copy = new int[integer_array.length];
 		for (int i = 0; i < integer_array.length; i++)
 		{
@@ -14,6 +40,7 @@ public class Array
 	
 	public static double[] copy(double[] decimal_array)
 	{
+		if (decimal_array == null)		return new double[] {};
 		double[] copy = new double[decimal_array.length];
 		for (int i = 0; i < decimal_array.length; i++)
 		{
@@ -24,6 +51,7 @@ public class Array
 	
 	public static String[] copy(String[] text_array)
 	{
+		if (text_array == null)		return new String[] {};
 		String[] copy = new String[text_array.length];
 		for (int i = 0; i < text_array.length; i++)
 		{
@@ -34,6 +62,7 @@ public class Array
 	
 	public static char[] copy(char[] character_array)
 	{
+		if (character_array == null)		return new char[] {};
 		char[] copy = new char[character_array.length];
 		for (int i = 0; i < character_array.length; i++)
 		{
@@ -41,6 +70,7 @@ public class Array
 		}
 		return copy;
 	}
+	
 	
 	
 	
@@ -117,6 +147,38 @@ public class Array
 			}
 		}
 		return combined_text_arrays;
+	}
+	public static String[] combine(String[] text_array_1, String[] text_array_2, String[] text_array_3)
+	{
+		return combine(combine(text_array_1, text_array_2), text_array_3);
+	}
+	public static String[] combine(String[] text_array_1, String[] text_array_2, String[] text_array_3, String[] text_array_4)
+	{
+		return combine(combine(text_array_1, text_array_2, text_array_3), text_array_4);
+	}
+	public static String[] combine(String[] text_array_1, String[] text_array_2, String[] text_array_3, String[] text_array_4, String[] text_array_5)
+	{
+		return combine(combine(text_array_1, text_array_2, text_array_3, text_array_4), text_array_5);
+	}
+	public static String[] combine(String[] text_array_1, String[] text_array_2, String[] text_array_3, String[] text_array_4, String[] text_array_5, String[] text_array_6)
+	{
+		return combine(combine(text_array_1, text_array_2, text_array_3, text_array_4, text_array_5), text_array_6);
+	}
+	public static String[] combine(String[] text_array_1, String[] text_array_2, String[] text_array_3, String[] text_array_4, String[] text_array_5, String[] text_array_6, String[] text_array_7)
+	{
+		return combine(combine(text_array_1, text_array_2, text_array_3, text_array_4, text_array_5, text_array_6), text_array_7);
+	}
+	public static String[] combine(String[] text_array_1, String[] text_array_2, String[] text_array_3, String[] text_array_4, String[] text_array_5, String[] text_array_6, String[] text_array_7, String[] text_array_8)
+	{
+		return combine(combine(text_array_1, text_array_2, text_array_3, text_array_4, text_array_5, text_array_6, text_array_7), text_array_8);
+	}
+	public static String[] combine(String[] text_array_1, String[] text_array_2, String[] text_array_3, String[] text_array_4, String[] text_array_5, String[] text_array_6, String[] text_array_7, String[] text_array_8, String[] text_array_9)
+	{
+		return combine(combine(text_array_1, text_array_2, text_array_3, text_array_4, text_array_5, text_array_6, text_array_7, text_array_8), text_array_9);
+	}
+	public static String[] combine(String[] text_array_1, String[] text_array_2, String[] text_array_3, String[] text_array_4, String[] text_array_5, String[] text_array_6, String[] text_array_7, String[] text_array_8, String[] text_array_9, String[] text_array_10)
+	{
+		return combine(combine(text_array_1, text_array_2, text_array_3, text_array_4, text_array_5, text_array_6, text_array_7, text_array_8, text_array_9), text_array_10);
 	}
 	
 	public static char[] combine(char[] character_array_1, char[] character_array_2)
@@ -272,6 +334,7 @@ public class Array
 	
 	
 	
+	
 	public static String[] permute(String[] text_array_1, String[] text_array_2)
 	{
 		if (text_array_1 == null  ||  text_array_1.length == 0  || text_array_2 == null  ||  text_array_2.length == 0)		return null;
@@ -285,8 +348,18 @@ public class Array
 		}
 		return permuted_text_arrays;
 	}
-	
-	
+	public static String[] permute(String[] text_array_1, String[] text_array_2, String[] text_array_3)
+	{
+		return permute(permute(text_array_1, text_array_2), text_array_3);
+	}
+	public static String[] permute(String[] text_array_1, String[] text_array_2, String[] text_array_3, String[] text_array_4)
+	{
+		return permute(permute(text_array_1, text_array_2, text_array_3), text_array_4);
+	}
+	public static String[] permute(String[] text_array_1, String[] text_array_2, String[] text_array_3, String[] text_array_4, String[] text_array_5)
+	{
+		return permute(permute(text_array_1, text_array_2, text_array_3, text_array_4), text_array_5);
+	}
 	
 	
 	
@@ -532,6 +605,7 @@ public class Array
 		indexes[1] = -1;
 		return indexes;
 	}
+	
 	
 	
 	

@@ -11,17 +11,17 @@
     "teamA": {
       "name": "Indianapolis Indians",
       "demonym": "the Indians",
-      "homeCity": "Indianapolis, Indiana",
+      "homecity": "Indianapolis, Indiana",
       "standings": {
         "position": 0,
-        "winRecord": 0,
-        "winStreak": 0,
-        "lossRecord": 0
+        "wins": 0,
+        "streak": 0,
+        "losses": 0
       },
       "inningScores": [
         0
       ],
-      "scoreTotal": 0,
+      "score": 0,
       "result": false,
       "players": [
         {
@@ -37,7 +37,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "P. Florimon",
@@ -52,7 +53,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "S. Lombardozzi",
@@ -67,7 +69,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "T. Sanchez",
@@ -82,7 +85,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "D. Romero",
@@ -97,7 +101,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "B. Morel",
@@ -112,7 +117,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "M. Rojas Jr.",
@@ -127,7 +133,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "G. Hernandez",
@@ -142,7 +149,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "N. Kingham",
@@ -157,7 +165,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "G. Nunez",
@@ -172,7 +181,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "N. Kingham",
@@ -187,7 +197,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "H. Morris",
@@ -202,7 +213,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "B. LaFromboise",
@@ -217,24 +229,25 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         }
       ]
     },
     "teamB": {
       "name": "Louisville Bats",
       "demonym": "the Bats",
-      "homeCity": "Louisville, Kentucky",
+      "homecity": "Louisville, Kentucky",
       "standings": {
         "position": 0,
-        "winRecord": 0,
-        "winStreak": 0,
-        "lossRecord": 0
+        "wins": 0,
+        "streak": 0,
+        "losses": 0
       },
       "inningScores": [
         0
       ],
-      "scoreTotal": 0,
+      "score": 0,
       "result": true,
       "players": [
         {
@@ -250,7 +263,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "aa",
@@ -265,7 +279,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "aa",
@@ -280,7 +295,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "aa",
@@ -295,7 +311,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "aa",
@@ -310,7 +327,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "aa",
@@ -325,7 +343,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "aa",
@@ -340,7 +359,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "aa",
@@ -355,7 +375,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "aa",
@@ -370,7 +391,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "aa",
@@ -385,7 +407,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "aa",
@@ -400,7 +423,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "aa",
@@ -415,7 +439,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         },
         {
           "name": "aa",
@@ -430,7 +455,8 @@
               "ballsRuns": 0
             }
           ],
-          "injuries": []
+          "injuries": [
+          ]
         }
       ]
     }

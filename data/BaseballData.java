@@ -1,7 +1,6 @@
 /* Progress..
-  * there is old importation and calling of this class in Converter of the converters package that should probably get removed
-  * include additional data, including functionality for its retrieval
-  * how should the index for a team run statistic be determined?
+  * there is an old importation and calling of this class in Converter that should probably get removed
+  * include additional data retrieval methods as data.json is updated as data is requested
  */
 
 package data;
@@ -9,395 +8,370 @@ package data;
 import org.json.*;
 
 // ReportData:
-//  > intended to provide resource methods for Modules' generation methods
-//  > capable of interpreting a JSON object
-//  > created by being fed the intended JSON object
-//  = contains general methods for accessing each data category
-//  + provides specific and boolean-specified methods for accessing each JSON value (datum) using corresponding keys of the JSON object
+//  [>] intended to provide resource methods for modules' generation methods
+//  [>] capable of interpreting a JSON object
+//  [>] created by being fed the intended JSON object
+//  [=] contains [private] general methods for accessing each data category
+//  [+] provides [public] specific and boolean-specified methods for accessing each JSON value (datum) using corresponding keys of the JSON object (container)
 public class BaseballData implements ReportData
 {
-	 // > each BaseballData object requires a JSON object to reference /////////////////////////////////
-     private JSONObject data;
-     
-     public BaseballData(JSONObject data)
-     {
-         this.data = data;
-     }
-     /////////////////////////////////////////////////////////////////////////////////////////////////
-     
-     
-     
-     // += data retrieval methods /////////////////////////////////////////////////////////////////////
-     // = primary statistics [precondition: key 'key' is present and corresponds to text] //
-     public String primaryStatistic(String key)
-     {
-     	return data.getString(key);
-     }
-     // = primary statistics - decimals [precondition: key 'key' is present and corresponds to text] //
-     public double primaryStatisticDouble(String key)
-     {
-     	return data.getDouble(key);
-     }
-     // = primary statistics - integers [precondition: key 'key' is present and corresponds to text] //
-     public int primaryStatisticInt(String key)
-     {
-     	return data.getInt(key);
-     }
-     // + location //
-     public String location()
-     {
-     	return primaryStatistic("location");
-     }
-     // + city //
-     public String city()
-     {
-     	return primaryStatistic("city");
-     }
-     // + temperature //
-     public double temperature()
-     {
-     	return primaryStatisticDouble("temperature");
-     }
-     // + rainfall //
-     public double rainfall()
-     {
-     	return primaryStatisticDouble("rainfall");
-     }
-     // + date //
-     public String temperature()
-     {
-     	return primaryStatistic("date");
-     }
-     // + start time //
-     public int startTime()
-     {
-     	return primaryStatisticInt("startTime");
-     }
-     // + minutes //
-     public int minutes()
-     {
-     	return primaryStatisticInt("minutes");
-     }
-     /////////////////////////////////////////////////////////////////////////////////////////////////
+	// [>] each BaseballData object requires a JSON object to reference ///////////////////////////////////
+	private JSONObject data;
+	
+	public BaseballData(JSONObject data)
+	{
+		this.data = data;
+	}
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	
+	
 
-     
-     
-     /************************************************************************************************/
-     // += data retrieval methods /////////////////////////////////////////////////////////////////////
-     // = game statistics [precondition: key 'key' is present and corresponds to text] //
-     public String getGameStatistic(String key)
-     {
-         return data.getJSONObject("GameStats").getString(key);
-     }
-     // = game statistics - integers [precondition: key 'key' is present and corresponds to an integer] //
-     public int getGameStatisticInt(String key)
-     {
-         return data.getJSONObject("GameStats").getInt(key);
-     }
-     // + innings (integer) //
-     public int getInnings()
-     {
-         return getGameStatisticInt("innings");
-     }
-     // + length (integer) //
-     public int getLength()
-     {
-         return getGameStatisticInt("length");
-     }
-     // + location //
-     public String getLocation()
-     {
-         return getGameStatistic("location");
-     }
-     // + start time //
-     public String getStartTime()
-     {
-         return getGameStatistic("startTime");
-     }
-     // + weather //
-     public String getWeather()
-     {
-         return getGameStatistic("weather");
-     }
-     
-     
-     // = team primary statistics [precondition: key 'key' is present and primary and corresponds to text] //
-     public String getTeamStatistic(boolean teamA, String key)
-     {
-         String teamLabel;
-         if (teamA)      teamLabel = "TeamA";
-         else        teamLabel = "TeamB";
-         return data.getJSONObject(teamLabel).getString(key);
-     }
-     
-     // = team primary statistics - integers [precondition: key 'key' is present and primary and corresponds to an integer] //
-     public int getTeamStatisticInt(boolean teamA, String key)
-     {
-         String teamLabel;
-         if (teamA)      teamLabel = "TeamA";
-         else        teamLabel = "TeamB";
-         return data.getJSONObject(teamLabel).getInt(key);
-     }
-     
-     // = team primary statistics - booleans [precondition: key 'key' is present and primary and corresponds to a boolean] //
-     public boolean getTeamStatisticBoolean(boolean teamA, String key)
-     {
-         String teamLabel;
-         if (teamA)      teamLabel = "TeamA";
-         else        teamLabel = "TeamB";
-         return data.getJSONObject(teamLabel).getBoolean(key);
-     }
-     // + team name //
-     public String getTeamName(boolean teamA)
-     {
-         return getTeamStatistic(teamA, "teamName");
-     }
-     // + team demonym //
-     public String getTeamDemonym(boolean teamA)
-     {
-         return getTeamStatistic(teamA, "teamDemonym");
-     }
-     // + team home city //
-     public String getTeamHomeCity(boolean teamA)
-     {
-         return getTeamStatistic(teamA, "homeCity");
-     }
-     // + team result //
-     public boolean getTeamResult(boolean teamA)
-     {
-         return getTeamStatisticBoolean(teamA, "wonGame");
-     }
-     // + team total score (integer) //
-     public int getTeamTotalScore(boolean teamA)
-     {
-         return getTeamStatisticInt(teamA, "totalScore");
-     }
-     
-     // = team players statistics [preconditions: the player named 'playerName' is present in the specified team, and key 'key' is present and is corresponds to text] //
-     public String getPlayerStatistic(boolean teamA, String playerName, String key)
-     {
-         String teamLabel;
-         if (teamA)      teamLabel = "TeamA";
-         else        teamLabel = "TeamB";
-         int index = -1;
-         String foundPlayerName = "";
-         while (!foundPlayerName.equals(playerName))
-         {
-             index++;
-             foundPlayerName = data.getJSONObject(teamLabel).getJSONArray("players").getJSONObject(index).getString("name");
-         }
-         return data.getJSONObject(teamLabel).getJSONArray("players").getJSONObject(index).getString(key);
-     }
-     
-     // = team players statistics - integers [preconditions: the player named 'playerName' is present in the specified team, and key 'key' is present and corresponds to an integer] //
-     public int getPlayerStatisticInt(boolean teamA, String playerName, String key)
-     {
-         String teamLabel;
-         if (teamA)      teamLabel = "TeamA";
-         else        teamLabel = "TeamB";
-         int index = -1;
-         String foundPlayerName = "";
-         while (!foundPlayerName.equals(playerName))
-         {
-             index++;
-             System.out.println(index);
-             foundPlayerName = data.getJSONObject(teamLabel).getJSONArray("players").getJSONObject(index).getString("name");
-         }
-         return data.getJSONObject(teamLabel).getJSONArray("players").getJSONObject(index).getInt(key);
-     }
-     // + team player hits (integer) [precondition: the player named 'playerName' is present in the specified team] //
-     public int getTeamPlayerHits(boolean teamA, String playerName)
-     {
-         return getPlayerStatisticInt(teamA, playerName, "hits");
-     }
-     
-     // + team player bats (integer) [precondition: the player named 'playerName' is present in the specified team] //
-     public int getTeamPlayerBats(boolean teamA, String playerName)
-     {
-         return getPlayerStatisticInt(teamA, playerName, "atBats");
-     }
-     
-     // + team player batting average [precondition: the player named 'playerName' is present in the specified team] //
-     public String getTeamPlayerBattingAverage(boolean teamA, String playerName)
-     {
-         return getPlayerStatistic(teamA, playerName, "battingAverage");
-     }
-     
-     // + team player runs (integer) [precondition: the player named 'playerName' is present in the specified team] //
-     public int getTeamPlayerRuns(boolean teamA, String playerName)
-     {
-         return getPlayerStatisticInt(teamA, playerName, "runs");
-     }
-     
-     // + team player out (integer) [precondition: the player named 'playerName' is present in the specified team] //
-     public int getTeamPlayerOut(boolean teamA, String playerName)
-     {
-         return getPlayerStatisticInt(teamA, playerName, "out");
-     }
-     
-     // + team player outs (integer) [precondition: the player named 'playerName' is present in the specified team] //
-     public int getTeamPlayerOuts(boolean teamA, String playerName)
-     {
-         return getPlayerStatisticInt(teamA, playerName, "outs");
-     }
-     
-     // + team player position (integer) [precondition: the player named 'playerName' is present in the specified team] //
-     public String getTeamPlayerPosition(boolean teamA, String playerName)
-     {
-         return getPlayerStatistic(teamA, playerName, "position");
-     }
-     
-     // = team standings statistics - integers [preconditions: key 'key' is present and corresponds to an int] //
-     public int getTeamStandingsStatisticInt(boolean teamA, String key)
-     {
-         String teamLabel;
-         if (teamA)      teamLabel = "TeamA";
-         else        teamLabel = "TeamB";
-         return data.getJSONObject(teamLabel).getJSONObject("teamStandings").getInt(key);
-     }
-     // + team standings win record (int) //
-     public int getTeamStandingsWinRecord(boolean teamA)
-     {
-         return getTeamStandingsStatisticInt(teamA, "winRecord");
-     }
-     // + team standings loss record (int) //
-     public int getTeamStandingsLossRecord(boolean teamA)
-     {
-         return getTeamStandingsStatisticInt(teamA, "lossRecord");
-     }
-     // + team standings win streak (int) //
-     public int getTeamStandingsWinStreak(boolean teamA)
-     {
-         return getTeamStandingsStatisticInt(teamA, "winStreak");
-     }
-     // + team standings position (int) //
-     public int getTeamStandingsPosition(boolean teamA)
-     {
-         return getTeamStandingsStatisticInt(teamA, "position");
-     }
-     
-     // = team runs statistics [preconditions: index 'index' is present, key 'key' is present and corresponds to text] //
-     public String getTeamRunsIndexStatistic(boolean teamA, int index, String key)
-     {
-         String teamLabel;
-         if (teamA)      teamLabel = "TeamA";
-         else        teamLabel = "TeamB";
-         return data.getJSONObject(teamLabel).getJSONArray("runs").getJSONObject(index).getString(key);
-     }
-     // = team runs statistics - integers [preconditions: index 'index' is present, key 'key' is present and corresponds to an int] //
-     public int getTeamRunsIndexStatisticInt(boolean teamA, int index, String key)
-     {
-        String teamLabel;
-         if (teamA)      teamLabel = "TeamA";
-         else        teamLabel = "TeamB";
-         return data.getJSONObject(teamLabel).getJSONArray("runs").getJSONObject(index).getInt(key);
-     }
-     // = team runs statistics - booleans [preconditions: index 'index' is present, key 'key' is present and corresponds to a boolean] //
-     public boolean getTeamRunsIndexStatisticBoolean(boolean teamA, int index, String key)
-     {
-        String teamLabel;
-         if (teamA)      teamLabel = "TeamA";
-         else        teamLabel = "TeamB";
-         return data.getJSONObject(teamLabel).getJSONArray("runs").getJSONObject(index).getBoolean(key);
-     }
-     // + team runs index hitter [precondition: index 'index' is present] //
-     public String getTeamRunsIndexHitter(boolean teamA, int index)
-     {
-         return getTeamRunsIndexStatistic(teamA, index, "hitter");
-     }
-     // + team runs index inning (int) [precondition: index 'index' is present] //
-     public int getTeamRunsIndexInning(boolean teamA, int index)
-     {
-         return getTeamRunsIndexStatisticInt(teamA, index, "inning");
-     }
-     // + team runs index points scored (int) [precondition: index 'index' is present] //
-     public int getTeamRunsIndexPointsScored(boolean teamA, int index)
-     {
-         return getTeamRunsIndexStatisticInt(teamA, index, "pointsScored");
-     }
-     // + team runs index points scored (boolean) [precondition: index 'index' is present] //
-     public boolean getTeamRunsIndexPointsScoredBoolean(boolean teamA, int index)
-     {
-         return getTeamRunsIndexStatisticBoolean(teamA, index, "overFence");
-     }
-     
-     // = team pitchers statistics //
-     // = team pitchers statistics [preconditions: the pitcher named 'pitcherName' is present in the specified team, and key 'key' is present and is corresponds to text] //
-     public String getTeamPitcherStatistic(boolean teamA, String pitcherName, String key)
-     {
-         String teamLabel;
-         if (teamA)      teamLabel = "TeamA";
-         else        teamLabel = "TeamB";
-         int index = -1;
-         String foundPitcherName = "";
-         while (!foundPitcherName.equals(pitcherName))
-         {
-             index++;
-             foundPitcherName = data.getJSONObject(teamLabel).getJSONArray("pitchers").getJSONObject(index).getString("name");
-         }
-         return data.getJSONObject(teamLabel).getJSONArray("pitchers").getJSONObject(index).getString(key);
-     }
-     // = team pitchers statistics - integers [preconditions: the pitcher named 'pitcherName' is present in the specified team, and key 'key' is present and is corresponds to an int] //
-     public int getTeamPitcherStatisticInt(boolean teamA, String pitcherName, String key)
-     {
-         String teamLabel;
-         if (teamA)      teamLabel = "TeamA";
-         else        teamLabel = "TeamB";
-         int index = -1;
-         String foundPitcherName = "";
-         while (!foundPitcherName.equals(pitcherName))
-         {
-             index++;
-             foundPitcherName = data.getJSONObject(teamLabel).getJSONArray("pitchers").getJSONObject(index).getString("name");
-         }
-         return data.getJSONObject(teamLabel).getJSONArray("pitchers").getJSONObject(index).getInt(key);
-     }
-     // = team pitchers statistics - decimals [preconditions: the pitcher named 'pitcherName' is present in the specified team, and key 'key' is present and is corresponds to a decimal] //
-     public double getTeamPitcherStatisticDouble(boolean teamA, String pitcherName, String key)
-     {
-         String teamLabel;
-         if (teamA)      teamLabel = "TeamA";
-         else        teamLabel = "TeamB";
-         int index = -1;
-         String foundPitcherName = "";
-         while (!foundPitcherName.equals(pitcherName))
-         {
-             index++;
-             foundPitcherName = data.getJSONObject(teamLabel).getJSONArray("pitchers").getJSONObject(index).getString("name");
-         }
-         return data.getJSONObject(teamLabel).getJSONArray("pitchers").getJSONObject(index).getDouble(key);
-     }
-     // + team pitcher innings pitched (integer) [precondition: the pitcher named 'pitcherName' is present in the specified team] //
-     public int getTeamPitcherInningsPitched(boolean teamA, String pitcherName)
-     {
-         return getTeamPitcherStatisticInt(teamA, pitcherName, "name");
-     }
-     // + team pitcher earned run average ('ERA') (decimal) [precondition: the pitcher named 'pitcherName' is present in the specified team] //
-     public double getTeamPitcherERA(boolean teamA, String pitcherName)
-     {
-         return getTeamPitcherStatisticDouble(teamA, pitcherName, "era");
-     }
-     // + team pitcher walks (integer) [precondition: the pitcher named 'pitcherName' is present in the specified team] //
-     public int getTeamPitcherWalks(boolean teamA, String pitcherName)
-     {
-         return getTeamPitcherStatisticInt(teamA, pitcherName, "walks");
-     }
-     // + team pitcher outs (integer) [precondition: the pitcher named 'pitcherName' is present in the specified team] //
-     public int getTeamPitcherOuts(boolean teamA, String pitcherName)
-     {
-         return getTeamPitcherStatisticInt(teamA, pitcherName, "outs");
-     }
-     // + team pitcher runs allowed (integer) [precondition: the pitcher named 'pitcherName' is present in the specified team] //
-     public int getTeamPitcherRunsAllowed(boolean teamA, String pitcherName)
-     {
-         return getTeamPitcherStatisticInt(teamA, pitcherName, "runsAllowed");
-     }
-     // + team pitcher pitches (integer) [precondition: the pitcher named 'pitcherName' is present in the specified team] //
-     public int getTeamPitcherPitches(boolean teamA, String pitcherName)
-     {
-         return getTeamPitcherStatisticInt(teamA, pitcherName, "pitches");
-     }
-     /////////////////////////////////////////////////////////////////////////////////////////////////
+    // data retrieval methods (the assumed data type is text) ///////////////////////////////////////////
+    // [>] array conversion utilities  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+	// [>] array converter [precondition: 'arrayJSON' is a text array] //
+	private String[] arrayFor(JSONArray arrayJSON)
+	{
+		String[] array = new String[arrayJSON.length()];
+		for (int i = 0; i < array.length; i++)
+		{
+		  array[i] = arrayJSON.getString(i);
+		}
+		return array;
+	}
+	// [>] array converter - integers [precondition: 'arrayJSON' is an integer array] //
+	private int[] arrayForInts(JSONArray arrayJSON)
+	{
+		int[] array = new int[arrayJSON.length()];
+		for (int i = 0; i < array.length; i++)
+		{
+		  array[i] = arrayJSON.getInt(i);
+		}
+		return array;
+	}
+
+    // [>] array converter - across parallel containers [preconditions: 'arrayJSON' is a text array; key 'key' is present and corresponds to (parallel) texts] //
+    private String[] arrayForParallel(JSONArray arrayJSON, String key)
+    {
+        String[] array = new String[arrayJSON.length()];
+        for (int i = 0; i < array.length; i++)
+        {
+            array[i] = arrayJSON.getJSONObject(i).getString(key);
+        }
+        return array;
+    }
+    // [>] array converter - integers across parallel containers [preconditions: 'arrayJSON' is an integer array; key 'key' is present and corresponds to (parallel) integers] //
+    private int[] arrayForParallelInts(JSONArray arrayJSON, String key)
+    {
+        int[] array = new int[arrayJSON.length()];
+        for (int i = 0; i < array.length; i++)
+        {
+            array[i] = arrayJSON.getJSONObject(i).getInt(key);
+        }
+        return array;
+    }
+
+    // [>] array converter - across parallel containers across parallel containers [preconditions: 'arrayJSON' is a container array; (array) key 'arrayKey' is present and corresponds to (parallel) arrays; key 'key' is present and corresponds to (parallel) texts] //
+    private String[][] arrayForParallelParallel(JSONArray arrayJSON, String arrayKey, String key)
+    {
+        String[][] array = new String[][arrayJSON.length()];
+        for (int i = 0; i < array.length; i++)
+        {
+            for (int j = 0; j < array[i].length; j++)
+            {
+                array[i][j] = arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getString(key);
+            }
+        }
+        return array;
+    }
+    // [>] array converter - integers across parallel containers across parallel containers [preconditions: 'arrayJSON' is a container array; (array) key 'arrayKey' is present and corresponds to (parallel) arrays; key 'key' is present and corresponds to (parallel) integers] //
+    private int[][] arrayForParallelParallelInts(JSONArray arrayJSON, String arrayKey, String key)
+    {
+        int[][] array = new int[][arrayJSON.length()];
+        for (int i = 0; i < array.length; i++)
+        {
+            for (int j = 0; j < array[i].length; j++)
+            {
+                array[i][j] = arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getInt(key);
+            }
+        }
+        return array;
+    }
+
+    // [>] array converter - text arrays across parallel containers [preconditions: 'arrayJSON' is a text array; key 'key' is present and corresponds to (parallel) text arrays] //
+    private String[][] arrayForParallelArrays(JSONArray arrayJSON, String key)
+    {
+        String[][] array = new String[][arrayJSON.length()];
+        for (int i = 0; i < array.length; i++)
+        {
+            array[i] = arrayFor(arrayJSON.getJSONObject(i).getJSONArray(key));
+        }
+        return array;
+    }
+    // [>] array converter - integer arrays across parallel containers [preconditions: 'arrayJSON' is an integer array; key 'key' is present and corresponds to (parallel) integer arrays] //
+    private int[][] arrayForParallelIntArrays(JSONArray arrayJSON, String key)
+    {
+        int[][] array = new int[][arrayJSON.length()];
+        for (int i = 0; i < array.length; i++)
+        {
+            array[i] = arrayFor(arrayJSON.getJSONObject(i).getJSONArray(key));
+        }
+        return array;
+    }
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  /
+
+	
+	
+	
+
+	// [+=] data retrieval methods - obvious and necessary  //  //  //  //  //  //  //  //  //  //  //  /
+	// [=] primary statistics [precondition: key 'key' is present and corresponds to text] //
+	private String primaryStatistic(String key)
+	{
+		return data.getString(key);
+	}
+	// [=] primary statistics - decimals [precondition: key 'key' is present and corresponds to a decimal] //
+	private double primaryStatisticDouble(String key)
+	{
+		return data.getDouble(key);
+	}
+	// [=] primary statistics - integers [precondition: key 'key' is present and corresponds to an integer] //
+	private int primaryStatisticInt(String key)
+	{
+		return data.getInt(key);
+	}
+	// [+] location //
+	public String location()
+	{
+		return primaryStatistic("location");
+	}
+	// [+] city //
+	public String city()
+	{
+		return primaryStatistic("city");
+	}
+	// [+] temperature //
+	public double temperature()
+	{
+		return primaryStatisticDouble("temperature");
+	}
+	// [+] rainfall //
+	public double rainfall()
+	{
+		return primaryStatisticDouble("rainfall");
+	}
+	// [+] date //
+	public String date()
+	{
+		return primaryStatistic("date");
+	}
+	// [+] start time - integer //
+	public int startTime()
+	{
+		return primaryStatisticInt("startTime");
+	}
+	// [+] minutes - integer //
+	public int minutes()
+	{
+		return primaryStatisticInt("minutes");
+	}
+	// [+] innings - integer //
+	public int innings()
+	{
+		return primaryStatisticInt("innings");
+	}
+	
+	
+
+	// [>] team label (key) chooser based on 'teamA' boolean //
+	private String teamFor(boolean teamA)
+	{
+		if (teamA)	 return "teamA";
+		else	return "teamB";
+	}
+	// [=] team primary statistics (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to text] //
+	private String teamPrimaryStatistic(boolean teamA, String key)
+	{
+		return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getString(key);
+	}
+	// [=] team primary statistics - integers (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to an integer] //
+	private int teamPrimaryStatisticInt(boolean teamA, String key)
+	{
+		return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getInt(key);
+	}
+	// [=] team primary statistics - booleans (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to a boolean] //
+	private boolean teamPrimaryStatisticBoolean(boolean teamA, String key)
+	{
+		return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getBoolean(key);
+	}
+	// [+] team name //
+	public String teamName(boolean teamA)
+	{
+		return teamPrimaryStatistic(teamA, "name");
+	}
+	// [+] team demonym //
+	public String teamDemonym(boolean teamA)
+	{
+		return teamPrimaryStatistic(teamA, "demonym");
+	}
+	// [+] team homecity //
+	public String teamHomecity(boolean teamA)
+	{
+		return teamPrimaryStatistic(teamA, "homecity");
+	}
+	// [+] team inning scores - integer arrays //
+	public int[] teamInningScores(boolean teamA)
+	{
+		return arrayForInts(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("inningScores"));
+	}
+	// [+] team score - integer //
+	public int teamScore(boolean teamA)
+	{
+		return teamPrimaryStatisticInt(teamA, "score");
+	}
+	// [+] team result - integer //
+	public int teamResult(boolean teamA)
+	{
+		return teamPrimaryStatisticBoolean(teamA, "result");
+	}
+	
+
+	// [=] team standings statistics - integers (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to an integer] //
+	private int teamStandingsStatisticInt(boolean teamA, String key)
+	{
+		return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONObject("standings").getInt(key);
+	}
+	// [+] team standings position - integer //
+	public int teamStandingsPosition(boolean teamA)
+	{
+		return teamStandingsStatisticInt(teamA, "position");
+	}
+	// [+] team standings wins - integer //
+	public int teamStandingsWins(boolean teamA)
+	{
+		return teamStandingsStatisticInt(teamA, "wins");
+	}
+	// [+] team standings streak - integer //
+	public int teamStandingsStreak(boolean teamA)
+	{
+		return teamStandingsStatisticInt(teamA, "streak");
+	}
+	// [+] team standings losses - integer //
+	public int teamStandingsLosses(boolean teamA)
+	{
+		return teamStandingsStatisticInt(teamA, "losses");
+	}
+	
+
+	// [=] team players statistics - arrays (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to (parallel) texts] //
+	private String[] teamPlayersPrimaryStatisticsArrays(boolean teamA, String key)
+	{
+        return arrayForParallel(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), key);
+	}
+    // [=] team players statistics - integer arrays (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to (parallel) integers] //
+    private int[] teamPlayersPrimaryStatisticsIntArrays(boolean teamA, String key)
+    {
+        return arrayForParallelInts(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), key);
+    }
+    // [=] team players statistics - text array arrays (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to (parallel) text arrays] //
+    private String[][] teamPlayersPrimaryStatisticsArrayArrays(boolean teamA, String key)
+    {
+        return arrayForParallelArrays(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), key);
+    }
+	// [+] team player names - arrays //
+	public String[] teamPlayerNames(boolean teamA)
+	{
+		return teamPlayersPrimaryStatisticsArrays(teamA, "name");
+	}
+    // [+] team player bats - integer arrays //
+    public int[] teamPlayerBats(boolean teamA)
+    {
+        return teamPlayersPrimaryStatisticsIntArrays(teamA, "bats");
+    }
+    // [+] team players hit descriptions - array arrays //
+    public String[][] teamPlayersHitsDescriptions(boolean teamA)
+    {
+        return teamPlayersPrimaryStatisticsArrayArrays(teamA, "hits");
+    }
+    // [+] team player R.B.I.s - integer arrays //
+    public int[] teamPlayerRBIs(boolean teamA)
+    {
+        return teamPlayersPrimaryStatisticsIntArrays(teamA, "RBI");
+    }
+
+    // [=] team players runs statistics - integer array arrays (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to (parallel) integer arrays]
+    private int[][] teamPlayersRunsStatisticsIntegerArrayArrays(boolean teamA, String key)
+    {
+        return arrayForParallelParallelInts(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), "runs", key);
+    }
+    // [+] team players runs innings - integer array arrays //
+    public int[][] teamPlayersRunsInnings(boolean teamA)
+    {
+        return teamPlayersRunsStatisticsIntegerArrayArrays(teamA, "inning");
+    }
+    // [+] team players runs balls' runs - integer array arrays //
+    public int[][] teamPlayersRunsBallsRuns(boolean teamA)
+    {
+        return teamPlayersRunsStatisticsIntegerArrayArrays(teamA, "ballsRuns");
+    }
+
+    // [=] team players injuries statistics - integer array arrays (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to (parallel) integer arrays]
+    private int[][] teamPlayersInjuriesStatisticsIntegerArrayArrays(boolean teamA, String key)
+    {
+        return arrayForParallelParallelInts(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), "injuries", key);
+    }
+    // [=] team players injuries statistics - array arrays (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to (parallel) text arrays]
+    private String[][] teamPlayersInjuriesStatisticsArrayArrays(boolean teamA, String key)
+    {
+        return arrayForParallelParallel(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), "injuries", key);
+    }
+    // [+] team players injuries games missed - integer array arrays //
+    public int[][] teamPlayersInjuriesGamesMissed(boolean teamA)
+    {
+        return teamPlayersInjuriesStatisticsIntegerArrayArrays(teamA, "gamesMissed");
+    }
+    // [+] team players injuries types - array arrays //
+    public String[][] teamPlayersInjuriesTypes(boolean teamA)
+    {
+        return teamPlayersInjuriesStatisticsArrayArrays(teamA, "type");
+    }
+    // [+] team players injuries locations - array arrays //
+    public String[][] teamPlayersInjuriesLocations(boolean teamA)
+    {
+        return teamPlayersInjuriesStatisticsArrayArrays(teamA, "location");
+    }
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  /
+
+
+
+
+	// [+=] data retrieval methods - nonobvious (and necessary) //  //  //  //  //  //  //  //  //  //  /
+    // [+] team players hits - integer arrays //
+    public int[] teamPlayersHits(boolean teamA)
+    {
+        String[][] teamPlayersHitsDescriptions = teamPlayersHitsDescriptions(teamA);
+        int[] teamPlayersHits = new int[teamPlayersHitsDescriptions.length]
+        for (int i = 0; i < teamPlayersHits.length; i++)
+        {
+            teamPlayersHits[i] = teamPlayersHitsDescriptions[i].length;
+        }
+        return teamPlayerHits;
+    }
+    // [+] team players runs - integer arrays //
+    public int[] teamPlayersRuns(boolean teamA)
+    {
+        int[][] teamPlayersRunsInnings = teamPlayersRunsInnings(teamA);        // could have used 'balls' runs too' //
+        int[] teamPlayersRuns = new int[teamPlayersRunsInnings.length]
+        for (int i = 0; i < teamPlayersRuns.length; i++)
+        {
+            teamPlayersRuns[i] = teamPlayersRunsInnings[i].length;
+        }
+        return teamPlayersRuns;
+    }
+	//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  /
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
 // Hunter Bobeck //
