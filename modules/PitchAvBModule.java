@@ -2,6 +2,7 @@ package modules;
 import data.*;
 import utilities.*;
 
+import java.util.ArrayList;
 
 /**
  * Write a description of class PitchAvB here.
@@ -13,10 +14,12 @@ public class PitchAvBModule extends ReportModule<BaseballData>
 {
     int runs1, runs2, strikeouts1, strikeouts2, battersFaced1, battersFaced2;
     String Name1, Name2, Team1, Team2, Output;
-	public PitchAvB(ArrayList<PitcherPlayer> )
+    ArrayList<PitcherPlayer> pitchers;
+	public PitchAvB(ArrayList<PitcherPlayer> p)
 	{
 	    Output = "";
-	   }
+	    pitchers = p;
+	}
 	public String generate()
 	{  
 	    //This is a generic statement generator
