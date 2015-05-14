@@ -6,6 +6,8 @@ public class BestPlayerModule
 {
     ArrayList<Player> TeamA = new ArrayList<>();
     ArrayList<Player> TeamB = new ArrayList<>();
+    
+    
       public String generate()
      {
          Player bestplayerA = new Player();
@@ -31,10 +33,11 @@ public class BestPlayerModule
         
      public void tempfill(ArrayList<Player> team)
      {
-         for (int i = 0; i < 9; i++)
+         for (int i = 0; i < 8; i++)
          {
              team.add(new Player());
             }
+         team.add(new Player("BestPlayer", 10, 10, 10, 40, "Cubs"));
         }
      
      
@@ -60,14 +63,14 @@ public class BestPlayerModule
         team = "Marlins";
     }
 
-    public Player(String playerName, int numHits, int numAtBats, int numHr, int numRbi, String team)
+    public Player(String playerName, int numHits, int numAtBats, int numHr, int numRbi, String teamnam)
     {
         name = playerName;
         hits = numHits;
         atbats = numAtBats;
         hr = numHr;
         rbi = numRbi;
-        this.team = team;
+        team = teamnam;
         /*
         * The Player Rating class takes the data from the player and determines their rating. The points are taken accordingly
         * 
