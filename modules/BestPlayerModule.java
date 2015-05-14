@@ -2,7 +2,7 @@ package modules;
 import java.util.*;
 import data.*;
 import utilities.*;
-public class BestPlayerModule extends ReportModule<BaseballData>
+public class BestPlayerModule
 {
     ArrayList<Player> TeamA = new ArrayList<>();
     ArrayList<Player> TeamB = new ArrayList<>();
@@ -10,15 +10,15 @@ public class BestPlayerModule extends ReportModule<BaseballData>
      {
          Player bestplayerA = new Player();
          Player bestplayerB = new Player();
-<<<<<<< HEAD
+//<<<<<<< HEAD
          //TeamA.fill()
          //TeamB.fill()     
-         TeamA.tempfill();
-         TeamB.tempfill();
-=======
-         TeamA.fill();
-         TeamB.fill() ;        
->>>>>>> origin/master
+         tempfill(TeamA);
+         tempfill(TeamB);
+//=======
+         //TeamA.fill();
+         //TeamB.fill() ;        
+//>>>>>>> origin/master
          bestplayerA = BestPlayer(TeamA);
          bestplayerB = BestPlayer(TeamB);
          return bestplayerA.toString() + " meanwhile, " + bestplayerB.toString();
@@ -29,14 +29,11 @@ public class BestPlayerModule extends ReportModule<BaseballData>
          
         }
         
-     public static void tempfill()
+     public void tempfill(ArrayList<Player> team)
      {
-         int rand = (int)(Math.random()*5)+4;
-         String jams = new String("Juan");
-         int potato = ((int)(Math.random()*4));
-         for (int i = 0; i < rand; i++)
+         for (int i = 0; i < 9; i++)
          {
-             add(new Player(jams, potato, potato + (int)(Math.random()*5), (int)(Math.random()*2), ((int)(Math.random()*6)+1)));
+             team.add(new Player());
             }
         }
      
