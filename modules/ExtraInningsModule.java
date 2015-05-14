@@ -2,7 +2,7 @@ package modules;
 import data.*;
 import utilities.*;
 
-public class ExtraInnings extends ReportModule<BaseballData>
+public class ExtraInningsModule extends ReportModule<BaseballData>
 {
     public String generate ()
     {
