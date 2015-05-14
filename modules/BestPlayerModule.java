@@ -4,15 +4,20 @@ import data.*;
 import utilities.*;
 public class BestPlayerModule extends ReportModule<BaseballData>
 {
-    
+    ArrayList<Player> TeamA = new ArrayList<>();
+    ArrayList<Player> TeamB = new ArrayList<>();
       public String generate()
      {
          Player bestplayerA = new Player();
          Player bestplayerB = new Player();
+         TeamA.fill()
+         TeamB.fill()         
          bestplayerA = BestPlayer(TeamA);
          bestplayerB = BestPlayer(TeamB);
          return bestplayerA.toString() + " meanwhile, " + bestplayerB.toString();
      }
+     
+     
      
   class Player
    {
