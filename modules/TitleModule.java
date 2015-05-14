@@ -9,6 +9,9 @@ public class TitleModule extends ReportModule<BaseballData>
 	 */
 	public String generate()
 	{
-		return "The game was a great success with " + data.getInnings() +  " innings!";
+	    //Please see the interface data/ReportData for method listings.
+	    return "The game was a great success with " + data.innings() +  " innings!";
+	    //Previous work below.
+		//return "The game was a great success with " + data.getInnings() +  " innings!";
 	}
 }
