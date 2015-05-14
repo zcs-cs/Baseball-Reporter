@@ -14,7 +14,7 @@ public class ExamplesModule extends ReportModule<BaseballData>
     // method calling examples - altogether //
     private String examplesConcatenated()
     {
-        return primaryStatisticsExample()+"\n"+teamStatisticsExample()+"\n"+TeamPlayersStatisticsExample();
+        return primaryStatisticsExample()+"\n\n"+teamStatisticsExample()+"\n\n"+TeamPlayersStatisticsExample();
     }
 
     // method calling examples - primary statistics //
@@ -38,7 +38,7 @@ public class ExamplesModule extends ReportModule<BaseballData>
         }
         statement += "\n";
         statement += Random.text_of(new String[] {"Their total score was "+data.teamScore(true), "The final tally for the team was "+data.teamScore(true)})+".";
-        statement += "This puts their standing at "+data.teamStandingsPosition(true)+". They have had "+data.teamStandingsWins(true)+" wins. They have had a "+data.teamStandingsStreak(true)+" game win streak. They have had "+data.teamStandingsStreak(true)+" losses.\n"
+        statement += "This puts their standing at "+data.teamStandingsPosition(true)+". They have had "+data.teamStandingsWins(true)+" wins. They have had a "+data.teamStandingsStreak(true)+" game win streak. They have had "+data.teamStandingsStreak(true)+" losses."
         return statement;
     }
     // method calling examples - team players statistics [including 'Text.capitalize()' and 'Function.line()' examples] //
