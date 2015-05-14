@@ -19,7 +19,6 @@ import java.util.ArrayList;
 //  [+] provides [public] specific and boolean-specified methods for accessing each JSON value (datum) using corresponding keys of the JSON object (container)
 public class BaseballData implements ReportData
 {
-    
     // [>] each BaseballData object requires a JSON object to reference ///////////////////////////////////
     private JSONObject data;
     
@@ -33,6 +32,8 @@ public class BaseballData implements ReportData
     
     
     
+
+
 
     // data retrieval methods (the assumed data type is text) ///////////////////////////////////////////
     // [>] array conversion utilities  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -139,7 +140,7 @@ public class BaseballData implements ReportData
         return output;
     }
 
-    // [>] array converter - text arrays across parallel containers
+    // [>] array converter - arrays across parallel containers
     // [preconditions]:
     //     'arrayJSON' is a text array
     //     key 'key' is present and corresponds to (parallel) text arrays
@@ -166,6 +167,7 @@ public class BaseballData implements ReportData
         return array;
     }
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  /
+
 
     
     
@@ -229,6 +231,8 @@ public class BaseballData implements ReportData
     }
     
     
+    
+    
 
     // [>] team label (key) chooser based on 'teamA' boolean //
     private String teamFor(boolean teamA)
@@ -289,6 +293,8 @@ public class BaseballData implements ReportData
     }
     
 
+
+
     // [=] team standings statistics - integers
     // (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively)
     // [precondition: key 'key' is present and corresponds to an integer] //
@@ -317,6 +323,7 @@ public class BaseballData implements ReportData
         return teamStandingsStatisticInt(teamA, "losses");
     }
     
+    
 
     // [=] team players statistics - arrays
     // (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively)
@@ -331,13 +338,6 @@ public class BaseballData implements ReportData
     private int[] teamPlayersPrimaryStatisticsIntArrays(boolean teamA, String key)
     {
         return arrayForParallelInts(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), key);
-    }
-    // [=] team players statistics - text array arrays
-    // (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively)
-    // [precondition: key 'key' is present and corresponds to (parallel) text arrays] //
-    private String[][] teamPlayersPrimaryStatisticsArrayArrays(boolean teamA, String key)
-    {
-        return arrayForParallelArrays(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), key);
     }
     // [=] team players statistics - integer array arrays
     // (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively)
@@ -356,15 +356,10 @@ public class BaseballData implements ReportData
     {
         return teamPlayersPrimaryStatisticsIntArrays(teamA, "bats");
     }
-    // [+] team players hit descriptions - array arrays //
-    public String[][] teamPlayersHitsDescriptions(boolean teamA)
+    // [+] team players runs innings - integer array arrays //
+    public int[][] teamPlayersRunsInnings(boolean teamA)
     {
-        return teamPlayersPrimaryStatisticsArrayArrays(teamA, "hits");
-    }
-    // [+] team player R.B.I.s - integer arrays //
-    public int[] teamPlayersRBIs(boolean teamA)
-    {
-        return teamPlayersPrimaryStatisticsIntArrays(teamA, "RBI");
+        return teamPlayersPrimaryStatisticsIntArrayArrays(teamA, "runsInnings");
     }
     // [+] team players innings pitched - integer array arrays //
     public int[][] teamPlayersInningsPitched(boolean teamA)
@@ -372,22 +367,30 @@ public class BaseballData implements ReportData
         return teamPlayersPrimaryStatisticsIntArrayArrays(teamA, "inningsPitched");
     }
 
-    // [=] team players runs statistics - integer array arrays
+   
+    // [=] team players hits statistics - array arrays
+    // (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively)
+    // [precondition: key 'key' is present and corresponds to (parallel) arrays]
+    private String[][] teamPlayersHitsStatisticsArrayArrays(boolean teamA, String key)
+    {
+        return arrayForParallelParallel(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), "hits", key);
+    }
+    // [=] team players hits statistics - integer array arrays
     // (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively)
     // [precondition: key 'key' is present and corresponds to (parallel) integer arrays]
-    private int[][] teamPlayersRunsStatisticsIntegerArrayArrays(boolean teamA, String key)
+    private int[][] teamPlayersHitsStatisticsIntArrayArrays(boolean teamA, String key)
     {
-        return arrayForParallelParallelInts(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), "runs", key);
+        return arrayForParallelParallelInts(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), "hits", key);
     }
-    // [+] team players runs innings - integer array arrays //
-    public int[][] teamPlayersRunsInnings(boolean teamA)
+    // [+] team players hits descriptions - array arrays //
+    public String[][] teamPlayersHitsDescriptions(boolean teamA)
     {
-        return teamPlayersRunsStatisticsIntegerArrayArrays(teamA, "inning");
+        return teamPlayersHitsStatisticsArrayArrays(teamA, "description");
     }
-    // [+] team players runs balls' runs - integer array arrays //
-    public int[][] teamPlayersRunsBallsRuns(boolean teamA)
+    // [+] team players hits R.B.I.s - integer array arrays //
+    public int[][] teamPlayersHitsRBIs(boolean teamA)
     {
-        return teamPlayersRunsStatisticsIntegerArrayArrays(teamA, "ballsRuns");
+        return teamPlayersHitsStatisticsIntArrayArrays(teamA, "RBI");
     }
 
     // [=] team players injuries statistics - integer array arrays
@@ -424,11 +427,29 @@ public class BaseballData implements ReportData
 
 
 
+
+
+
     // [+=] data retrieval methods - nonobvious (and necessary) //  //  //  //  //  //  //  //  //  //  /
+    // [+] team players R.B.I.s - integer arrays //
+    public int[] teamPlayersRBIs(boolean teamA)
+    {
+        int[][] teamPlayersHitsRBIs = teamPlayersHitsRBIs(teamA);  
+        int[] teamPlayersRBIs = new int[teamPlayersHitsRBIs.length];
+        for (int i = 0; i < teamPlayerRBIs.length; i++)
+        {
+            teamPlayersRBIs[i] = 0;
+            for (int j = 0; j < teamPlayersHitsRBIs[i].length; j++)
+            {
+                teamPlayersRBIs[i] += teamPlayerHitsRBIS[i][j];
+            }
+        }
+        return teamPlayersRBIs;
+    }
     // [+] team players hits - integer arrays //
     public int[] teamPlayersHits(boolean teamA)
     {
-        String[][] teamPlayersHitsDescriptions = teamPlayersHitsDescriptions(teamA);
+        String[][] teamPlayersHitsDescriptions = teamPlayersHitsDescriptions(teamA);        // could have used hits R.B.I.s too //
         int[] teamPlayersHits = new int[teamPlayersHitsDescriptions.length];
         for (int i = 0; i < teamPlayersHits.length; i++)
         {
@@ -439,7 +460,7 @@ public class BaseballData implements ReportData
     // [+] team players runs - integer arrays //
     public int[] teamPlayersRuns(boolean teamA)
     {
-        int[][] teamPlayersRunsInnings = teamPlayersRunsInnings(teamA);        // could have used 'balls' runs too' //
+        int[][] teamPlayersRunsInnings = teamPlayersRunsInnings(teamA);
         int[] teamPlayersRuns = new int[teamPlayersRunsInnings.length];
         for (int i = 0; i < teamPlayersRuns.length; i++)
         {
