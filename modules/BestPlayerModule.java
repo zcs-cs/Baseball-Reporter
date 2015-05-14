@@ -2,7 +2,7 @@ package modules;
 import java.util.*;
 import data.*;
 import utilities.*;
-public class BestPlayer extends ReportModule<BaseballData>
+public class BestPlayerModule extends ReportModule<BaseballData>
 {
     
       public String generate()
