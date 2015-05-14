@@ -10,10 +10,15 @@ public class BestPlayerModule extends ReportModule<BaseballData>
      {
          Player bestplayerA = new Player();
          Player bestplayerB = new Player();
+<<<<<<< HEAD
          //TeamA.fill()
          //TeamB.fill()     
          TeamA.tempfill();
          TeamB.tempfill();
+=======
+         TeamA.fill();
+         TeamB.fill() ;        
+>>>>>>> origin/master
          bestplayerA = BestPlayer(TeamA);
          bestplayerB = BestPlayer(TeamB);
          return bestplayerA.toString() + " meanwhile, " + bestplayerB.toString();
@@ -36,6 +41,10 @@ public class BestPlayerModule extends ReportModule<BaseballData>
         }
      
      
+     
+     
+     
+     
   class Player
    {
     String name = "", team = "";
@@ -51,15 +60,17 @@ public class BestPlayerModule extends ReportModule<BaseballData>
         hr = 0;
         rbi = 0; 
         rating = 0.0;
+        team = "Marlins";
     }
 
-    public Player(String playerName, int numHits, int numAtBats, int numHr, int numRbi)
+    public Player(String playerName, int numHits, int numAtBats, int numHr, int numRbi, String team)
     {
         name = playerName;
         hits = numHits;
         atbats = numAtBats;
         hr = numHr;
         rbi = numRbi;
+        this.team = team;
         /*
         * The Player Rating class takes the data from the player and determines their rating. The points are taken accordingly
         * 

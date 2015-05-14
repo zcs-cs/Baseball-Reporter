@@ -24,14 +24,15 @@ public class Array
 		return ""+Arrays.asList(character_array);
 	}
 	
-	public static String text(int[][] arr)
+	
+	public static String text(int[][] integer_array_array)
 	{
-		return "" + Arrays.asList(arr);
+		return ""+Arrays.asList(integer_array_array);
 	}
 	
-	public static String text(String[][] arr)
+	public static String text(String[][] text_array_array)
 	{
-		return "" + Arrays.asList(arr);
+		return ""+Arrays.asList(text_array_array);
 	}
 	
 	
