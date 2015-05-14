@@ -1,4 +1,4 @@
-package modules; 
+
 import data.*;
 import utilities.*;
 public class InjuryModule extends ReportModule<BaseballData>
@@ -6,7 +6,10 @@ public class InjuryModule extends ReportModule<BaseballData>
     public String generate()
     {
         end = "";
-        //This will cycle through the arrays and call reportInjury for each instance of an injury
+        String[][] names;
+        int[][] timeOut;
+        String[][] type;
+        String[][] location;
         return end;
     }
     private static String randomName(String first, String last, boolean capital)
