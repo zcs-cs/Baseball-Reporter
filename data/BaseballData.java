@@ -92,22 +92,22 @@ public class BaseballData implements ReportData
     //     key 'key' is present and corresponds to (parallel) texts
     private String[][] arrayForParallelParallel(JSONArray arrayJSON, String arrayKey, String key)
     {
-        ArrayList<ArrayList<String>> array = new ArrayList<ArrayList<String>>();
+        ArrayList<ArrayList<String>> arraylist = new ArrayList<ArrayList<String>>();
         for (int i = 0; i < arrayJSON.length(); i++)
         {
-            array.add(new ArrayList<String>());
+            arraylist.add(new ArrayList<String>());
             for (int j = 0; j < arrayJSON.getJSONArray(i).length(); j++)
             {
-                array.get(i).add( arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getString(key) );
+                array.get(i).add(arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getString(key));
             }
         }
-        
-        //extract the elements from the array and spit them out as a String[][]
-        String[][] output = new String[array.size()][];
-        for(int k = 0; k < array.size(); k++) {
-            output[k] = (String[])(array.get(k).toArray());
+        // convert 'arraylist' to a text array array //
+        String[][] array = new String[arraylist.size()][];
+        for(int i = 0; i < arraylist.size(); i++)
+        {
+            array[i] = (String[])(arraylist.get(i).toArray());
         }
-        return output;
+        return array;
     }
     // [>] array converter - integers across parallel containers across parallel containers
     // [preconditions]:
@@ -116,26 +116,26 @@ public class BaseballData implements ReportData
     //     key 'key' is present and corresponds to (parallel) integers
     private int[][] arrayForParallelParallelInts(JSONArray arrayJSON, String arrayKey, String key)
     {
-        ArrayList<ArrayList<Integer>> array = new ArrayList<ArrayList<Integer>>();
-        //int[][] array = new int[][arrayJSON.length()];
+        ArrayList<ArrayList<Integer>> arraylist = new ArrayList<ArrayList<Integer>>();
         for (int i = 0; i < arrayJSON.length(); i++)
         {
-            array.add( new ArrayList<Integer>() );
+            arraylist.add( new ArrayList<Integer>() );
             for (int j = 0; j < arrayJSON.getJSONArray(i).length(); j++)
             {
-                array.get(i).add( arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getInt(key) );
+                arraylist.get(i).add(arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getInt(key));
             }
         }
-        
-        int[][] output = new int[array.size()][];
-        for(int k = 0; k < array.size(); k++) {
-            Integer[] tmp = (Integer[])(array.get(k).toArray());
-            int[] blah = new int[tmp.length];
-            for(int l = 0; l < tmp.length; l++) {
-                blah[l] = tmp[l];
+        // convert 'arraylist' to an integer array array //
+        int[][] array = new int[arraylist.size()][];
+        for(int i = 0; i < arraylist.size(); i++)
+        {
+            Integer[] arrayWrapper = (Integer[]) (arraylist.get(i).toArray());
+            int[] arrayComponent = new int[arrayWrapper.length];
+            for(int j = 0; j < arrayWrapper.length; j++)
+            {
+                arrayComponent[j] = arrayWrapper[j];
             }
-            
-            output[k] = blah;
+            output[i] = arrayComponent;
         }
         return output;
     }
