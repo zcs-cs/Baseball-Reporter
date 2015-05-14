@@ -15,42 +15,42 @@ import org.json.*;
 //  [+] provides [public] specific and boolean-specified methods for accessing each JSON value (datum) using corresponding keys of the JSON object (container)
 public class BaseballData implements ReportData
 {
-	// [>] each BaseballData object requires a JSON object to reference ///////////////////////////////////
-	private JSONObject data;
-	
-	public BaseballData(JSONObject data)
-	{
-		this.data = data;
-	}
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	
-	
-	
-	
-	
+    // [>] each BaseballData object requires a JSON object to reference ///////////////////////////////////
+    private JSONObject data;
+    
+    public BaseballData(JSONObject data)
+    {
+        this.data = data;
+    }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    
+    
+    
 
     // data retrieval methods (the assumed data type is text) ///////////////////////////////////////////
     // [>] array conversion utilities  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-	// [>] array converter [precondition: 'arrayJSON' is a text array] //
-	private String[] arrayFor(JSONArray arrayJSON)
-	{
-		String[] array = new String[arrayJSON.length()];
-		for (int i = 0; i < array.length; i++)
-		{
-		  array[i] = arrayJSON.getString(i);
-		}
-		return array;
-	}
-	// [>] array converter - integers [precondition: 'arrayJSON' is an integer array] //
-	private int[] arrayForInts(JSONArray arrayJSON)
-	{
-		int[] array = new int[arrayJSON.length()];
-		for (int i = 0; i < array.length; i++)
-		{
-		  array[i] = arrayJSON.getInt(i);
-		}
-		return array;
-	}
+    // [>] array converter [precondition: 'arrayJSON' is a text array] //
+    private String[] arrayFor(JSONArray arrayJSON)
+    {
+        String[] array = new String[arrayJSON.length()];
+        for (int i = 0; i < array.length; i++)
+        {
+          array[i] = arrayJSON.getString(i);
+        }
+        return array;
+    }
+    // [>] array converter - integers [precondition: 'arrayJSON' is an integer array] //
+    private int[] arrayForInts(JSONArray arrayJSON)
+    {
+        int[] array = new int[arrayJSON.length()];
+        for (int i = 0; i < array.length; i++)
+        {
+          array[i] = arrayJSON.getInt(i);
+        }
+        return array;
+    }
 
     // [>] array converter - across parallel containers [preconditions: 'arrayJSON' is a text array; key 'key' is present and corresponds to (parallel) texts] //
     private String[] arrayForParallel(JSONArray arrayJSON, String key)
@@ -122,154 +122,154 @@ public class BaseballData implements ReportData
     }
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  /
 
-	
-	
-	
+    
+    
+    
 
-	// [+=] data retrieval methods - obvious and necessary  //  //  //  //  //  //  //  //  //  //  //  /
-	// [=] primary statistics [precondition: key 'key' is present and corresponds to text] //
-	private String primaryStatistic(String key)
-	{
-		return data.getString(key);
-	}
-	// [=] primary statistics - decimals [precondition: key 'key' is present and corresponds to a decimal] //
-	private double primaryStatisticDouble(String key)
-	{
-		return data.getDouble(key);
-	}
-	// [=] primary statistics - integers [precondition: key 'key' is present and corresponds to an integer] //
-	private int primaryStatisticInt(String key)
-	{
-		return data.getInt(key);
-	}
-	// [+] location //
-	public String location()
-	{
-		return primaryStatistic("location");
-	}
-	// [+] city //
-	public String city()
-	{
-		return primaryStatistic("city");
-	}
-	// [+] temperature //
-	public double temperature()
-	{
-		return primaryStatisticDouble("temperature");
-	}
-	// [+] rainfall //
-	public double rainfall()
-	{
-		return primaryStatisticDouble("rainfall");
-	}
-	// [+] date //
-	public String date()
-	{
-		return primaryStatistic("date");
-	}
-	// [+] start time - integer //
-	public int startTime()
-	{
-		return primaryStatisticInt("startTime");
-	}
-	// [+] minutes - integer //
-	public int minutes()
-	{
-		return primaryStatisticInt("minutes");
-	}
-	// [+] innings - integer //
-	public int innings()
-	{
-		return primaryStatisticInt("innings");
-	}
-	
-	
+    // [+=] data retrieval methods - obvious and necessary  //  //  //  //  //  //  //  //  //  //  //  /
+    // [=] primary statistics [precondition: key 'key' is present and corresponds to text] //
+    private String primaryStatistic(String key)
+    {
+        return data.getString(key);
+    }
+    // [=] primary statistics - decimals [precondition: key 'key' is present and corresponds to a decimal] //
+    private double primaryStatisticDouble(String key)
+    {
+        return data.getDouble(key);
+    }
+    // [=] primary statistics - integers [precondition: key 'key' is present and corresponds to an integer] //
+    private int primaryStatisticInt(String key)
+    {
+        return data.getInt(key);
+    }
+    // [+] location //
+    public String location()
+    {
+        return primaryStatistic("location");
+    }
+    // [+] city //
+    public String city()
+    {
+        return primaryStatistic("city");
+    }
+    // [+] temperature //
+    public double temperature()
+    {
+        return primaryStatisticDouble("temperature");
+    }
+    // [+] rainfall //
+    public double rainfall()
+    {
+        return primaryStatisticDouble("rainfall");
+    }
+    // [+] date //
+    public String date()
+    {
+        return primaryStatistic("date");
+    }
+    // [+] start time - integer //
+    public int startTime()
+    {
+        return primaryStatisticInt("startTime");
+    }
+    // [+] minutes - integer //
+    public int minutes()
+    {
+        return primaryStatisticInt("minutes");
+    }
+    // [+] innings - integer //
+    public int innings()
+    {
+        return primaryStatisticInt("innings");
+    }
+    
+    
 
-	// [>] team label (key) chooser based on 'teamA' boolean //
-	private String teamFor(boolean teamA)
-	{
-		if (teamA)	 return "teamA";
-		else	return "teamB";
-	}
-	// [=] team primary statistics (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to text] //
-	private String teamPrimaryStatistic(boolean teamA, String key)
-	{
-		return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getString(key);
-	}
-	// [=] team primary statistics - integers (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to an integer] //
-	private int teamPrimaryStatisticInt(boolean teamA, String key)
-	{
-		return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getInt(key);
-	}
-	// [=] team primary statistics - booleans (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to a boolean] //
-	private boolean teamPrimaryStatisticBoolean(boolean teamA, String key)
-	{
-		return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getBoolean(key);
-	}
-	// [+] team name //
-	public String teamName(boolean teamA)
-	{
-		return teamPrimaryStatistic(teamA, "name");
-	}
-	// [+] team demonym //
-	public String teamDemonym(boolean teamA)
-	{
-		return teamPrimaryStatistic(teamA, "demonym");
-	}
-	// [+] team homecity //
-	public String teamHomecity(boolean teamA)
-	{
-		return teamPrimaryStatistic(teamA, "homecity");
-	}
-	// [+] team inning scores - integer arrays //
-	public int[] teamInningScores(boolean teamA)
-	{
-		return arrayForInts(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("inningScores"));
-	}
-	// [+] team score - integer //
-	public int teamScore(boolean teamA)
-	{
-		return teamPrimaryStatisticInt(teamA, "score");
-	}
-	// [+] team result - integer //
-	public int teamResult(boolean teamA)
-	{
-		return teamPrimaryStatisticBoolean(teamA, "result");
-	}
-	
+    // [>] team label (key) chooser based on 'teamA' boolean //
+    private String teamFor(boolean teamA)
+    {
+        if (teamA)     return "teamA";
+        else    return "teamB";
+    }
+    // [=] team primary statistics (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to text] //
+    private String teamPrimaryStatistic(boolean teamA, String key)
+    {
+        return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getString(key);
+    }
+    // [=] team primary statistics - integers (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to an integer] //
+    private int teamPrimaryStatisticInt(boolean teamA, String key)
+    {
+        return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getInt(key);
+    }
+    // [=] team primary statistics - booleans (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to a boolean] //
+    private boolean teamPrimaryStatisticBoolean(boolean teamA, String key)
+    {
+        return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getBoolean(key);
+    }
+    // [+] team name //
+    public String teamName(boolean teamA)
+    {
+        return teamPrimaryStatistic(teamA, "name");
+    }
+    // [+] team demonym //
+    public String teamDemonym(boolean teamA)
+    {
+        return teamPrimaryStatistic(teamA, "demonym");
+    }
+    // [+] team homecity //
+    public String teamHomecity(boolean teamA)
+    {
+        return teamPrimaryStatistic(teamA, "homecity");
+    }
+    // [+] team inning scores - integer arrays //
+    public int[] teamInningScores(boolean teamA)
+    {
+        return arrayForInts(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("inningScores"));
+    }
+    // [+] team score - integer //
+    public int teamScore(boolean teamA)
+    {
+        return teamPrimaryStatisticInt(teamA, "score");
+    }
+    // [+] team result - integer //
+    public int teamResult(boolean teamA)
+    {
+        return teamPrimaryStatisticBoolean(teamA, "result");
+    }
+    
 
-	// [=] team standings statistics - integers (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to an integer] //
-	private int teamStandingsStatisticInt(boolean teamA, String key)
-	{
-		return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONObject("standings").getInt(key);
-	}
-	// [+] team standings position - integer //
-	public int teamStandingsPosition(boolean teamA)
-	{
-		return teamStandingsStatisticInt(teamA, "position");
-	}
-	// [+] team standings wins - integer //
-	public int teamStandingsWins(boolean teamA)
-	{
-		return teamStandingsStatisticInt(teamA, "wins");
-	}
-	// [+] team standings streak - integer //
-	public int teamStandingsStreak(boolean teamA)
-	{
-		return teamStandingsStatisticInt(teamA, "streak");
-	}
-	// [+] team standings losses - integer //
-	public int teamStandingsLosses(boolean teamA)
-	{
-		return teamStandingsStatisticInt(teamA, "losses");
-	}
-	
+    // [=] team standings statistics - integers (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to an integer] //
+    private int teamStandingsStatisticInt(boolean teamA, String key)
+    {
+        return data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONObject("standings").getInt(key);
+    }
+    // [+] team standings position - integer //
+    public int teamStandingsPosition(boolean teamA)
+    {
+        return teamStandingsStatisticInt(teamA, "position");
+    }
+    // [+] team standings wins - integer //
+    public int teamStandingsWins(boolean teamA)
+    {
+        return teamStandingsStatisticInt(teamA, "wins");
+    }
+    // [+] team standings streak - integer //
+    public int teamStandingsStreak(boolean teamA)
+    {
+        return teamStandingsStatisticInt(teamA, "streak");
+    }
+    // [+] team standings losses - integer //
+    public int teamStandingsLosses(boolean teamA)
+    {
+        return teamStandingsStatisticInt(teamA, "losses");
+    }
+    
 
-	// [=] team players statistics - arrays (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to (parallel) texts] //
-	private String[] teamPlayersPrimaryStatisticsArrays(boolean teamA, String key)
-	{
+    // [=] team players statistics - arrays (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to (parallel) texts] //
+    private String[] teamPlayersPrimaryStatisticsArrays(boolean teamA, String key)
+    {
         return arrayForParallel(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), key);
-	}
+    }
     // [=] team players statistics - integer arrays (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively) [precondition: key 'key' is present and corresponds to (parallel) integers] //
     private int[] teamPlayersPrimaryStatisticsIntArrays(boolean teamA, String key)
     {
@@ -280,11 +280,11 @@ public class BaseballData implements ReportData
     {
         return arrayForParallelArrays(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), key);
     }
-	// [+] team player names - arrays //
-	public String[] teamPlayerNames(boolean teamA)
-	{
-		return teamPlayersPrimaryStatisticsArrays(teamA, "name");
-	}
+    // [+] team player names - arrays //
+    public String[] teamPlayerNames(boolean teamA)
+    {
+        return teamPlayersPrimaryStatisticsArrays(teamA, "name");
+    }
     // [+] team player bats - integer arrays //
     public int[] teamPlayerBats(boolean teamA)
     {
@@ -347,7 +347,7 @@ public class BaseballData implements ReportData
 
 
 
-	// [+=] data retrieval methods - nonobvious (and necessary) //  //  //  //  //  //  //  //  //  //  /
+    // [+=] data retrieval methods - nonobvious (and necessary) //  //  //  //  //  //  //  //  //  //  /
     // [+] team players hits - integer arrays //
     public int[] teamPlayersHits(boolean teamA)
     {
@@ -370,7 +370,7 @@ public class BaseballData implements ReportData
         }
         return teamPlayersRuns;
     }
-	//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  /
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  /
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
