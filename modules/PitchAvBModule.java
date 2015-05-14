@@ -17,8 +17,32 @@ public class PitchAvBModule extends ReportModule<BaseballData>
     ArrayList<PitcherPlayer> pitchers;
     public String generate()
     {
+        BaseballData d;
         //This is a generic statement generator
+        // populate pitcher list
+        pitchers = new ArrayList<PitcherPlayer>();
+        int counter = 0;
+        try{
+            while(counter < 10){
+                PitcherPlayer p = new PitcherPlayer(d, 'a', counter);
+                pitchers.add(p);
+                counter++;
+            }
+        }catch (Exception e){
+            
+        }
+        counter = 0;
+        try{
+            while(counter < 10){
+                PitcherPlayer p = new PitcherPlayer(d, 'b', counter);
+                pitchers.add(p);
+                counter++;
+            }
+        }catch (Exception e){
+            
+        }
         
+        //
         int shazbot = (int)Math.random()*5;
         if(shazbot == 0)
         {output = Name1 + " pitched for the " + Team1 + ", with " + Name2 + "pitching for the " + Team2 + ".";}
