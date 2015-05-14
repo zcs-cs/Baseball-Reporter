@@ -10,13 +10,30 @@ public class BestPlayerModule extends ReportModule<BaseballData>
      {
          Player bestplayerA = new Player();
          Player bestplayerB = new Player();
-         TeamA.fill()
-         TeamB.fill()         
+         //TeamA.fill()
+         //TeamB.fill()     
+         TeamA.tempfill();
+         TeamB.tempfill();
          bestplayerA = BestPlayer(TeamA);
          bestplayerB = BestPlayer(TeamB);
          return bestplayerA.toString() + " meanwhile, " + bestplayerB.toString();
      }
      
+     public void fill(String teamname)
+     {
+         
+        }
+        
+     public static void tempfill()
+     {
+         int rand = (int)(Math.random()*5)+4;
+         String jams = new String("Juan");
+         int potato = ((int)(Math.random()*4));
+         for (int i = 0; i < rand; i++)
+         {
+             add(new Player(jams, potato, potato + (int)(Math.random()*5), (int)(Math.random()*2), ((int)(Math.random()*6)+1)));
+            }
+        }
      
      
   class Player
