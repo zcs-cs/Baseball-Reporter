@@ -24,6 +24,16 @@ public class Array
 		return ""+Arrays.asList(character_array);
 	}
 	
+	public static String text(int[][] arr)
+	{
+		return "" + Arrays.asList(arr);
+	}
+	
+	public static String text(String[][] arr)
+	{
+		return "" + Arrays.asList(arr);
+	}
+	
 	
 	
 	

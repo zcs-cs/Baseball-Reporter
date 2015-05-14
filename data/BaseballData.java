@@ -19,6 +19,7 @@ import java.util.ArrayList;
 //  [+] provides [public] specific and boolean-specified methods for accessing each JSON value (datum) using corresponding keys of the JSON object (container)
 public class BaseballData implements ReportData
 {
+    
     // [>] each BaseballData object requires a JSON object to reference ///////////////////////////////////
     private JSONObject data;
     

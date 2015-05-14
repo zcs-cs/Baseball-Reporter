@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import org.json.*;
 import converter.*;
 import data.*;
@@ -24,18 +26,13 @@ public class BaseballReporter
         BaseballData data = converter.convert();
         
         // modules creation and output //
-        ReportModule[] modules =
-        {
-            new ExamplesModule(data)
-            /*new TitleModule(data),
-            new BestPlayer(data),
-            new ExtraInnings(data),
-            new InjuryModule(data)*/
-        };
+        ArrayList<ReportModule<BaseballData>> modules = new ArrayList<ReportModule<BaseballData>>();
+        modules.add(new ExamplesModule());
+        
         String output = "";
-        for (int i = 0; i < modules.length; i++)
+        for (ReportModule<BaseballData> module : modules)
         {
-            output += modules[i].generate(data);
+            output += module.generate(data);
         }
         System.out.println(output);
     }

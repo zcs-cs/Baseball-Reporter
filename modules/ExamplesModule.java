@@ -75,18 +75,18 @@ public class ExamplesModule extends ReportModule<BaseballData>
         
         statement += "Here's some example player talk...";
         String hitsPluralization = "";
-        if (data.teamPlayerHits(true)[0] == 1)
+        if (data.teamPlayersHits(true)[0] == 1)
             hitsPluralization = "hit";
         else
             hitsPluralization = "hits";
         String[] run_descriptions = new String[] {"no", "one good", "two", "several", "many"};
         int runDescriptionIndex = -1;
-        if (data.teamPlayerRuns(true)[0] > 5)       runDescriptionIndex = 5;
-        else        runDescriptionIndex = Function.line(0, 0, runDescriptions.length, 5, data.teamPlayerRuns(true))[0];
-        String runsDescription = runDescriptions[runDescriptionIndex];
+        if (data.teamPlayersRuns(true)[0] > 5)       runDescriptionIndex = 5;
+        else        runDescriptionIndex = Function.line(0, 0, run_descriptions.length, 5, data.teamPlayersRuns(true)[0]);
+        String runsDescription = run_descriptions[runDescriptionIndex];
         String runPunctuation = "";
         if (runDescriptionIndex <= 2)     runPunctuation = ".";
         else        runPunctuation = "!";
-        return data.teamPlayersNames(true)[0]+" got "+data.teamPlayerHits(true)[0]+" "+hitsPluralization+" out of "+data.teamPlayersBats(true)[0]+" bats. He achieved "+runsDescription+" ("+data.teamPlayersRuns(true)[0]+") runs"+runPunctuation;
+        return data.teamPlayersNames(true)[0]+" got "+data.teamPlayersHits(true)[0]+" "+hitsPluralization+" out of "+data.teamPlayersBats(true)[0]+" bats. He achieved "+runsDescription+" ("+data.teamPlayersRuns(true)[0]+") runs"+runPunctuation;
     }
 }
