@@ -24,7 +24,7 @@ public class BaseballReporter
         BaseballData data = converter.convert();
         
         // modules creation and output //
-        Module[] modules =
+        ReportModule[] modules =
         {
             new ExamplesModule(data)
             /*new TitleModule(data),
