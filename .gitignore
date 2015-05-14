@@ -13,7 +13,6 @@ hs_err_pid*
 
 # Custom exclusions #
 TestDriver.java
-\doc
 *.bluej
 *.ini
-TestDriver.java
+*.ctxt
