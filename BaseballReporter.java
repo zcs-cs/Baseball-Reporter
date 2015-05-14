@@ -26,11 +26,11 @@ public class BaseballReporter
         // modules creation and output //
         Module[] modules =
         {
-            new ExamplesModule()
-            /*new TitleModule(),
-            new BestPlayer(),
-            new ExtraInnings(),
-            new InjuryModule()*/
+            new ExamplesModule(data)
+            /*new TitleModule(data),
+            new BestPlayer(data),
+            new ExtraInnings(data),
+            new InjuryModule(data)*/
         };
         String output = "";
         for (int i = 0; i < modules.length; i++)
