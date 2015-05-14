@@ -24,13 +24,19 @@ public class BaseballReporter
         BaseballData data = converter.convert();
         
         // modules creation and output //
+        Module[] modules =
+        {
+            new ExamplesModule()
+            /*new TitleModule(),
+            new BestPlayer(),
+            new ExtraInnings(),
+            new InjuryModule()*/
+        };
         String output = "";
-        output += (new TitleModule()).generate(data);
-        output += (new BestPlayer()).generate(data);
-        output += (new ExtraInnings()).generate(data);
-        output += (new InjuryModule()).generate(data);
-        //output += (new ExamplesModule()).generate(data);
-        
+        for (int i = 0; i < modules.length; i++)
+        {
+            output += modules[i].generate(data);
+        }
         System.out.println(output);
     }
 }
