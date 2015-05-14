@@ -43,7 +43,7 @@ public class ExamplesModule extends ReportModule<BaseballData>
         String[] ordinals = {"first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth"};
         for (int i = 0; i < teamInningScores.length; i++)
         {
-            statement += "\nThe score for the " + ordinals[i + 1] + " inning was " + teamInningScores[i] + ".";
+            statement += "\nThe score for the " + ordinals[i] + " inning was " + teamInningScores[i] + ".";
         }
         statement += "\n";
         statement += Random.text_of(new String[] { 
@@ -67,7 +67,7 @@ public class ExamplesModule extends ReportModule<BaseballData>
         statement += teamDemonymCapitalized + " players' hits' descriptions: " + Array.text(data.teamPlayersHitsDescriptions(true));
         statement += teamDemonymCapitalized + " players' runs (counts): " + Array.text(data.teamPlayersRuns(true));
         statement += teamDemonymCapitalized + " players' runs' innings: " + Array.text(data.teamPlayersRunsInnings(true));
-        statement += teamDemonymCapitalized + " players' runs' balls' runs: " + Array.text(data.teamPlayersRunsBallsRuns(true));
+        //statement += teamDemonymCapitalized + " players' runs' balls' runs: " + Array.text(data.teamPlayersRunsBallsRuns(true));
         statement += teamDemonymCapitalized + " players' injuries' games missed: " + Array.text(data.teamPlayersInjuriesGamesMissed(true));
         statement += teamDemonymCapitalized + " players' injuries' types: " + Array.text(data.teamPlayersInjuriesTypes(true));
         statement += teamDemonymCapitalized + " players' injuries' locations: " + Array.text(data.teamPlayersInjuriesLocations(true));

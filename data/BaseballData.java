@@ -96,16 +96,21 @@ public class BaseballData implements ReportData
         for (int i = 0; i < arrayJSON.length(); i++)
         {
             arraylist.add(new ArrayList<String>());
-            for (int j = 0; j < arrayJSON.getJSONArray(i).length(); j++)
+            for (int j = 0; j < arrayJSON.getJSONObject(i).getJSONArray(arrayKey).length(); j++)
             {
-                array.get(i).add(arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getString(key));
+                arraylist.get(i).add(arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getString(key));
             }
         }
         // convert 'arraylist' to a text array array //
         String[][] array = new String[arraylist.size()][];
         for(int i = 0; i < arraylist.size(); i++)
         {
-            array[i] = (String[])(arraylist.get(i).toArray());
+            String[] arrayComponent = new String[arraylist.get(i).size()];
+            for(int j = 0; j < arraylist.get(i).size(); j++)
+            {
+                arrayComponent[j] = arraylist.get(i).get(j);
+            }
+            array[i] = arrayComponent;
         }
         return array;
     }
@@ -120,7 +125,7 @@ public class BaseballData implements ReportData
         for (int i = 0; i < arrayJSON.length(); i++)
         {
             arraylist.add( new ArrayList<Integer>() );
-            for (int j = 0; j < arrayJSON.getJSONArray(i).length(); j++)
+            for (int j = 0; j < arrayJSON.getJSONObject(i).getJSONArray(arrayKey).length(); j++)
             {
                 arraylist.get(i).add(arrayJSON.getJSONObject(i).getJSONArray(arrayKey).getJSONObject(j).getInt(key));
             }
@@ -129,15 +134,14 @@ public class BaseballData implements ReportData
         int[][] array = new int[arraylist.size()][];
         for(int i = 0; i < arraylist.size(); i++)
         {
-            Integer[] arrayWrapper = (Integer[]) (arraylist.get(i).toArray());
-            int[] arrayComponent = new int[arrayWrapper.length];
-            for(int j = 0; j < arrayWrapper.length; j++)
+            int[] arrayComponent = new int[arraylist.get(i).size()];
+            for(int j = 0; j < arraylist.get(i).size(); j++)
             {
-                arrayComponent[j] = arrayWrapper[j];
+                arrayComponent[j] = arraylist.get(i).get(j);
             }
-            output[i] = arrayComponent;
+            array[i] = arrayComponent;
         }
-        return output;
+        return array;
     }
 
     // [>] array converter - arrays across parallel containers
@@ -436,12 +440,12 @@ public class BaseballData implements ReportData
     {
         int[][] teamPlayersHitsRBIs = teamPlayersHitsRBIs(teamA);  
         int[] teamPlayersRBIs = new int[teamPlayersHitsRBIs.length];
-        for (int i = 0; i < teamPlayerRBIs.length; i++)
+        for (int i = 0; i < teamPlayersRBIs.length; i++)
         {
             teamPlayersRBIs[i] = 0;
             for (int j = 0; j < teamPlayersHitsRBIs[i].length; j++)
             {
-                teamPlayersRBIs[i] += teamPlayerHitsRBIS[i][j];
+                teamPlayersRBIs[i] += teamPlayersHitsRBIs[i][j];
             }
         }
         return teamPlayersRBIs;
