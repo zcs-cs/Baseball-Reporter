@@ -318,12 +318,12 @@ public class BaseballData implements ReportData
         return arrayForParallelArrays(data.getJSONObject("teams").getJSONObject(teamFor(teamA)).getJSONArray("players"), key);
     }
     // [+] team players names - arrays //
-    public String[] teamPlayerNames(boolean teamA)
+    public String[] teamPlayersNames(boolean teamA)
     {
         return teamPlayersPrimaryStatisticsArrays(teamA, "name");
     }
     // [+] team player bats - integer arrays //
-    public int[] teamPlayerBats(boolean teamA)
+    public int[] teamPlayersBats(boolean teamA)
     {
         return teamPlayersPrimaryStatisticsIntArrays(teamA, "bats");
     }
@@ -333,7 +333,7 @@ public class BaseballData implements ReportData
         return teamPlayersPrimaryStatisticsArrayArrays(teamA, "hits");
     }
     // [+] team player R.B.I.s - integer arrays //
-    public int[] teamPlayerRBIs(boolean teamA)
+    public int[] teamPlayersRBIs(boolean teamA)
     {
         return teamPlayersPrimaryStatisticsIntArrays(teamA, "RBI");
     }
