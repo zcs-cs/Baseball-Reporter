@@ -11,7 +11,8 @@ public class ExamplesModule extends ReportModule<BaseballData>
         return "Baseball Game was a great success.\n"+examplesConcatenated();
     }
     
-    // method calling examples - altogether //
+    // method calling examples - altogether
+	// Please see the ReportData interface for a listing of every data retrieval method in BaseballData.
     private String examplesConcatenated()
     {
         return primaryStatisticsExample() + "\n\n" + 
