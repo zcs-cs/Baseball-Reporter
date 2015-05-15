@@ -6,33 +6,75 @@ public class Array
 {
 	public static String text(int[] integer_array)
 	{
-		return ""+Arrays.asList(integer_array);
+		String text = 0;
+		for (int i = 0; i < integer_array.length; i++)
+		{
+			if (i == 0)		text += "{"+integer_array[0];
+			else if (i == integer_array.length - 1)		text += integer_array[integer_array.length - 1]+"}";
+			else		text += integer_array[i]+", "
+		}
+		return text;
 	}
 	
 	public static String text(double[] decimal_array)
 	{
-		return ""+Arrays.asList(decimal_array);
+		String text = 0;
+		for (int i = 0; i < decimal_array.length; i++)
+		{
+			if (i == 0)		text += "{"+decimal_array[0];
+			else if (i == decimal_array.length - 1)		text += decimal_array[decimal_array.length - 1]+"}";
+			else		text += decimal_array[i]+", "
+		}
+		return text;
 	}
 	
 	public static String text(String[] text_array)
 	{
-		return ""+Arrays.asList(text_array);
-	}
-	
-	public static String text(char[] character_array)
-	{
-		return ""+Arrays.asList(character_array);
+		String text = 0;
+		for (int i = 0; i < text_array.length; i++)
+		{
+			if (i == 0)		text += "{"+text_array[0];
+			else if (i == text_array.length - 1)		text += text_array[text_array.length - 1]+"}";
+			else		text += text_array[i]+", "
+		}
+		return text;
 	}
 	
 	
 	public static String text(int[][] integer_array_array)
 	{
-		return ""+Arrays.asList(integer_array_array);
+		String text = 0;
+		for (int i = 0; i < integer_array_array.length; i++)
+		{
+			if (i == 0)		text += "{"+text(integer_array_array[0]);
+			else if (i == integer_array_array.length - 1)		text += text(integer_array_array[integer_array_array.length - 1])+"}";
+			else		text += text(integer_array_array[i])+", "
+		}
+		return text;
+	}
+	
+	public static String text(double[][] decimal_array_array)
+	{
+		String text = 0;
+		for (int i = 0; i < decimal_array_array.length; i++)
+		{
+			if (i == 0)		text += "{"+text(decimal_array_array[0]);
+			else if (i == decimal_array_array.length - 1)		text += text(decimal_array_array[decimal_array_array.length - 1])+"}";
+			else		text += text(decimal_array_array[i])+", "
+		}
+		return text;
 	}
 	
 	public static String text(String[][] text_array_array)
 	{
-		return ""+Arrays.asList(text_array_array);
+		String text = 0;
+		for (int i = 0; i < text_array_array.length; i++)
+		{
+			if (i == 0)		text += "{"+text(text_array_array[0]);
+			else if (i == text_array_array.length - 1)		text += text(text_array_array[text_array_array.length - 1])+"}";
+			else		text += text(text_array_array[i])+", "
+		}
+		return text;
 	}
 	
 	
