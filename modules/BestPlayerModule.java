@@ -12,21 +12,16 @@ public class BestPlayerModule extends ReportModule<BaseballData>
      {
          Player bestplayerA = new Player();
          Player bestplayerB = new Player();
-//<<<<<<< HEAD
-         //TeamA.fill()
-         //TeamB.fill()     
          tempfill(TeamA);
          tempfill(TeamB);
-//=======
          //TeamA.fill();
          //TeamB.fill() ;        
-//>>>>>>> origin/master
          bestplayerA = BestPlayer(TeamA);
          bestplayerB = BestPlayer(TeamB);
          return bestplayerA.toString() + " meanwhile, " + bestplayerB.toString();
      }
      
-     public void fill(String teamname)
+     public void fill(boolean teamname)
      {
        String A = data.teamName(true);
        String B = data.teamName(false);
@@ -41,6 +36,16 @@ public class BestPlayerModule extends ReportModule<BaseballData>
        
         }
         
+     public ArrayList<Player> fill2(boolean teamname)
+     {
+         int totalplayers = (data.teamPlayerNames(teamname)).length;
+         ArrayList<Player> newlist = new ArrayList<Player>();
+         for (int i = 0; i < totalplayers; i++)
+         {
+             newlist.add(new Player(data.teamPlayerNames(teamname)[i], data.teamPlayerHits(teamname)[i], data.teamPlayerBats(teamname)[i], data.teamPlayerNames(teamname)[i], data.teamPlayerRBIs(teamname)[i], teamname)
+         return newlist;
+        }
+     }
      public void tempfill(ArrayList<Player> team)
      {
          for (int i = 0; i < 8; i++)
@@ -73,7 +78,7 @@ public class BestPlayerModule extends ReportModule<BaseballData>
         team = "Marlins";
     }
 
-    public Player(String playerName, int numHits, int numAtBats, int numHr, int numRbi, String teamnam)
+    public Player(String playerName, int numHits, int numAtBats, int numHr, int numRbi, boolean teamnam)
     {
         name = playerName;
         hits = numHits;
@@ -168,5 +173,5 @@ public class BestPlayerModule extends ReportModule<BaseballData>
         }
       }
       return max;
-     }
+    }
 }
