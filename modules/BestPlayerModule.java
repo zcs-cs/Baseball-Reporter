@@ -60,7 +60,8 @@ public class BestPlayerModule extends ReportModule<BaseballData>
      
   class Player
    {
-    String name = "", team = "";
+    String name = "";
+    boolean team;
     int hits, atbats, hr, rbi;
     double rating = 0.0;
     //Not used - ArrayList<String> typeofhits = new ArrayList();    
@@ -73,7 +74,7 @@ public class BestPlayerModule extends ReportModule<BaseballData>
         hr = 0;
         rbi = 0; 
         rating = 0.0;
-        team = "Marlins";
+        team = true;
     }
 
     public Player(String playerName, int numHits, int numAtBats, int numHr, int numRbi, boolean teamnam)
@@ -129,11 +130,14 @@ public class BestPlayerModule extends ReportModule<BaseballData>
        return rating;
    }  
    
-   public String getTeamName()
+   public boolean getTeamName()
    {
        return team;
     }
     
+   public String teamAsString()
+   {
+    }
    public String toString()
    {
      String intro = "", info = "";
