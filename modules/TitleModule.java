@@ -10,7 +10,7 @@ public class TitleModule extends ReportModule<BaseballData>
 	 */
 	public String generate()
 	{
-	    String winnerTeam, loserTeam, scores;
+	    String winnerTeamDemonym, loserTeamDemonym, scores;
 	    int scoreDifferece;
 	    // prep ~"[Team A]s [Defeat] [Team B]s" output //
 	    if (data.teamResult(true))
