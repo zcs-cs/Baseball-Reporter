@@ -9,18 +9,9 @@ public class Array
 		String text = "";
 		for (int i = 0; i < integer_array.length; i++)
 		{
-			if (integer_array[i] == null)
-			{
-				if (i == 0)		text += "{null";
-				else if (i == integer_array.length - 1)		text += "null}";
-				else		text += "null, ";	
-			}
-			else
-			{
-				if (i == 0)		text += "{"+integer_array[0];
-				else if (i == integer_array.length - 1)		text += integer_array[integer_array.length - 1]+"}";
-				else		text += integer_array[i]+", ";	
-			}
+			if (i == 0)		text += "{"+integer_array[0];
+			else if (i == integer_array.length - 1)		text += integer_array[integer_array.length - 1]+"}";
+			else		text += integer_array[i]+", ";	
 		}
 		return text;
 	}
@@ -30,18 +21,9 @@ public class Array
 		String text = "";
 		for (int i = 0; i < decimal_array.length; i++)
 		{
-			if (decimal_array[i] == null)
-			{
-				if (i == 0)		text += "{null";
-				else if (i == decimal_array.length - 1)		text += "null}";
-				else		text += "null, ";	
-			}
-			else
-			{
-				if (i == 0)		text += "{"+decimal_array[0];
-				else if (i == decimal_array.length - 1)		text += decimal_array[decimal_array.length - 1]+"}";
-				else		text += decimal_array[i]+", ";	
-			}
+			if (i == 0)		text += "{"+decimal_array[0];
+			else if (i == decimal_array.length - 1)		text += decimal_array[decimal_array.length - 1]+"}";
+			else		text += decimal_array[i]+", ";
 		}
 		return text;
 	}
@@ -73,9 +55,18 @@ public class Array
 		String text = "";
 		for (int i = 0; i < integer_array_array.length; i++)
 		{
-			if (i == 0)		text += "{"+text(integer_array_array[0]);
-			else if (i == integer_array_array.length - 1)		text += text(integer_array_array[integer_array_array.length - 1])+"}";
-			else		text += text(integer_array_array[i])+", ";
+			if (integer_array_array[i] == null)
+			{
+				if (i == 0)		text += "{null";
+				else if (i == integer_array_array.length - 1)		text += "null}";
+				else		text += "null, ";
+			}
+			else
+			{
+				if (i == 0)		text += "{"+text(integer_array_array[0]);
+				else if (i == integer_array_array.length - 1)		text += text(integer_array_array[integer_array_array.length - 1])+"}";
+				else		text += text(integer_array_array[i])+", ";
+			}
 		}
 		return text;
 	}
@@ -85,9 +76,18 @@ public class Array
 		String text = "";
 		for (int i = 0; i < decimal_array_array.length; i++)
 		{
-			if (i == 0)		text += "{"+text(decimal_array_array[0]);
-			else if (i == decimal_array_array.length - 1)		text += text(decimal_array_array[decimal_array_array.length - 1])+"}";
-			else		text += text(decimal_array_array[i])+", ";
+			if (decimal_array_array[i] == null)
+			{
+				if (i == 0)		text += "{null";
+				else if (i == decimal_array_array.length - 1)		text += "null}";
+				else		text += "null, ";
+			}
+			else
+			{
+				if (i == 0)		text += "{"+text(decimal_array_array[0]);
+				else if (i == decimal_array_array.length - 1)		text += text(decimal_array_array[decimal_array_array.length - 1])+"}";
+				else		text += text(decimal_array_array[i])+", ";
+			}
 		}
 		return text;
 	}
@@ -97,9 +97,18 @@ public class Array
 		String text = "";
 		for (int i = 0; i < text_array_array.length; i++)
 		{
-			if (i == 0)		text += "{"+text(text_array_array[0]);
-			else if (i == text_array_array.length - 1)		text += text(text_array_array[text_array_array.length - 1])+"}";
-			else		text += text(text_array_array[i])+", ";
+			if (text_array_array[i] == null)
+			{
+				if (i == 0)		text += "{null";
+				else if (i == text_array_array.length - 1)		text += "null}";
+				else		text += "null, ";
+			}
+			else
+			{
+				if (i == 0)		text += "{"+text(text_array_array[0]);
+				else if (i == text_array_array.length - 1)		text += text(text_array_array[text_array_array.length - 1])+"}";
+				else		text += text(text_array_array[i])+", ";
+			}
 		}
 		return text;
 	}
