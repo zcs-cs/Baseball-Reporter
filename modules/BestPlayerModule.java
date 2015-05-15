@@ -12,29 +12,27 @@ public class BestPlayerModule extends ReportModule<BaseballData>
      {
          Player bestplayerA = new Player();
          Player bestplayerB = new Player();
-         tempfill(TeamA);
-         tempfill(TeamB);
-         //TeamA.fill();
-         //TeamB.fill() ;        
+         TeamA.fill();
+         TeamB.fill() ;        
          bestplayerA = BestPlayer(TeamA);
          bestplayerB = BestPlayer(TeamB);
          return bestplayerA.toString() + " meanwhile, " + bestplayerB.toString();
      }
-     
-     public void fill(boolean teamname)
-     {
-       String A = data.teamName(true);
-       String B = data.teamName(false);
-       String[] Anames = data.teamPlayersNames(true);
-       String[] Bnames = data.teamPlayersNames(false);
-       int[] ABats = data.teamPlayersBats(true);
-       int[] BBats = data.teamPlayersBats(false);
-       int[] ARBI = data.teamPlayersRBIs(true);
-       int[] BRBI = data.teamPlayersRBIs(false);
-       int[] AHits = data.teamPlayersHits(true);
-       int[] BHits = data.teamPlayersHits(false);
-       
-        }
+//      
+//      public void fill(boolean teamname)
+//      {
+//        String A = data.teamName(true);
+//        String B = data.teamName(false);
+//        String[] Anames = data.teamPlayersNames(true);
+//        String[] Bnames = data.teamPlayersNames(false);
+//        int[] ABats = data.teamPlayersBats(true);
+//        int[] BBats = data.teamPlayersBats(false);
+//        int[] ARBI = data.teamPlayersRBIs(true);
+//        int[] BRBI = data.teamPlayersRBIs(false);
+//        int[] AHits = data.teamPlayersHits(true);
+//        int[] BHits = data.teamPlayersHits(false);
+//        
+//         }
         
      public ArrayList<Player> fill2(boolean teamname)
      {
@@ -51,6 +49,7 @@ public class BestPlayerModule extends ReportModule<BaseballData>
                                 }
          return newlist;
         }
+<<<<<<< HEAD
      
      public void tempfill(ArrayList<Player> team)
      {
@@ -61,6 +60,18 @@ public class BestPlayerModule extends ReportModule<BaseballData>
          team.add(new Player("BestPlayer", 10, 10, 10, 40, "Cubs"));
         }
      
+=======
+     }
+//      public void tempfill(ArrayList<Player> team)
+//      {
+//          for (int i = 0; i < 8; i++)
+//          {
+//              team.add(new Player());
+//             }
+//          team.add(new Player("BestPlayer", 10, 10, 10, 40, "Cubs"));
+//         }
+//      
+>>>>>>> origin/master
      
      
      
