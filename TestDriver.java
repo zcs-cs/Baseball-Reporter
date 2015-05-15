@@ -25,7 +25,7 @@ public class TestDriver
         // modules creation and output //
         String output = "";
         output += (new TitleModule()).generate(data);
-        
+        output += (new BestPlayerModule()).generate();
         System.out.println(output);
 	}
 }
