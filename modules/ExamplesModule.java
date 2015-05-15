@@ -5,30 +5,21 @@ import utilities.*;
 
 public class ExamplesModule extends ReportModule<BaseballData>
 {
-    // generation example of example title and concatenated method call examples //
+    // generation of concatenated method call examples //
     public String generate()
     {
-        return "Baseball Game was a great success.\n"+examplesConcatenated();
+        return primaryStatisticsExample()+"\n\n"+teamStatisticsExample()+"\n\n"+TeamPlayersStatisticsExample();
     }
     
-    // method calling examples - altogether
-	// Please see the ReportData interface for a listing of every data retrieval method in BaseballData.
-    private String examplesConcatenated()
-    {
-        return primaryStatisticsExample() + "\n\n" + 
-                teamStatisticsExample() + "\n\n "+ 
-                TeamPlayersStatisticsExample();
-    }
+    // Please see the ReportData interface for a listing of every data retrieval method in BaseballData.
 
     // method calling examples - primary statistics [including 'Array.permute()' example] //
     private String primaryStatisticsExample()
     {
         String[] weatherDescriptions = Array.permute(new String[] {"", "quite"}, new String[] {"freezing", "frigid", "cold", "cool", "refreshing", "moderate", "warm", "hot", "sweaty", "unbearable"});
         int weatherDescriptionIndex = (data.temperature() > 100) ? weatherDescriptions.length : (int) Function.line(0, 0, 100, weatherDescriptions.length, data.temperature());
-        return "It took place at "+data.location()+" in "+data.city()+".\nThe temperature was a "+weatherDescriptions[weatherDescriptionIndex]+" "+data.temperature()+" degrees.\nrainfall: " + data.rainfall() + 
-              "\nIt lasted for "+data.innings()+" innings."+
-              "\nstart time: " + data.startTime() + 
-              "\nminutes: " + data.minutes();
+        String rainStatement = (data.rainfall() > 1) ? "It rained "+data.rainfall()+" inches" : "The weather was clear";
+        return "The game took place at "+data.location()+" in "+data.city()+". It lasted for "+data.innings()+" innings. The temperature was a "+weatherDescriptions[weatherDescriptionIndex]+" "+data.temperature()+" degrees. "+rainStatement+". The game began at: "+data.startTime()+" (in military time). It lasted for "+data.minutes()+" minutes.";
     }
     // method calling examples - team statistics [including 'Random.text_of()' example] //
     private String teamStatisticsExample()
