@@ -28,7 +28,17 @@ public class BestPlayerModule extends ReportModule<BaseballData>
      
      public void fill(String teamname)
      {
-         
+       String A = data.teamName(true);
+       String B = data.teamName(false);
+       String[] Anames = data.teamPlayersNames(true);
+       String[] Bnames = data.teamPlayersNames(false);
+       int[] ABats = data.teamPlayersBats(true);
+       int[] BBats = data.teamPlayersBats(false);
+       int[] ARBI = data.teamPlayersRBIs(true);
+       int[] BRBI = data.teamPlayersRBIs(false);
+       int[] AHits = data.teamPlayersHits(true);
+       int[] BHits = data.teamPlayersHits(false);
+       
         }
         
      public void tempfill(ArrayList<Player> team)
@@ -121,7 +131,7 @@ public class BestPlayerModule extends ReportModule<BaseballData>
        return team;
     }
     
-   public String generate()
+   public String toString()
    {
      String intro = "", info = "";
      int rand;
