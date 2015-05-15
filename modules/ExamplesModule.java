@@ -46,17 +46,17 @@ public class ExamplesModule extends ReportModule<BaseballData>
         String statement = "";
         // general players talk //
         String teamDemonymCapitalized = Text.capitalize(data.teamDemonym(true));
-        statement += teamDemonymCapitalized + " players' names: " + Array.text(data.teamPlayersNames(true)) +"\n";
-        statement += teamDemonymCapitalized + " players' bats: " + Array.text(data.teamPlayersBats(true));
-        statement += teamDemonymCapitalized + " players' hits (counts): " + Array.text(data.teamPlayersHits(true));
-        statement += teamDemonymCapitalized + " players' hits' descriptions: " + Array.text(data.teamPlayersHitsDescriptions(true));
-        statement += teamDemonymCapitalized + " players' hit's RBIs: " + Array.text(data.teamPlayersHitsRBIs(true));
-        statement += teamDemonymCapitalized + " players' RBIs (totals): " + Array.text(data.teamPlayersRBIs(true));
-        statement += teamDemonymCapitalized + " players' runs (counts): " + Array.text(data.teamPlayersRuns(true));
-        statement += teamDemonymCapitalized + " players' runs' innings: " + Array.text(data.teamPlayersRunsInnings(true));
-        statement += teamDemonymCapitalized + " players' injuries' games missed: " + Array.text(data.teamPlayersInjuriesGamesMissed(true));
-        statement += teamDemonymCapitalized + " players' injuries' types: " + Array.text(data.teamPlayersInjuriesTypes(true));
-        statement += teamDemonymCapitalized + " players' injuries' locations: " + Array.text(data.teamPlayersInjuriesLocations(true));
+        statement += teamDemonymCapitalized + " players' names: " + Array.text(data.teamPlayersNames(true))+"\n";
+        statement += teamDemonymCapitalized + " players' bats: " + Array.text(data.teamPlayersBats(true))+"\n";
+        statement += teamDemonymCapitalized + " players' hits (counts): " + Array.text(data.teamPlayersHits(true))+"\n";
+        statement += teamDemonymCapitalized + " players' hits' descriptions: " + Array.text(data.teamPlayersHitsDescriptions(true))+"\n";
+        statement += teamDemonymCapitalized + " players' hit's RBIs: " + Array.text(data.teamPlayersHitsRBIs(true))+"\n";
+        statement += teamDemonymCapitalized + " players' RBIs (totals): " + Array.text(data.teamPlayersRBIs(true))+"\n";
+        statement += teamDemonymCapitalized + " players' runs (counts): " + Array.text(data.teamPlayersRuns(true))+"\n";
+        statement += teamDemonymCapitalized + " players' runs' innings: " + Array.text(data.teamPlayersRunsInnings(true))+"\n";
+        statement += teamDemonymCapitalized + " players' injuries' games missed: " + Array.text(data.teamPlayersInjuriesGamesMissed(true))+"\n";
+        statement += teamDemonymCapitalized + " players' injuries' types: " + Array.text(data.teamPlayersInjuriesTypes(true))+"\n";
+        statement += teamDemonymCapitalized + " players' injuries' locations: " + Array.text(data.teamPlayersInjuriesLocations(true))+"\n";
         statement += "\n\n";
         
         // specific player talk //
