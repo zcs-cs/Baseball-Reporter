@@ -170,6 +170,15 @@ public interface ReportData
      *        Get information from first team (true) or second team (false).
      *        Use the constants defined above (INDIANS & BATS).
      *
+     * @return A 2D array of HRs for each player, for each inning.
+     */
+    public abstract int[][] teamPlayersHRs(boolean teamA);
+    
+    /**
+     * @param teamA
+     *        Get information from first team (true) or second team (false).
+     *        Use the constants defined above (INDIANS & BATS).
+     *
      * @return A 2D array of pitches for each player, for each inning.
      */
     public abstract int[][] teamPlayersInningsPitched(boolean teamA);
