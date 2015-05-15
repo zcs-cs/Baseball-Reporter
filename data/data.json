@@ -10,7 +10,7 @@
   "teams": {
     "teamA": {
       "name": "Indianapolis Indians",
-      "demonym": "the Indians",
+      "demonym": "Indians",
       "homecity": "Indianapolis, Indiana",
       "standings": {
         "position": 0,
@@ -341,7 +341,7 @@
     },
     "teamB": {
       "name": "Louisville Bats",
-      "demonym": "the Bats",
+      "demonym": "Bats",
       "homecity": "Louisville, Kentucky",
       "standings": {
         "position": 0,
