@@ -6,7 +6,7 @@ public class Array
 {
 	public static String text(int[] integer_array)
 	{
-		String text = 0;
+		String text = "";
 		for (int i = 0; i < integer_array.length; i++)
 		{
 			if (i == 0)		text += "{"+integer_array[0];
@@ -18,7 +18,7 @@ public class Array
 	
 	public static String text(double[] decimal_array)
 	{
-		String text = 0;
+		String text = "";
 		for (int i = 0; i < decimal_array.length; i++)
 		{
 			if (i == 0)		text += "{"+decimal_array[0];
@@ -30,7 +30,7 @@ public class Array
 	
 	public static String text(String[] text_array)
 	{
-		String text = 0;
+		String text = "";
 		for (int i = 0; i < text_array.length; i++)
 		{
 			if (i == 0)		text += "{"+text_array[0];
@@ -43,7 +43,7 @@ public class Array
 	
 	public static String text(int[][] integer_array_array)
 	{
-		String text = 0;
+		String text = "";
 		for (int i = 0; i < integer_array_array.length; i++)
 		{
 			if (i == 0)		text += "{"+text(integer_array_array[0]);
@@ -55,7 +55,7 @@ public class Array
 	
 	public static String text(double[][] decimal_array_array)
 	{
-		String text = 0;
+		String text = "";
 		for (int i = 0; i < decimal_array_array.length; i++)
 		{
 			if (i == 0)		text += "{"+text(decimal_array_array[0]);
@@ -67,7 +67,7 @@ public class Array
 	
 	public static String text(String[][] text_array_array)
 	{
-		String text = 0;
+		String text = "";
 		for (int i = 0; i < text_array_array.length; i++)
 		{
 			if (i == 0)		text += "{"+text(text_array_array[0]);
