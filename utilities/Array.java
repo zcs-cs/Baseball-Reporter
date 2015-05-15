@@ -38,7 +38,7 @@ public class Array
 	public static String text(String[][] text_array_array)
 	{
 		String text = "";
-		for (int[] text_array : text_array_array)
+		for (String[] text_array : text_array_array)
 		{
 			text += text(text_array);
 		}
