@@ -27,12 +27,22 @@ public class Array
 	
 	public static String text(int[][] integer_array_array)
 	{
-		return ""+Arrays.asList(integer_array_array);
+		String text = "";
+		for (int[] integer_array : integer_array_array)
+		{
+			text += text(integer_array);
+		}
+		return text;
 	}
 	
 	public static String text(String[][] text_array_array)
 	{
-		return ""+Arrays.asList(text_array_array);
+		String text = "";
+		for (int[] text_array : text_array_array)
+		{
+			text += text(text_array);
+		}
+		return text;
 	}
 	
 	
