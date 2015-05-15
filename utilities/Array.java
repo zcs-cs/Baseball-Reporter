@@ -57,7 +57,7 @@ public class Array
 		{
 			if (integer_array_array[i] == null)
 			{
-				if (i == 0)		text += "{null", ;
+				if (i == 0)		text += "{null, ";
 				else if (i == integer_array_array.length - 1)		text += "null}";
 				else		text += "null, ";
 			}
