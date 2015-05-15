@@ -26,9 +26,9 @@ public class ExamplesModule extends ReportModule<BaseballData>
         String[] weatherDescriptions = Array.permute(new String[] {"", "quite"}, new String[] {"freezing", "frigid", "cold", "cool", "refreshing", "moderate", "warm", "hot", "sweaty", "unbearable"});
         int weatherDescriptionIndex = (data.temperature() > 100) ? weatherDescriptions.length : (int) Function.line(0, 0, 100, weatherDescriptions.length, data.temperature());
         return "It took place at "+data.location()+" in "+data.city()+".\nThe temperature was a "+weatherDescriptions[weatherDescriptionIndex]+" "+data.temperature()+" degrees.\nrainfall: " + data.rainfall() + 
-              "\nIt lasted for "+data.innings()+" innings.";
+              "\nIt lasted for "+data.innings()+" innings."+
               "\nstart time: " + data.startTime() + 
-              "\nminutes: " + data.minutes() + 
+              "\nminutes: " + data.minutes();
     }
     // method calling examples - team statistics [including 'Random.text_of()' example] //
     private String teamStatisticsExample()
