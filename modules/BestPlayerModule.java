@@ -2,7 +2,7 @@ package modules;
 import java.util.*;
 import data.*;
 import utilities.*;
-public class BestPlayerModule
+public class BestPlayerModule extends ReportModule<BaseballData>
 {
     ArrayList<Player> TeamA = new ArrayList<>();
     ArrayList<Player> TeamB = new ArrayList<>();
@@ -121,7 +121,7 @@ public class BestPlayerModule
        return team;
     }
     
-   public String toString()
+   public String generate()
    {
      String intro = "", info = "";
      int rand;

@@ -7,7 +7,7 @@ public class InjuryModule extends ReportModule<BaseballData>
 {
     public String generate()
     {
-        end = "";
+        String end = "";
         String[][] names;
         int[][] timeOut;
         String[][] type;
