@@ -42,10 +42,16 @@ public class BestPlayerModule extends ReportModule<BaseballData>
          ArrayList<Player> newlist = new ArrayList<Player>();
          for (int i = 0; i < totalplayers; i++)
          {
-             newlist.add(new Player(data.teamPlayerNames(teamname)[i], data.teamPlayerHits(teamname)[i], data.teamPlayerBats(teamname)[i], data.teamPlayerNames(teamname)[i], data.teamPlayerRBIs(teamname)[i], teamname)
+             newlist.add(new Player(data.teamPlayerNames(teamname)[i],
+                                    data.teamPlayerHits(teamname)[i], 
+                                    data.teamPlayerBats(teamname)[i], 
+                                    data.teamPlayerHRs(teamname)[i], 
+                                    data.teamPlayerRBIs(teamname)[i], 
+                                    teamname)
+                                }
          return newlist;
         }
-     }
+     
      public void tempfill(ArrayList<Player> team)
      {
          for (int i = 0; i < 8; i++)
