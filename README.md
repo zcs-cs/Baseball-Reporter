@@ -13,7 +13,7 @@ $ git clone https://github.com/zcs-cs/Baseball-Reporter.git
 ```
 
 ##2. Opening in BlueJ
-The repository already contains the necessary files to open in BlueJ, and you can open it like you would any other BlueJ project.
+The repository does not contain any `package.bluej` project files or any `*.ctxt` files. To open the project, simply open the directory `Baseball-Reporter/` as a non-Bluejay project. This will create all necessary `package.bluej` and `*.ctxt` files within your local copy of `Baseball-Reporter`. When changes are `add`ed, `commit`ted, and `push`ed, Git will ignore these files (see `/.gitignore`).
 
 ##3. Making Changes
 You can make changes like you would any other project and Git will keep track of what you have changed. When you wish to push changes to GitHub so others can view, you will need to use `git add`, `git commit`, and `git push`. You will need to have navigated into the `*\Baseball-Reporter` directory by using `cd`
