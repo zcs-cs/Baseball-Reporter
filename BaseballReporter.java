@@ -28,6 +28,11 @@ public class BaseballReporter
         // modules creation and output //
         ArrayList<ReportModule<BaseballData>> modules = new ArrayList<ReportModule<BaseballData>>();
         modules.add(new ExamplesModule());
+        modules.add(new TitleModule());
+        modules.add(new BestPlayerModule());
+        modules.add(new ExtraInningsModule());
+        modules.add(new InjuryModule());
+        modules.add(new PitchAvBModule());
         
         String output = "";
         for (ReportModule<BaseballData> module : modules)
