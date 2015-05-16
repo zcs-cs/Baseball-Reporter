@@ -74,20 +74,47 @@ public class FileWrite
 
     
     /**
+     * @brief Write the input String to the file; close the file by default.
+     */
+    public void writeToFile()
+    {
+        this.writeToFile(true);
+    }
+    
+    /**
+     * @brief Write the input String to the file;
      *
+     * @param close
+     *        Close the file after write event (true), or not (false).
      */
     public void writeToFile(boolean close)
     {
-        if (wrapText) {
+        if (this.wrapText) {
             String formatedText = this.wordWrap(this.textStream, this.wrapCol);
-            this.writer.println(formatedText);
+            this.writer.print(formatedText);
         }
         else {
-            this.writer.println(this.textStream);
+            this.writer.print(this.textStream);
         }
         
         if(close) {
             this.close();
+        }
+    }
+    
+    /**
+     * @brief Add a String to the file.
+     *
+     * @note DO NOT use this method if the file has been close()ed. Will cause error!
+     */
+    public void writeToFile(String additionalText)
+    {
+        if(this.wrapText) {
+            String formatedText = this.wordWrap(additionalText, this.wrapCol);
+            this.writer.print(formatedText);
+        }
+        else {
+            this.writer.print(additionalText);
         }
     }
     
@@ -100,7 +127,7 @@ public class FileWrite
     }
     
     /**
-     *
+     * @brief Wrap text to a certain width.
      */
     private String wordWrap(String input, int wrapCol)
     {
@@ -110,9 +137,9 @@ public class FileWrite
         for(i = 0;
             i < this.textStream.length() && this.textStream.length() - i > wrapCol;
             i += wrapCol) {
-            output += this.textStream.substring( i, i + wrapCol ) + "\n";
+            output += input.substring( i, i + wrapCol ) + "\n";
         }
-        output += this.textStream.substring( i );
+        output += input.substring( i );
         
         return output;
     }
