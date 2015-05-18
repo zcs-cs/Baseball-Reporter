@@ -5,6 +5,8 @@ import utilities.*;
 
 public class WeatherModule extends ReportModule<BaseballData>
 {
+    public WeatherModule(BaseballData data) { super(data); }
+    
     public String generate()
     {
         String result = "";

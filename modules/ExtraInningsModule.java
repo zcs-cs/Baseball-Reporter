@@ -5,6 +5,8 @@ import utilities.*;
 
 public class ExtraInningsModule extends ReportModule<BaseballData>
 {
+    public ExtraInningsModule(BaseballData data) { super(data); }
+    
     public String generate ()
     {
         //int innings = 10;

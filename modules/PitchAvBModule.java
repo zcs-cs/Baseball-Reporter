@@ -12,6 +12,8 @@ import java.util.ArrayList;
  */
 public class PitchAvBModule extends ReportModule<BaseballData>
 {
+    public PitchAvBModule(BaseballData data) { super(data); }
+    
     int runs1, runs2, strikeouts1, strikeouts2, battersFaced1, battersFaced2;
     String Name1, Name2, Team1, Team2, output;
     ArrayList<PitcherPlayer> pitchers;

@@ -4,6 +4,8 @@ import data.*;
 import utilities.*;
 public class BestPlayerModule extends ReportModule<BaseballData>
 {
+    public BestPlayerModule(BaseballData data) { super(data); }
+    
     ArrayList<Player> TeamA;
     ArrayList<Player> TeamB;
     

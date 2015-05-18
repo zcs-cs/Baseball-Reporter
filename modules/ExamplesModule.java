@@ -5,6 +5,8 @@ import utilities.*;
 
 public class ExamplesModule extends ReportModule<BaseballData>
 {
+    public ExamplesModule(BaseballData data) { super(data); }
+    
     // generation of concatenated method call examples //
     public String generate()
     {
