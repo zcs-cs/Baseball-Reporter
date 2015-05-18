@@ -16,7 +16,7 @@
         "position": 2,
         "wins": 22,
         "streak": 1,
-        "losses": 16
+        "losses": 16,
         "PCT": 37
       },
       "inningScores": [
@@ -266,7 +266,7 @@
         "position": 3,
         "wins": 17,
         "streak": 4,
-        "losses": 20
+        "losses": 20,
         "PCT": 43
       },
       "inningScores": [
