@@ -244,7 +244,7 @@ public class BaseballData implements ReportData
         if (teamA)     return "teamA";
         else    return "teamB";
     }
-    // [=] team primary statistics
+    // [=]  statistics
     // (for this and each of its implementations, 'teamA' equals true or false designating Team A or Team B respectively)
     // [precondition: key 'key' is present and corresponds to text]
     private String teamPrimaryStatistic(boolean teamA, String key)
@@ -325,6 +325,11 @@ public class BaseballData implements ReportData
     public int teamStandingsLosses(boolean teamA)
     {
         return teamStandingsStatisticInt(teamA, "losses");
+    }
+    // [+] team standings 'PCT' - integer //
+    public int teamStandingsPCT(boolean teamA)
+    {
+        return teamStandingsStatisticInt(teamA, "PCT");
     }
     
     
@@ -476,6 +481,25 @@ public class BaseballData implements ReportData
             teamPlayersRuns[i] = teamPlayersRunsInnings[i].length;
         }
         return teamPlayersRuns;
+    }
+    
+    // [>] team label (key) chooser based on 'teamC' boolean //
+    private String teamForC(boolean teamC)
+    {
+        if (teamC)     return "teamC";
+        else    return "teamD";
+    }
+    // [+] other team name
+    // ('teamC' equals true or false designating Team C or Team D respectively)
+    public String otherTeamName(boolean teamC)
+    {
+        return data.getJSONObject("teams").getJSONObject(teamForC(teamC)).getString("name");
+    }
+    // [+] other team standings 'PCT' - integer
+    // ('teamC' equals true or false designating Team C or Team D respectively)
+    public int otherTeamStandingsPCT(boolean teamC)
+    {
+        return data.getJSONObject("teams").getJSONObject(teamForC(teamC)).getInt("PCT");
     }
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  /
     /////////////////////////////////////////////////////////////////////////////////////////////////////
