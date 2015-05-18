@@ -17,6 +17,7 @@
         "wins": 22,
         "streak": 1,
         "losses": 16
+        "PCT": 37
       },
       "inningScores": [
         0,0,0,0,0,0,0,0,0
@@ -266,6 +267,7 @@
         "wins": 17,
         "streak": 4,
         "losses": 20
+        "PCT": 43
       },
       "inningScores": [
         0,0
@@ -537,6 +539,14 @@
           ]
         }
       ]
+    }
+    "teamC": {
+      "name": "Hens",
+      "PCT": 67,
+    }
+    "teamD": {
+      "name": "Clippers",
+      "standingsPCT": 50,
     }
   }
 }
