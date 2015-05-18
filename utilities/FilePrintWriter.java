@@ -43,7 +43,7 @@ public class FilePrintWriter extends PrintWriter
     public void print(String s)
     {
         if(wrapText) {
-            String formattedText = this.wrapSimple(s, this.wrapCol);
+            String formattedText = this.wrapComplex(s, this.wrapCol);
             super.print(formattedText);
         }
         else {
@@ -66,6 +66,36 @@ public class FilePrintWriter extends PrintWriter
             output += input.substring( i, i + wrapCol ) + "\n";
         }
         output += input.substring( i );
+        
+        return output;
+    }
+    
+    private String wrapComplex(String input, int wrapCol)
+    {
+        String output = "";
+        
+        int counter = 0, position = 0;
+        while( position < input.length() ) {
+            if( counter <= wrapCol ) {
+                output += input.substring( position, position+1 );
+            }
+            else {
+                if( input.charAt(position) == ' ' ||
+                    input.charAt(position) == '\n'  ) {
+                    output += "\n";
+                    
+                    //or simply: counter = -1;
+                    counter = 0;
+                    position++;
+                    continue;
+                }
+                else {
+                    output += input.substring( position, position+1 );
+                }
+            }
+            counter++;
+            position++;
+        }
         
         return output;
     }
