@@ -489,11 +489,11 @@ public class BaseballData implements ReportData
         if (teamC)     return "teamC";
         else    return "teamD";
     }
-    // [+] other team name
+    // [+] other team demonym
     // ('teamC' equals true or false designating Team C or Team D respectively)
-    public String otherTeamName(boolean teamC)
+    public String otherTeamDemonym(boolean teamC)
     {
-        return data.getJSONObject("teams").getJSONObject(teamForC(teamC)).getString("name");
+        return data.getJSONObject("teams").getJSONObject(teamForC(teamC)).getString("demonym");
     }
     // [+] other team standings 'PCT' - integer
     // ('teamC' equals true or false designating Team C or Team D respectively)
