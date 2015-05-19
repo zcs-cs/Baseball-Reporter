@@ -10,6 +10,7 @@ public class FilePrintWriter extends PrintWriter
     
     private boolean wrapText;
     private int wrapCol = DEFAULT_WRAP_SIZE;
+    private String fileName = "Unknown";
 
     
     public FilePrintWriter(String fileName, String charset, int wrapCol)
@@ -18,6 +19,7 @@ public class FilePrintWriter extends PrintWriter
         super(fileName, charset);
         this.wrapText = true;
         this.wrapCol = wrapCol;
+        this.fileName = fileName;
     }
     public FilePrintWriter(String fileName, int wrapCol)
            throws FileNotFoundException
@@ -25,18 +27,21 @@ public class FilePrintWriter extends PrintWriter
         super(fileName);
         this.wrapText = true;
         this.wrapCol = wrapCol;
+        this.fileName = fileName;
     }
     public FilePrintWriter(String fileName, String charset)
            throws FileNotFoundException, UnsupportedEncodingException
     {
         super(fileName, charset);
         this.wrapText = false;
+        this.fileName = fileName;
     }
     public FilePrintWriter(String fileName)
            throws FileNotFoundException
     {
         super(fileName);
         this.wrapText = false;
+        this.fileName = fileName;
     }
     
     
@@ -53,6 +58,11 @@ public class FilePrintWriter extends PrintWriter
     public void println(String s)
     {
         this.print( s += "\n" );
+    }
+    public void close()
+    {
+        super.close();
+        System.out.println("\"" + this.fileName + "\" written.");
     }
     
     private String wrapSimple(String input, int wrapCol)
