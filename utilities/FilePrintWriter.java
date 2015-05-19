@@ -78,6 +78,11 @@ public class FilePrintWriter extends PrintWriter
         while( position < input.length() ) {
             if( counter <= wrapCol ) {
                 output += input.substring( position, position+1 );
+                if( input.charAt(position) == '\n' ) {
+                    counter = 0;
+                    position++;
+                    continue;
+                }
             }
             else {
                 if( input.charAt(position) == ' ' ||
