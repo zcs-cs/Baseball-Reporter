@@ -7,6 +7,8 @@ public interface ReportData
 {
     public static final boolean INDIANS = true;
     public static final boolean BATS = false;
+    public static final boolean HENS = true;
+    public static final boolean CLIPPERS = false;
 
     /**
      * @return The location of the game (field).
