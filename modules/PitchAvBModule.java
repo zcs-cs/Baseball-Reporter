@@ -17,7 +17,7 @@ public class PitchAvBModule extends ReportModule<BaseballData>
     ArrayList<PitcherPlayer> pitchers;
     public String generate()
     {
-        BaseballData d;
+        BaseballData d = (BaseballData)data;
         //This is a generic statement generator
         // populate pitcher list
         pitchers = new ArrayList<PitcherPlayer>();

@@ -3,14 +3,14 @@
   "city": "Indianapolis, Indiana",
   "temperature": 0.1,
   "rainfall": 0.1,
-  "date": "04-29-2015",
+  "date": "04/30/2015",
   "startTime": 1105,
   "minutes": 0,
   "innings": 0,
   "teams": {
     "teamA": {
       "name": "Indianapolis Indians",
-      "demonym": "the Indians",
+      "demonym": "Indians",
       "homecity": "Indianapolis, Indiana",
       "standings": {
         "position": 0,
@@ -22,7 +22,7 @@
         0,
         0
       ],
-      "score": 0,
+      "score": 2,
       "result": false,
       "players": [
         {
@@ -341,7 +341,7 @@
     },
     "teamB": {
       "name": "Louisville Bats",
-      "demonym": "the Bats",
+      "demonym": "Bats",
       "homecity": "Louisville, Kentucky",
       "standings": {
         "position": 0,
@@ -353,7 +353,7 @@
         0,
         0
       ],
-      "score": 0,
+      "score": 6,
       "result": true,
       "players": [
         {

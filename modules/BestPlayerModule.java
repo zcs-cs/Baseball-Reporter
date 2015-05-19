@@ -2,39 +2,57 @@ package modules;
 import java.util.*;
 import data.*;
 import utilities.*;
-public class BestPlayerModule
+public class BestPlayerModule extends ReportModule<BaseballData>
 {
     ArrayList<Player> TeamA = new ArrayList<>();
     ArrayList<Player> TeamB = new ArrayList<>();
+    
+    
       public String generate()
      {
          Player bestplayerA = new Player();
          Player bestplayerB = new Player();
-//<<<<<<< HEAD
-         //TeamA.fill()
-         //TeamB.fill()     
          tempfill(TeamA);
          tempfill(TeamB);
-//=======
          //TeamA.fill();
          //TeamB.fill() ;        
-//>>>>>>> origin/master
          bestplayerA = BestPlayer(TeamA);
          bestplayerB = BestPlayer(TeamB);
          return bestplayerA.toString() + " meanwhile, " + bestplayerB.toString();
      }
      
-     public void fill(String teamname)
+     public void fill(boolean teamname)
      {
-         
+       String A = data.teamName(true);
+       String B = data.teamName(false);
+       String[] Anames = data.teamPlayersNames(true);
+       String[] Bnames = data.teamPlayersNames(false);
+       int[] ABats = data.teamPlayersBats(true);
+       int[] BBats = data.teamPlayersBats(false);
+       int[] ARBI = data.teamPlayersRBIs(true);
+       int[] BRBI = data.teamPlayersRBIs(false);
+       int[] AHits = data.teamPlayersHits(true);
+       int[] BHits = data.teamPlayersHits(false);
+       
         }
         
+     public ArrayList<Player> fill2(boolean teamname)
+     {
+         int totalplayers = (data.teamPlayerNames(teamname)).length;
+         ArrayList<Player> newlist = new ArrayList<Player>();
+         for (int i = 0; i < totalplayers; i++)
+         {
+             newlist.add(new Player(data.teamPlayerNames(teamname)[i], data.teamPlayerHits(teamname)[i], data.teamPlayerBats(teamname)[i], data.teamPlayerNames(teamname)[i], data.teamPlayerRBIs(teamname)[i], teamname)
+         return newlist;
+        }
+     }
      public void tempfill(ArrayList<Player> team)
      {
-         for (int i = 0; i < 9; i++)
+         for (int i = 0; i < 8; i++)
          {
              team.add(new Player());
             }
+         team.add(new Player("BestPlayer", 10, 10, 10, 40, "Cubs"));
         }
      
      
@@ -60,14 +78,14 @@ public class BestPlayerModule
         team = "Marlins";
     }
 
-    public Player(String playerName, int numHits, int numAtBats, int numHr, int numRbi, String team)
+    public Player(String playerName, int numHits, int numAtBats, int numHr, int numRbi, boolean teamnam)
     {
         name = playerName;
         hits = numHits;
         atbats = numAtBats;
         hr = numHr;
         rbi = numRbi;
-        this.team = team;
+        team = teamnam;
         /*
         * The Player Rating class takes the data from the player and determines their rating. The points are taken accordingly
         * 
@@ -155,5 +173,5 @@ public class BestPlayerModule
         }
       }
       return max;
-     }
+    }
 }

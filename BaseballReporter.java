@@ -19,7 +19,7 @@ public class BaseballReporter
         String filePath = "data/data.json";
         if(args.length != 0 && args[0].length() > 0)
             filePath = args[0];
-        System.out.println("Reading from " + filePath + "\n");
+        System.out.println("The following article is being generated from: " + filePath + "\n");
         
         // conversion //
         Converter<BaseballData> converter = new BaseballJSONConverter(filePath);
@@ -27,13 +27,21 @@ public class BaseballReporter
         
         // modules creation and output //
         ArrayList<ReportModule<BaseballData>> modules = new ArrayList<ReportModule<BaseballData>>();
+        modules.add(new TitleModule());
+        /* temporarily enabled for examples: */
         modules.add(new ExamplesModule());
+        /* temporarily disabled for examples..
+        modules.add(new BestPlayerModule());
+        modules.add(new ExtraInningsModule());
+        modules.add(new InjuryModule());
+        modules.add(new PitchAvBModule());
+        */
         
         String output = "";
         for (ReportModule<BaseballData> module : modules)
         {
-            output += module.generate(data);
+            output += module.generate(data)+"\n\n";
         }
-        System.out.println(output);
+        System.out.print(output);
     }
 }
