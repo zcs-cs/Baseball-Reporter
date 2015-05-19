@@ -44,7 +44,7 @@ public class PitchAvBModule extends ReportModule<BaseballData>
             
         }
         
-        //opening sentence introducing best pitchers
+        ////////////////////opening sentence introducing best pitchers////////////////////
         
         int select = (int)(Math.random()*5);
         
@@ -66,8 +66,7 @@ public class PitchAvBModule extends ReportModule<BaseballData>
                 break;
         }
         
-        //
-        
+        //////////////////////////////////////////////////////////////////////////////////
         
         //next sentence
         
