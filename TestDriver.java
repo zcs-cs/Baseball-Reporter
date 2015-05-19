@@ -30,7 +30,8 @@ public class TestDriver
             new BigInningModule(data),
             new InjuryModule(data),
             new PitchAvBModule(data),
-            new BestPlayerModule(data)
+            new BestPlayerModule(data),
+            new StandingsModule(data)
         };
         
         String output = "";
@@ -38,8 +39,9 @@ public class TestDriver
             output += modules[i].generate();
         }
         
-        FilePrintWriter printer = new FilePrintWriter("dump.txt", 50);
+        FilePrintWriter printer = new FilePrintWriter("dump.txt", 75);
         printer.print(output);
+        //printer.print(data.toString());
         printer.close();
         
         // modules creation and output //
