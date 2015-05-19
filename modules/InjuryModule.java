@@ -1,4 +1,4 @@
- 
+
 import data.*;
 import utilities.*;
 public class InjuryModule extends ReportModule<BaseballData>
@@ -8,54 +8,10 @@ public class InjuryModule extends ReportModule<BaseballData>
     public String generate()
     {
         end = "";
-        String[] teamAPlayersNames = data.teamPlayersNames(true);
-        String[] teamBPlayersNames = data.teamPlayersNames(false);
-        int[][] teamAPlayersInjuriesGamesMissed = data.teamPlayersInjuriesGamesMissed(true);
-        int[][] teamBPlayersInjuriesGamesMissed = data.teamPlayersInjuriesGamesMissed(false);
-        String[][] teamAPlayersInjuriesTypes = data.teamPlayersInjuriesTypes(true);
-        String[][] teamBPlayersInjuriesTypes = data.teamPlayersInjuriesTypes(false);
-        String[][] teamAPlayersInjuriesLocations = data.teamPlayersInjuriesLocations(true);
-        String[][] teamBPlayersInjuriesLocations = data.teamPlayersInjuriesLocations(false);
-        String name = "";
-        String type = "";
-        String location = "";
-        int timeOut = 0;
-        for(int i = 0; i < teamAPlayersNames.length; i++)
-        {
-            name = "";
-            type = "";
-            location = "";
-            timeOut = 0;
-            if(teamAPlayersInjuriesGamesMissed[i] != null)
-            {
-                for(int j = 0; j < teamAPlayersInjuriesGamesMissed[i].length; j++)
-                {
-                    name = teamAPlayersNames[i];
-                    timeOut = teamAPlayersInjuriesGamesMissed[i][j];
-                    type = teamAPlayersInjuriesTypes[i][j];
-                    location = teamAPlayersInjuriesLocations[i][j];
-                    end += reportInjury(name, type, location, timeOut);
-                }
-            }
-        }
-        for(int i = 0; i < teamBPlayersNames.length; i++)
-        {
-            name = "";
-            type = "";
-            location = "";
-            timeOut = 0;
-            if(teamBPlayersInjuriesGamesMissed[i] != null)
-            {
-                for(int j = 0; j < teamBPlayersInjuriesGamesMissed[i].length; j++)
-                {
-                    name = teamBPlayersNames[i];
-                    timeOut = teamBPlayersInjuriesGamesMissed[i][j];
-                    type = teamBPlayersInjuriesTypes[i][j];
-                    location = teamBPlayersInjuriesLocations[i][j];
-                    end += reportInjury(name, type, location, timeOut);
-                }
-            }
-        }
+        String[][] names;
+        int[][] timeOut;
+        String[][] type;
+        String[][] location;
         return end;
     }
     private static String randomName(String first, String last, boolean capital)
@@ -114,7 +70,7 @@ public class InjuryModule extends ReportModule<BaseballData>
         }
         else
         {
-            end += (" The number of games " + randomName(first , last, false) + " will be out for is " + timeOut + ". ");
+            end += (" The number of games " + randomName(first , last, false) + " will be out for is " + timeOut + ".");
         }
         return end;
     }
