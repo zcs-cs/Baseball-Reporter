@@ -9,15 +9,41 @@ public class StandingsModule extends ReportModule<BaseballData>
      * Incomplete *
      *  * * * * * *
      */
-    int score1, score2, indianswin = 0, indiansloss = 0, indianspct = 0, batsloss = 0, batswin = 0, batspct = 0, clipperspct, henspct, indiansposition, batsposition, hensposition, clippersposition,function;
+    
+    int teamAScore = data.teamScore(true);
+    int teamBScore = data.teamScore(false);
+    
+    int teamAWins = data.teamStandingsWins(true);
+    int teamBWins = data.teamStandingsWins(false);
+    
+    int teamALosses = data.teamStandingsLosses(true);
+    int teamBLosses = data.teamStandingsLosses(false);
+    
+    int teamAPCT = data.teamStandingsPCT(true);
+    int teamBPCT = data.teamStandingsPCT(false);
+    int teamCPCT = data.otherTeamStandingsPCT(true);
+    int teamDPCT = data.otherTeamStandingsPCT(false);
+    
+    int teamAPosition = data.teamStandingsPosition(true);
+    int teamBPosition = data.teamStandingsPosition(false);
+    int teamCPosition = data.otherTeamStandingsPosition(true);
+    int teamDPosition = data.otherTeamStandingsPosition(false);
+    
+    String teamADemonym = data.teamDemonym(true); //Indians
+    String teamBDemonym = data.teamDemonym(false); //Bats
+    String teamCDemonym = data.otherTeamDemonym(true); //Hens
+    String teamDDemonym = data.otherTeamDemonym(false); //Clippers
+    
+    int teamAposition, teamBposition, teamCposition, teamDposition, function;
     Random generator = new Random();
+    
     public String generate()
     {
         int random = generator.nextInt(1);
         if (random == 0)
         {
             if (function == 1)
-                return "The Indians are now in position " + indiansposition + "and the Bats are in position " + batsposition + ".";
+                return "The Indians are now in position " + teamAPosition + "and the Bats are in position " + teamBPosition + ".";
             else if (function == 2)
                 return "";
             else
@@ -36,59 +62,56 @@ public class StandingsModule extends ReportModule<BaseballData>
 
     private void setScores ()
     {
-        score1 = 4; //Indians score
-        score2 = 5; //Bats score
-        if (score1 > score2) //Indians won
+        if (teamAScore > teamBScore) //Indians won
         {
-            indianswin += 1; //indians standings win
-            batsloss += 1;
-            indianspct = (indianswin / (indianswin + indiansloss)) + 100; //pctforindians
-            batspct = (batswin / (batswin + batsloss)) + 100;
+            teamAWins += 1; //indians standings win
+            teamBLosses += 1;
+            teamAPCT = (teamAWins / (teamAWins + teamALosses)) + 100; //pctforindians
+            teamBPCT = (teamBWins / (teamBWins + teamBLosses)) + 100;
         }
-        else if (score1 < score2) //Bats won
+        else if (teamAScore < teamBScore) //Bats won
         {
-            batswin += 1; //indians standings win
-            indiansloss += 1;
-            indianspct = (indianswin / (indianswin + indiansloss)) + 100; //pctforindians
-            batspct = (batswin / (batswin + batsloss)) + 100;
+            teamBWins += 1; //indians standings win
+            teamALosses += 1;
+            teamAPCT = (teamAWins / (teamAWins + teamALosses)) + 100; //pctforindians
+            teamBPCT = (teamBWins / (teamBWins + teamBLosses)) + 100;
         }
         else //tied
         {
-            indianspct = (indianswin / (indianswin + indiansloss)) + 100; //pctforindians
-            batspct = (batswin / (batswin + batsloss)) + 100;
+            teamAPCT = (teamAWins / (teamAWins + teamALosses)) + 100; //pctforindians
+            teamBPCT = (teamBWins / (teamBWins + teamBLosses)) + 100;
         }
     }
 
     private void standings()
     {
-        if (indianspct > batspct)
+        if (teamAPCT > teamBPCT)
         {
-            indiansposition = 3;
-            batsposition = 4;
-            if (indianspct > clipperspct)
+            teamAPosition = 3;
+            teamBPosition = 4;
+            if (teamAPCT > teamDPCT)
             {
-                indiansposition = 2;
-                clippersposition = 3;
-                if (indianspct > henspct)
+                teamAPosition = 2;
+                teamDPosition = 3;
+                if (teamAPCT > teamCPCT)
                 {
-                    indiansposition = 1;
-                    hensposition = 2;
+                    teamAPosition = 1;
+                    teamCPosition = 2;
                 }
             }
             function = 1;
         }
-        else if (indianspct < batspct)
+        else if (teamBPCT > teamAPCT)
         {
-            batsposition = 3;
-            indiansposition = 4;
-            if (batspct > clipperspct)
+            //Indians and Bats do not swith places
+            if (teamBPCT > teamDPCT)
             {
-                batsposition = 2;
-                clippersposition = 3;
-                if (batspct > henspct)
+                teamBPosition = 2;
+                teamDPosition = 3;
+                if (teamBPCT > teamCPCT)
                 {
-                    batsposition = 1;
-                    hensposition = 2;
+                    teamBPosition = 1;
+                    teamCPosition = 2;
                 }
             }
             function = 2;
