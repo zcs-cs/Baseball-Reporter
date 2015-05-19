@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class StandingsModule extends ReportModule<BaseballData>
 {
+     public StandingsModule(BaseballData data) { super(data); }
     /**
      *  * * * * * *
      * Incomplete *
