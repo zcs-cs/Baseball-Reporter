@@ -175,7 +175,7 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
+            1,2,3,4,5
           ],
           "injuries": [
           ]
@@ -228,7 +228,7 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
+            6,7,8
           ],
           "injuries": [
           ]
@@ -251,7 +251,7 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
+            9
           ],
           "injuries": [
           ]
@@ -465,7 +465,7 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
+            1,2,3
           ],
           "injuries": [
           ]
@@ -495,7 +495,7 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
+            4,5,6
           ],
           "injuries": [
           ]
@@ -511,6 +511,21 @@
           "HRs": 0,
           "inningsPitched": [
             0,0
+          ],
+          "injuries": [
+          ]
+        },
+        {
+          "name": "S. LeCure",
+          "bats": 0,
+          "hits": [
+          ],
+          "runsInnings": [
+            0,0
+          ],
+          "HRs": 0,
+          "inningsPitched": [
+            7,8,9
           ],
           "injuries": [
           ]
