@@ -257,11 +257,39 @@ public interface ReportData
      */
     public abstract int[] teamPlayersRuns(boolean teamA);
     
+    /**
+     * @param teamC
+     *        Get information from third team (true) or fourth team (false).
+     *        Use the constants defined above (HENS & CLIPPERS)
+     *
+     * @return The position of the team.
+     */
     public abstract int otherTeamStandingsPosition(boolean teamC);
     
-    public int otherTeamStandingsWins(boolean teamC);
+    /**
+     * @param teamC
+     *        Get information from third team (true) or fourth team (false).
+     *        Use the constants defined above (HENS & CLIPPERS)
+     *
+     * @return The number of wins the team had before the game.
+     */
+    public abstract int otherTeamStandingsWins(boolean teamC);
         
-    public int otherTeamStandingsStreak(boolean teamC);
-        
-    public int otherTeamStandingsLosses(boolean teamC);
+    /**
+     * @param teamC
+     *        Get information from third team (true) or fourth team (false).
+     *        Use the constants defined above (HENS & CLIPPERS)
+     *
+     * @return The team's streak before the game.
+     */
+    public abstract int otherTeamStandingsStreak(boolean teamC);
+    
+    /**
+     * @param teamC
+     *        Get information from third team (true) or fourth team (false).
+     *        Use the constants defined above (HENS & CLIPPERS)
+     *
+     * @return The number of losses the team had before the game.
+     */
+    public abstract int otherTeamStandingsLosses(boolean teamC);
 }
