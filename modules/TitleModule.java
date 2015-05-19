@@ -33,6 +33,6 @@ public class TitleModule extends ReportModule<BaseballData>
             Boolean firstTeam = Random.binary();
             return data.teamDemonym(firstTeam)+" Tie "+data.teamDemonym(!firstTeam);
         }
-        return winnerTeamDemonym+" Defeat "+loserTeamDemonym+" "+scores+"\n"+data.date();
+        return winnerTeamDemonym+" Defeat "+loserTeamDemonym+" "+scores+"\n"+data.date() + "\n";
     }
 }
