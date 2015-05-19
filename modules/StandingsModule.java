@@ -34,7 +34,7 @@ public class StandingsModule extends ReportModule<BaseballData>
     String teamCDemonym = data.otherTeamDemonym(true); //Hens
     String teamDDemonym = data.otherTeamDemonym(false); //Clippers
     
-    int teamAposition, teamBposition, teamCposition, teamDposition, function;
+    int function;
     Random generator = new Random();
     
     public String generate()
