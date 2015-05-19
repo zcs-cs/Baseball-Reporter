@@ -254,4 +254,12 @@ public interface ReportData
      * @return Number of runs for each player on a team.
      */
     public abstract int[] teamPlayersRuns(boolean teamA);
+    
+    public abstract int otherTeamStandingsPosition(boolean teamC);
+    
+    public int otherTeamStandingsWins(boolean teamC);
+        
+    public int otherTeamStandingsStreak(boolean teamC);
+        
+    public int otherTeamStandingsLosses(boolean teamC);
 }

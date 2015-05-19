@@ -499,7 +499,30 @@ public class BaseballData implements ReportData
     // ('teamC' equals true or false designating Team C or Team D respectively)
     public int otherTeamStandingsPCT(boolean teamC)
     {
-        return data.getJSONObject("teams").getJSONObject(teamForC(teamC)).getInt("PCT");
+        return data.getJSONObject("teams").getJSONObject(teamForC(teamC)).getJSONObject("standings").getInt("PCT");
+    }
+    
+    //Blah blah
+    public int otherTeamStandingsPosition(boolean teamC)
+    {
+        return data.getJSONObject("teams").getJSONObject(teamForC(teamC)).getJSONObject("standings").getInt("position");
+    }
+    
+    
+    //Blah blah
+    public int otherTeamStandingsWins(boolean teamC)
+    {
+        return data.getJSONObject("teams").getJSONObject(teamForC(teamC)).getJSONObject("standings").getInt("wins");
+    }
+    
+    public int otherTeamStandingsStreak(boolean teamC)
+    {
+        return data.getJSONObject("teams").getJSONObject(teamForC(teamC)).getJSONObject("standings").getInt("streak");
+    }
+    
+    public int otherTeamStandingsLosses(boolean teamC)
+    {
+        return data.getJSONObject("teams").getJSONObject(teamForC(teamC)).getJSONObject("standings").getInt("losses");
     }
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  /
     /////////////////////////////////////////////////////////////////////////////////////////////////////

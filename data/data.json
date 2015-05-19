@@ -535,12 +535,24 @@
       ]
     },
     "teamC": {
-      "name": "Hens",
-      "PCT": 67,
+      "demonym": "Hens",
+      "standings": {
+        "position": 2,
+        "wins": 22,
+        "streak": 1,
+        "losses": 16,
+        "PCT": 67
+      }
     },
     "teamD": {
-      "name": "Clippers",
-      "standingsPCT": 50,
+      "demonym": "Clippers",
+      "standings": {
+        "position": 2,
+        "wins": 22,
+        "streak": 1,
+        "losses": 16,
+        "PCT": 50
+      }
     }
   }
 }
