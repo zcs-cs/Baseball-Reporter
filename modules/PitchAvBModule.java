@@ -58,22 +58,15 @@ public class PitchAvBModule extends ReportModule<BaseballData>
                 break;
             case 2:
                 output = Team2+ "'s best pitcher, " +Name2+ ", went up against "+Name1+"of the " +Team1+ "s.";
+            case 3:
+                output = "Pitchers " +Name1+ " and " +Name2+ " faced off in the game between " +Team1+ " and " +Team2+ ".";
+            case 4:
+                output = "Pitchers " +Name2+ " and " +Name1+ " faced off in the game between " +Team2+ " and " +Team1+ ".";
         }
         
         //being revised and transferred to above ^
-        if(shazbot == 0)
-        {output = "In this game, " +Name1+ " pitched for the " +Team1+ ", with " +Name2+ "pitching for the " +Team2+ ".";}
-        else if(shazbot == 1)
-        {output = Team1+ "'s best pitcher, " +Name1+ ", went up against "+Name2+"of the " +Team2+ "s.";}
-        else if(shazbot == 2)
-        {output = Name1 + ", the pitcher for " + Team1 ;}
-        else if(shazbot == 3)
-        {output = Name2 + ", the pitcher for " + Team2 ;}
-        else if(shazbot == 4 && (Math.abs(Strikeouts1-Strikeouts2) <= 3))
-        {output = "The team's best pitchers both had even games. " +Team1+ "'s " +Name1+ " brought " +Strikeouts1+" strikeouts, while "
-                            +Name2+ " of the " +Team2+ " had " +Strikeouts2+ " strikeouts.";}
-        else 
-        {final int demons = 666;}
+        //{output = "The team's best pitchers both had even games. " +Team1+ "'s " +Name1+ " brought " +Strikeouts1+" strikeouts, while "
+        //                    +Name2+ " of the " +Team2+ " had " +Strikeouts2+ " strikeouts.";}
         
         
         return output;
