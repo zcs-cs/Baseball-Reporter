@@ -35,6 +35,7 @@ public class StandingsModule extends ReportModule<BaseballData>
     String teamCDemonym = data.otherTeamDemonym(true); //Hens
     String teamDDemonym = data.otherTeamDemonym(false); //Clippers
     
+    String name;
     int function;
     Random generator = new Random();
     
@@ -44,18 +45,34 @@ public class StandingsModule extends ReportModule<BaseballData>
         if (random == 0)
         {
             if (function == 1)
-                return "The Indians are now in position " + teamAPosition + "and the Bats are in position " + teamBPosition + ".";
+                return "Since the " + name + " won, " + teamCDemonym + "are in position " + teamCPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", " + teamADemonym + " are in position " + teamAPosition + ", and " + teamBDemonym + " are in position " + teamBPosition + ".";
             else if (function == 2)
-                return "";
+                return "Since the " + name + " won, " + teamCDemonym + "are in position " + teamCPosition + ", " + teamADemonym + " are in position " + teamAPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", and " + teamBDemonym + " are in position " + teamBPosition + ".";
+            else if (function == 3)
+                return "Since the " + name + " won, " + teamADemonym + "are in position " + teamAPosition + ", " + teamCDemonym + " are in position " + teamCPosition + ", " + teamADemonym + " are in position " + teamAPosition + ", and " + teamBDemonym + " are in position " + teamBPosition + ".";
+            else if (function == 4)
+                return "Since the " + name + " won, " + teamCDemonym + "are in position " + teamCPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", " + teamBDemonym + " are in position " + teamBPosition + ", and " + teamADemonym + " are in position " + teamAPosition + ".";
+            else if (function == 5)
+                return "Since the " + name + " won, " + teamCDemonym + "are in position " + teamCPosition + ", " + teamBDemonym + " are in position " + teamBPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", and " + teamADemonym + " are in position " + teamAPosition + ".";
+            else if (function == 6)
+                return "Since the " + name + " won, " + teamBDemonym + "are in position " + teamBPosition + ", " + teamCDemonym + " are in position " + teamCPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", and " + teamADemonym + " are in position " + teamAPosition + ".";
             else
                 return "The standings can't be found at this time.";
         }
         else
         {
             if (function == 1)
-                return "";
+                return teamCDemonym + "are in position " + teamCPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", " + teamADemonym + " are in position " + teamAPosition + ", and " + teamBDemonym + " are in position " + teamBPosition + ", since the " + name + " won.";
             else if (function == 2)
-                return "";
+                return teamCDemonym + "are in position " + teamCPosition + ", " + teamADemonym + " are in position " + teamAPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", and " + teamBDemonym + " are in position " + teamBPosition + ", since the " + name + " won.";
+            else if (function == 3)
+                return teamADemonym + "are in position " + teamAPosition + ", " + teamCDemonym + " are in position " + teamCPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", and " + teamBDemonym + " are in position " + teamBPosition + ", since the " + name + " won.";
+            else if (function == 4)
+                return teamCDemonym + "are in position " + teamCPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", " + teamBDemonym + " are in position " + teamBPosition + ", and " + teamADemonym + " are in position " + teamAPosition + ", since the " + name + " won.";
+            else if (function == 5)
+                return teamCDemonym + "are in position " + teamCPosition + ", " + teamBDemonym + " are in position " + teamBPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", and " + teamADemonym + " are in position " + teamAPosition + ", since the " + name + " won.";
+            else if (function == 6)
+                return teamBDemonym + "are in position " + teamBPosition + ", " + teamCDemonym + " are in position " + teamDPosition + ", " + teamCDemonym + " are in position " + teamDPosition + ", and " + teamADemonym + " are in position " + teamAPosition + ", since the " + name + " won.";
             else
                 return "The standings are not available right now.";
         }
@@ -65,6 +82,7 @@ public class StandingsModule extends ReportModule<BaseballData>
     {
         if (teamAScore > teamBScore) //Indians won
         {
+            name = teamADemonym;
             teamAWins += 1; //indians standings win
             teamBLosses += 1;
             teamAPCT = (teamAWins / (teamAWins + teamALosses)) + 100; //pctforindians
@@ -72,6 +90,7 @@ public class StandingsModule extends ReportModule<BaseballData>
         }
         else if (teamAScore < teamBScore) //Bats won
         {
+            name = teamBDemonym;
             teamBWins += 1; //indians standings win
             teamALosses += 1;
             teamAPCT = (teamAWins / (teamAWins + teamALosses)) + 100; //pctforindians
@@ -90,32 +109,36 @@ public class StandingsModule extends ReportModule<BaseballData>
         {
             teamAPosition = 3;
             teamBPosition = 4;
+            function = 1;
             if (teamAPCT > teamDPCT)
             {
                 teamAPosition = 2;
                 teamDPosition = 3;
+                function = 2;
                 if (teamAPCT > teamCPCT)
                 {
                     teamAPosition = 1;
                     teamCPosition = 2;
+                    function = 3;
                 }
             }
-            function = 1;
         }
         else if (teamBPCT > teamAPCT)
         {
             //Indians and Bats do not swith places
+            function = 4;
             if (teamBPCT > teamDPCT)
             {
                 teamBPosition = 2;
                 teamDPosition = 3;
+                function = 5;
                 if (teamBPCT > teamCPCT)
                 {
                     teamBPosition = 1;
                     teamCPosition = 2;
+                    function = 6;
                 }
             }
-            function = 2;
         }
     }
 }
