@@ -20,7 +20,7 @@
         "PCT": 37
       },
       "inningScores": [
-        0,0,0,0,0,0,0,0,0
+        0,0,2,0,0,0,0,0,0
       ],
       "score": 2,
       "result": false,
@@ -35,7 +35,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -50,7 +49,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -65,11 +63,10 @@
             }
           ],
           "runsInnings": [
-            0,0
+            3
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -84,7 +81,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -99,7 +95,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -114,7 +109,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -137,7 +131,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -160,7 +153,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -171,7 +163,7 @@
           "hits": [
           ],
           "runsInnings": [
-            0,0
+            3
           ],
           "HRs": 0,
           "inningsPitched": [
@@ -198,7 +190,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -213,7 +204,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -270,7 +260,7 @@
         "PCT": 43
       },
       "inningScores": [
-        0,0
+        0,4,0,0,1,0,0,0,1
       ],
       "score": 6,
       "result": true,
@@ -293,11 +283,10 @@
             }
           ],
           "runsInnings": [
-            0,0
+            9
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -320,11 +309,10 @@
             }
           ],
           "runsInnings": [
-            0,0
+            5
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -343,7 +331,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -370,11 +357,10 @@
             }
           ],
           "runsInnings": [
-            0,0
+            2
           ],
           "HRs": 1,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -393,11 +379,10 @@
             }
           ],
           "runsInnings": [
-            0,0
+            2
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -412,7 +397,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -423,11 +407,10 @@
           "hits": [
           ],
           "runsInnings": [
-            0,0
+            2
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -446,11 +429,10 @@
             }
           ],
           "runsInnings": [
-            0,0
+            2
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -480,7 +462,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -510,7 +491,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
@@ -548,7 +528,6 @@
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,0
           ],
           "injuries": [
           ]
