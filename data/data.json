@@ -14,9 +14,9 @@
       "homecity": "Indianapolis, Indiana",
       "standings": {
         "position": 2,
-        "wins": 22,
+        "wins": 3,
         "streak": 1,
-        "losses": 16,
+        "losses": 5,
         "PCT": 37
       },
       "inningScores": [
@@ -254,9 +254,9 @@
       "homecity": "Louisville, Kentucky",
       "standings": {
         "position": 3,
-        "wins": 17,
+        "wins": 3,
         "streak": 4,
-        "losses": 20,
+        "losses": 4,
         "PCT": 43
       },
       "inningScores": [
@@ -538,9 +538,9 @@
       "demonym": "Hens",
       "standings": {
         "position": 2,
-        "wins": 22,
+        "wins": 4,
         "streak": 1,
-        "losses": 16,
+        "losses": 2,
         "PCT": 67
       }
     },
@@ -548,9 +548,9 @@
       "demonym": "Clippers",
       "standings": {
         "position": 2,
-        "wins": 22,
+        "wins": 3,
         "streak": 1,
-        "losses": 16,
+        "losses": 3,
         "PCT": 50
       }
     }
