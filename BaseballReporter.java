@@ -27,15 +27,15 @@ public class BaseballReporter
         
         // modules creation and output //
         ArrayList<ReportModule<BaseballData>> modules = new ArrayList<ReportModule<BaseballData>>();
+        // examples (currently disabled):
+        // modules.add(new ExamplesModule());
         modules.add(new TitleModule());
-        /* temporarily enabled for examples: */
-        modules.add(new ExamplesModule());
-        /* temporarily disabled for examples..
+        modules.add(new WeatherModule());
         modules.add(new BestPlayerModule());
+        modules.add(new BigInningModule());
         modules.add(new ExtraInningsModule());
         modules.add(new InjuryModule());
         modules.add(new PitchAvBModule());
-        */
         
         String output = "";
         for (ReportModule<BaseballData> module : modules)

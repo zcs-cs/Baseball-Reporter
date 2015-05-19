@@ -3,6 +3,8 @@ import data.*;
 import utilities.*;
 public class InjuryModule extends ReportModule<BaseballData>
 {
+    public InjuryModule(BaseballData data) { super(data); }
+    
     public String generate()
     {
         end = "";

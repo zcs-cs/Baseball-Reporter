@@ -7,6 +7,8 @@ public interface ReportData
 {
     public static final boolean INDIANS = true;
     public static final boolean BATS = false;
+    public static final boolean HENS = true;
+    public static final boolean CLIPPERS = false;
 
     /**
      * @return The location of the game (field).
@@ -170,6 +172,15 @@ public interface ReportData
      *        Get information from first team (true) or second team (false).
      *        Use the constants defined above (INDIANS & BATS).
      *
+     * @return An array of HRs for each player, for each inning.
+     */
+    public abstract int[] teamPlayersHRs(boolean teamA);
+    
+    /**
+     * @param teamA
+     *        Get information from first team (true) or second team (false).
+     *        Use the constants defined above (INDIANS & BATS).
+     *
      * @return A 2D array of pitches for each player, for each inning.
      */
     public abstract int[][] teamPlayersInningsPitched(boolean teamA);
@@ -245,4 +256,12 @@ public interface ReportData
      * @return Number of runs for each player on a team.
      */
     public abstract int[] teamPlayersRuns(boolean teamA);
+    
+    public abstract int otherTeamStandingsPosition(boolean teamC);
+    
+    public int otherTeamStandingsWins(boolean teamC);
+        
+    public int otherTeamStandingsStreak(boolean teamC);
+        
+    public int otherTeamStandingsLosses(boolean teamC);
 }

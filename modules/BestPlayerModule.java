@@ -4,67 +4,81 @@ import data.*;
 import utilities.*;
 public class BestPlayerModule extends ReportModule<BaseballData>
 {
-    ArrayList<Player> TeamA = new ArrayList<>();
-    ArrayList<Player> TeamB = new ArrayList<>();
+    public BestPlayerModule(BaseballData data) { super(data); }
+    
+    ArrayList<Player> TeamA;
+    ArrayList<Player> TeamB;
     
     
       public String generate()
      {
          Player bestplayerA = new Player();
          Player bestplayerB = new Player();
-         tempfill(TeamA);
-         tempfill(TeamB);
-         //TeamA.fill();
-         //TeamB.fill() ;        
+         TeamA = fill(true);
+         TeamB = fill(false) ;        
          bestplayerA = BestPlayer(TeamA);
          bestplayerB = BestPlayer(TeamB);
          return bestplayerA.toString() + " meanwhile, " + bestplayerB.toString();
      }
-     
-     public void fill(boolean teamname)
-     {
-       String A = data.teamName(true);
-       String B = data.teamName(false);
-       String[] Anames = data.teamPlayersNames(true);
-       String[] Bnames = data.teamPlayersNames(false);
-       int[] ABats = data.teamPlayersBats(true);
-       int[] BBats = data.teamPlayersBats(false);
-       int[] ARBI = data.teamPlayersRBIs(true);
-       int[] BRBI = data.teamPlayersRBIs(false);
-       int[] AHits = data.teamPlayersHits(true);
-       int[] BHits = data.teamPlayersHits(false);
-       
-        }
+//      
+//      public void fill(boolean teamname)
+//      {
+//        String A = data.teamName(true);
+//        String B = data.teamName(false);
+//        String[] Anames = data.teamPlayersNames(true);
+//        String[] Bnames = data.teamPlayersNames(false);
+//        int[] ABats = data.teamPlayersBats(true);
+//        int[] BBats = data.teamPlayersBats(false);
+//        int[] ARBI = data.teamPlayersRBIs(true);
+//        int[] BRBI = data.teamPlayersRBIs(false);
+//        int[] AHits = data.teamPlayersHits(true);
+//        int[] BHits = data.teamPlayersHits(false);
+//        
+//         }
         
-     public ArrayList<Player> fill2(boolean teamname)
+     public ArrayList<Player> fill(boolean teamname)
      {
-         int totalplayers = (data.teamPlayerNames(teamname)).length;
+         int totalplayers = (data.teamPlayersNames(teamname)).length;
          ArrayList<Player> newlist = new ArrayList<Player>();
          for (int i = 0; i < totalplayers; i++)
          {
-             newlist.add(new Player(data.teamPlayerNames(teamname)[i], data.teamPlayerHits(teamname)[i], data.teamPlayerBats(teamname)[i], data.teamPlayerNames(teamname)[i], data.teamPlayerRBIs(teamname)[i], teamname)
+             newlist.add(new Player(data.teamPlayersNames(teamname)[i],
+                                    data.teamPlayersHits(teamname)[i], 
+                                    data.teamPlayersBats(teamname)[i], 
+                                    data.teamPlayersHRs(teamname)[i], 
+                                    data.teamPlayersRBIs(teamname)[i], 
+                                    teamname));
+                                }
          return newlist;
         }
-     }
-     public void tempfill(ArrayList<Player> team)
-     {
-         for (int i = 0; i < 8; i++)
-         {
-             team.add(new Player());
-            }
-         team.add(new Player("BestPlayer", 10, 10, 10, 40, "Cubs"));
-        }
-     
-     
-     
+// 
+//         
+//      public void tempfill(ArrayList<Player> team)
+//      {
+//          for (int i = 0; i < 8; i++)
+//          {
+//              team.add(new Player());
+//             }
+//          team.add(new Player("BestPlayer", 10, 10, 10, 40, "Cubs"));
+//         }
+//      public void tempfill(ArrayList<Player> team)
+//      {
+//          for (int i = 0; i < 8; i++)
+//          {
+//              team.add(new Player());
+//             }
+//          team.add(new Player("BestPlayer", 10, 10, 10, 40, "Cubs"));
+//         }
+//       
      
      
      
   class Player
    {
-    String name = "", team = "";
+    String name;
+    boolean team;
     int hits, atbats, hr, rbi;
-    double rating = 0.0;
+    double rating;
     //Not used - ArrayList<String> typeofhits = new ArrayList();    
 
     public Player()
@@ -75,7 +89,7 @@ public class BestPlayerModule extends ReportModule<BaseballData>
         hr = 0;
         rbi = 0; 
         rating = 0.0;
-        team = "Marlins";
+        team = true;
     }
 
     public Player(String playerName, int numHits, int numAtBats, int numHr, int numRbi, boolean teamnam)
@@ -133,7 +147,7 @@ public class BestPlayerModule extends ReportModule<BaseballData>
    
    public String getTeamName()
    {
-       return team;
+       return data.teamName(team);
     }
     
    public String toString()
