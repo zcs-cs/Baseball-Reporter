@@ -532,6 +532,9 @@ public class BaseballData implements ReportData
      */
     private String intArray_toString(int[] arr)
     {
+        if(arr.length == 0) {
+            return "null";
+        }
         String output = "[";
         int i;
         for(i = 0; i < arr.length-1; i++) {
@@ -543,16 +546,23 @@ public class BaseballData implements ReportData
     }
     private String intArrayArray_toString(int[][] arr)
     {
-        String output = "[";
-        for( int[] tmp : arr) {
-            output += intArray_toString(tmp);
+        if(arr.length == 0) {
+            return "null";
         }
-        output += "]";
+        String output = "[";
+        int i;
+        for( i = 0; i < arr.length-1; i++ ) {
+            output += intArray_toString(arr[i]) + ", ";
+        }
+        output += intArray_toString(arr[i]) + "]";
         
         return output;
     }
     private String StringArray_toString(String[] arr)
     {
+        if(arr.length == 0) {
+            return "null";
+        }
         String output = "[";
         int i;
         for(i = 0; i < arr.length-1; i++) {
@@ -564,12 +574,15 @@ public class BaseballData implements ReportData
     }
     private String StringArrarArray_toString(String[][] arr)
     {
+        if(arr.length == 0) {
+            return "null";
+        }
         String output = "[";
         int i;
-        for(String[] tmp : arr) {
-            output += StringArray_toString(tmp);
+        for(i = 0; i < arr.length-1; i++) {
+            output += StringArray_toString(arr[i]) + ", ";
         }
-        output += "]";
+        output += StringArray_toString(arr[i]) + "]";
         
         return output;
     }
@@ -584,42 +597,42 @@ public class BaseballData implements ReportData
         /**
         * @return The location of the game (field).
         */
-        output += "String location()\t:" + this.location() + "\n";
+        output += "String location()\t\t\t\t:" + this.location() + "\n\n";
         
         /**
         * @return The city where the game was played.
         */
-        output += "String city()\t:" + this.city() + "\n";
+        output += "String city()\t\t\t\t\t:" + this.city() + "\n\n";
         
         /**
         * @return The temperature on gameday.
         */
-        output += "double temperature()\t:" + this.temperature() + "\n";
+        output += "double temperature()\t\t\t\t:" + this.temperature() + "\n\n";
         
         /**
         * @return The precipitation on gameday.
         */
-        output += "double rainfall()\t:" + this.rainfall() + "\n";
+        output += "double rainfall()\t\t\t\t:" + this.rainfall() + "\n\n";
 
         /**
         * @return The date of the game.
         */
-        output += "String date()\t:" + this.date() + "\n";
+        output += "String date()\t\t\t\t\t:" + this.date() + "\n\n";
         
         /**
         * @return The start time of the game.
         */
-        output += "int startTime()\t:" + this.startTime() + "\n";
+        output += "int startTime()\t\t\t\t\t:" + this.startTime() + "\n\n";
         
         /**
         * @return Minutes the game lasted.
         */
-        output += "int minutes()\t:" + this.minutes() + "\n";
+        output += "int minutes()\t\t\t\t\t:" + this.minutes() + "\n\n";
         
         /**
         * @return The number of innings the game has.
         */
-        output += "int innings()\t:" + this.innings() + "\n";
+        output += "int innings()\t\t\t\t\t:" + this.innings() + "\n\n";
         
         /**
         * @param teamA
@@ -628,8 +641,8 @@ public class BaseballData implements ReportData
         *
         * @return The official team name.
         */
-        output += "String teamName(INDIANS)\t:" + this.teamName(INDIANS) + "\n";
-        output += "String teamName(BATS)\t:" + this.teamName(BATS) + "\n";
+        output += "String teamName(INDIANS)\t\t\t:" + this.teamName(INDIANS) + "\n\n";
+        output += "String teamName(BATS)\t\t\t\t:" + this.teamName(BATS) + "\n\n";
         
         /**
         * @param teamA
@@ -638,8 +651,8 @@ public class BaseballData implements ReportData
         *
         * @return The nickname of the team.
         */
-        output += "String teamDemonym(INDIANS)\t:" + this.teamDemonym(INDIANS) + "\n";
-        output += "String teamDemonym(BATS)\t:" + this.teamDemonym(BATS) + "\n";
+        output += "String teamDemonym(INDIANS)\t\t\t:" + this.teamDemonym(INDIANS) + "\n\n";
+        output += "String teamDemonym(BATS)\t\t\t:" + this.teamDemonym(BATS) + "\n\n";
         
         /**
         * @param teamA
@@ -648,8 +661,8 @@ public class BaseballData implements ReportData
         *
         * @return The home city of the team.
         */
-        output += "String teamHomecity(INDIANS)\t:" + this.teamHomecity(INDIANS) + "\n";
-        output += "String teamHomecity(BATS)\t:" + this. teamHomecity(BATS) + "\n";
+        output += "String teamHomecity(INDIANS)\t\t\t:" + this.teamHomecity(INDIANS) + "\n\n";
+        output += "String teamHomecity(BATS)\t\t\t:" + this. teamHomecity(BATS) + "\n\n";
         
         /**
         * @param teamA
@@ -658,8 +671,8 @@ public class BaseballData implements ReportData
         *
         * @return An array of scores a team made throughout the game, per inning.
         */
-        output += "int[] teamInningScores(INDIANS)\t:" + intArray_toString( this.teamInningScores(INDIANS) ) + "\n";
-        output += "int[] teamInningScores(BATS)\t:" + intArray_toString( this.teamInningScores(BATS) ) + "\n";
+        output += "int[] teamInningScores(INDIANS)\t\t\t:" + intArray_toString( this.teamInningScores(INDIANS) ) + "\n\n";
+        output += "int[] teamInningScores(BATS)\t\t\t:" + intArray_toString( this.teamInningScores(BATS) ) + "\n\n";
         
         /**
         * @param teamA
@@ -668,8 +681,8 @@ public class BaseballData implements ReportData
         *
         * @return Final score for the team.
         */
-        output += "int teamScore(INDIANS)\t:" + this.teamScore(INDIANS) + "\n";
-        output += "int teamScore(BATS)\t:" + this.teamScore(BATS) + "\n";
+        output += "int teamScore(INDIANS)\t\t\t\t:" + this.teamScore(INDIANS) + "\n\n";
+        output += "int teamScore(BATS)\t\t\t\t:" + this.teamScore(BATS) + "\n\n";
         
         /**
         * @param teamA
@@ -678,8 +691,8 @@ public class BaseballData implements ReportData
         *
         * @return Win or loss of the game (true/false)
         */
-        output += "boolean teamResult(INDIANS)\t:" + this.teamResult(INDIANS) + "\n";
-        output += "boolean teamResult(INDIANS)\t:" + this.teamResult(INDIANS) + "\n";
+        output += "boolean teamResult(INDIANS)\t\t\t:" + this.teamResult(INDIANS) + "\n\n";
+        output += "boolean teamResult(BATS)\t\t\t:" + this.teamResult(BATS) + "\n\n";
         
         /**
         * @param teamA
@@ -688,8 +701,8 @@ public class BaseballData implements ReportData
         *
         * @return The position within the league of the team.
         */
-        output += "int teamStandingsPosition(INDIANS)\t:" + this.teamStandingsPosition(INDIANS) + "\n";
-        output += "int teamStandingsPosition(BATS)\t:" + this.teamStandingsPosition(BATS) + "\n";
+        output += "int teamStandingsPosition(INDIANS)\t\t:" + this.teamStandingsPosition(INDIANS) + "\n\n";
+        output += "int teamStandingsPosition(BATS)\t\t\t:" + this.teamStandingsPosition(BATS) + "\n\n";
         
         /**
         * @param teamA
@@ -698,8 +711,8 @@ public class BaseballData implements ReportData
         *
         * @return The number of wins the team has for the season.
         */
-        output += "int teamStandingsWins(INDIANS)\t:" + this.teamStandingsWins(INDIANS) + "\n";
-        output += "int teamStandingsWins(BATS)\t:" + this.teamStandingsWins(BATS) + "\n";
+        output += "int teamStandingsWins(INDIANS)\t\t\t:" + this.teamStandingsWins(INDIANS) + "\n\n";
+        output += "int teamStandingsWins(BATS)\t\t\t:" + this.teamStandingsWins(BATS) + "\n\n";
         
         /**
         * @param teamA
@@ -708,8 +721,8 @@ public class BaseballData implements ReportData
         *
         * @return The longest winning streak for the team.
         */
-        output += "int teamStandingsStreak(INDIANS)\t:" + this.teamStandingsStreak(INDIANS) + "\n";
-        output += "int teamStandingsStreak(BATS)\t:" + this.teamStandingsStreak(BATS) + "\n";
+        output += "int teamStandingsStreak(INDIANS)\t\t:" + this.teamStandingsStreak(INDIANS) + "\n\n";
+        output += "int teamStandingsStreak(BATS)\t\t\t:" + this.teamStandingsStreak(BATS) + "\n\n";
         
         /**
         * @param teamA
@@ -718,8 +731,8 @@ public class BaseballData implements ReportData
         *
         * @return The number of losses the team has for the season.
         */
-        output += "int teamStandingsLosses(INDIANS)\t:" + this.teamStandingsLosses(INDIANS) + "\n";
-        output += "int teamStandingsLosses(BATS)\t:" + this.teamStandingsLosses(BATS) + "\n";
+        output += "int teamStandingsLosses(INDIANS)\t\t:" + this.teamStandingsLosses(INDIANS) + "\n\n";
+        output += "int teamStandingsLosses(BATS)\t\t\t:" + this.teamStandingsLosses(BATS) + "\n\n";
         
         /**
         * @param teamA
@@ -728,8 +741,8 @@ public class BaseballData implements ReportData
         *
         * @return An array containing all player names on a given team.
         */
-        output += "int teamStandingsLosses(INDIANS)\t:" + this.teamStandingsLosses(INDIANS) + "\n";
-        output += "int teamStandingsLosses(BATS)\t:" + this.teamStandingsLosses(BATS) + "\n";
+        output += "String[] teamPlayersNames(INDIANS)\t\t:" + StringArray_toString( this.teamPlayersNames(INDIANS) ) + "\n\n";
+        output += "String[] teamPlayersNames(BATS)\t\t\t:" + StringArray_toString( this.teamPlayersNames(BATS) ) + "\n\n";
         
         /**
         * @param teamA
@@ -738,8 +751,8 @@ public class BaseballData implements ReportData
         *
         * @return An array of bats for each corresponding player.
         */
-        output += "int[] teamPlayersBats(INDIANS)\t:" + intArray_toString( this.teamPlayersBats(INDIANS) ) + "\n";
-        output += "int[] teamPlayersBats(BATS)\t:" + intArray_toString( this.teamPlayersBats(BATS) ) + "\n";
+        output += "int[] teamPlayersBats(INDIANS)\t\t\t:" + intArray_toString( this.teamPlayersBats(INDIANS) ) + "\n\n";
+        output += "int[] teamPlayersBats(BATS)\t\t\t:" + intArray_toString( this.teamPlayersBats(BATS) ) + "\n\n";
         
         /**
         * @param teamA
@@ -748,8 +761,8 @@ public class BaseballData implements ReportData
         *
         * @return A 2D array of runs for each player, for each inning.
         */
-        output += "int[][] teamPlayersRunsInnings(INDIANS)\t:" + intArrayArray_toString( this.teamPlayersRunsInnings(INDIANS) ) + "\n";
-        output += "int[][] teamPlayersRunsInnings(BATS)\t:" + intArrayArray_toString( this.teamPlayersRunsInnings(BATS) ) + "\n";
+        output += "int[][] teamPlayersRunsInnings(INDIANS)\t\t:" + intArrayArray_toString( this.teamPlayersRunsInnings(INDIANS) ) + "\n\n";
+        output += "int[][] teamPlayersRunsInnings(BATS)\t\t:" + intArrayArray_toString( this.teamPlayersRunsInnings(BATS) ) + "\n\n";
         
         /**
         * @param teamA
@@ -758,8 +771,8 @@ public class BaseballData implements ReportData
         *
         * @return An array of HRs for each player, for each inning.
         */
-        output += "int[] teamPlayersHRs(INDIANS)\t:" + intArray_toString( this.teamPlayersHRs(INDIANS) ) + "\n";
-        output += "int[] teamPlayersHRs(BATS)\t:" + intArray_toString( this.teamPlayersHRs(BATS) ) + "\n";
+        output += "int[] teamPlayersHRs(INDIANS)\t\t\t:" + intArray_toString( this.teamPlayersHRs(INDIANS) ) + "\n\n";
+        output += "int[] teamPlayersHRs(BATS)\t\t\t:" + intArray_toString( this.teamPlayersHRs(BATS) ) + "\n\n";
         
         /**
         * @param teamA
@@ -768,8 +781,8 @@ public class BaseballData implements ReportData
         *
         * @return A 2D array of pitches for each player, for each inning.
         */
-        output += "int[][] teamPlayersInningsPitched(INDIANS)\t:" + intArrayArray_toString( this.teamPlayersInningsPitched(INDIANS) ) + "\n";
-        output += "int[][] teamPlayersInningsPitched(BATS)\t:" + intArrayArray_toString( this.teamPlayersInningsPitched(BATS) ) + "\n";
+        output += "int[][] teamPlayersInningsPitched(INDIANS)\t:" + intArrayArray_toString( this.teamPlayersInningsPitched(INDIANS) ) + "\n\n";
+        output += "int[][] teamPlayersInningsPitched(BATS)\t\t:" + intArrayArray_toString( this.teamPlayersInningsPitched(BATS) ) + "\n\n";
         
         /**
         * @param teamA
@@ -778,8 +791,8 @@ public class BaseballData implements ReportData
         *
         * @return A 2D array of hits for each player.
         */
-        output += "String[][] teamPlayersHitsDescriptions(INDIANS)\t:" + StringArrarArray_toString( this.teamPlayersHitsDescriptions(INDIANS) ) + "\n";
-        output += "String[][] teamPlayersHitsDescriptions(BATS)\t:" + StringArrarArray_toString( this.teamPlayersHitsDescriptions(BATS) ) + "\n";
+        output += "String[][] teamPlayersHitsDescriptions(INDIANS)\t:" + StringArrarArray_toString( this.teamPlayersHitsDescriptions(INDIANS) ) + "\n\n";
+        output += "String[][] teamPlayersHitsDescriptions(BATS)\t:" + StringArrarArray_toString( this.teamPlayersHitsDescriptions(BATS) ) + "\n\n";
         
         /**
         * @param teamA
@@ -788,8 +801,8 @@ public class BaseballData implements ReportData
         *
         * @return RBIs for each player on a team.
         */
-        output += "int[][] teamPlayersHitsRBIs(INDIANS)\t:" + intArrayArray_toString( this.teamPlayersHitsRBIs(INDIANS) ) + "\n";
-        output += "int[][] teamPlayersHitsRBIs(BATS)\t:" + intArrayArray_toString( this.teamPlayersHitsRBIs(BATS) ) + "\n";
+        output += "int[][] teamPlayersHitsRBIs(INDIANS)\t\t:" + intArrayArray_toString( this.teamPlayersHitsRBIs(INDIANS) ) + "\n\n";
+        output += "int[][] teamPlayersHitsRBIs(BATS)\t\t:" + intArrayArray_toString( this.teamPlayersHitsRBIs(BATS) ) + "\n\n";
         
         /**
         * @param teamA
@@ -798,8 +811,8 @@ public class BaseballData implements ReportData
         *
         * @return Injuries for all players.
         */
-        output += "int[][] teamPlayersInjuriesGamesMissed(INDIANS)\t:" + intArrayArray_toString( this.teamPlayersInjuriesGamesMissed(INDIANS) ) + "\n";
-        output += "int[][] teamPlayersInjuriesGamesMissed(BATS)\t:" + intArrayArray_toString( this.teamPlayersInjuriesGamesMissed(BATS) ) + "\n";
+        output += "int[][] teamPlayersInjuriesGamesMissed(INDIANS)\t:" + intArrayArray_toString( this.teamPlayersInjuriesGamesMissed(INDIANS) ) + "\n\n";
+        output += "int[][] teamPlayersInjuriesGamesMissed(BATS)\t:" + intArrayArray_toString( this.teamPlayersInjuriesGamesMissed(BATS) ) + "\n\n";
         
         /**
         * @param teamA
@@ -808,8 +821,8 @@ public class BaseballData implements ReportData
         *
         * @return Injury types for all players.
         */
-        output += "String[][] teamPlayersInjuriesTypes(INDIANS)\t:" + StringArrarArray_toString( this.teamPlayersInjuriesTypes(INDIANS) ) + "\n";
-        output += "String[][] teamPlayersInjuriesTypes(BATS)\t:" + StringArrarArray_toString( this.teamPlayersInjuriesTypes(BATS) ) + "\n";
+        output += "String[][] teamPlayersInjuriesTypes(INDIANS)\t:" + StringArrarArray_toString( this.teamPlayersInjuriesTypes(INDIANS) ) + "\n\n";
+        output += "String[][] teamPlayersInjuriesTypes(BATS)\t:" + StringArrarArray_toString( this.teamPlayersInjuriesTypes(BATS) ) + "\n\n";
         
         /**
         * @param teamA
@@ -818,8 +831,8 @@ public class BaseballData implements ReportData
         *
         * @return Locations for all player injuries.
         */
-        output += "String[][] teamPlayersInjuriesLocations(INDIANS)\t:" + StringArrarArray_toString( this.teamPlayersInjuriesLocations(INDIANS) ) + "\n";
-        output += "String[][] teamPlayersInjuriesLocations(BATS)\t:" + StringArrarArray_toString( this.teamPlayersInjuriesLocations(BATS) ) + "\n";
+        output += "String[][] teamPlayersInjuriesLocations(INDIANS):" + StringArrarArray_toString( this.teamPlayersInjuriesLocations(INDIANS) ) + "\n\n";
+        output += "String[][] teamPlayersInjuriesLocations(BATS)\t:" + StringArrarArray_toString( this.teamPlayersInjuriesLocations(BATS) ) + "\n\n";
         
         /**
         * @param teamA
@@ -828,8 +841,8 @@ public class BaseballData implements ReportData
         *
         * @return All player RBIs on a team.
         */
-        output += "int[] teamPlayersRBIs(INDIANS)\t:" + intArray_toString( this.teamPlayersRBIs(INDIANS) ) + "\n";
-        output += "int[] teamPlayersRBIs(BATS)\t:" + intArray_toString( this.teamPlayersRBIs(BATS) ) + "\n";
+        output += "int[] teamPlayersRBIs(INDIANS)\t\t\t:" + intArray_toString( this.teamPlayersRBIs(INDIANS) ) + "\n\n";
+        output += "int[] teamPlayersRBIs(BATS)\t\t\t:" + intArray_toString( this.teamPlayersRBIs(BATS) ) + "\n\n";
         
         /**
         * @param teamA
@@ -838,8 +851,8 @@ public class BaseballData implements ReportData
         *
         * @return Hit count for each player on a team.
         */
-        output += "int[] teamPlayersHits(INDIANS)\t:" + intArray_toString( this.teamPlayersHits(INDIANS) ) + "\n";
-        output += "int[] teamPlayersHits(BATS)\t:" + intArray_toString( this.teamPlayersHits(BATS) ) + "\n";
+        output += "int[] teamPlayersHits(INDIANS)\t\t\t:" + intArray_toString( this.teamPlayersHits(INDIANS) ) + "\n\n";
+        output += "int[] teamPlayersHits(BATS)\t\t\t:" + intArray_toString( this.teamPlayersHits(BATS) ) + "\n\n";
         
         /**
         * @param teamA
@@ -848,8 +861,8 @@ public class BaseballData implements ReportData
         *
         * @return Number of runs for each player on a team.
         */
-        output += "int[] teamPlayersRuns(INDIANS)\t:" + intArray_toString( this.teamPlayersRuns(INDIANS) ) + "\n";
-        output += "int[] teamPlayersRuns(BATS)\t:" + intArray_toString( this.teamPlayersRuns(BATS) ) + "\n";
+        output += "int[] teamPlayersRuns(INDIANS)\t\t\t:" + intArray_toString( this.teamPlayersRuns(INDIANS) ) + "\n\n";
+        output += "int[] teamPlayersRuns(BATS)\t\t\t:" + intArray_toString( this.teamPlayersRuns(BATS) ) + "\n\n";
         
         /**
         * @param teamC
@@ -858,8 +871,8 @@ public class BaseballData implements ReportData
         *
         * @return The position of the team.
         */
-        output += "int otherTeamStandingsPosition(HENS)\t:" + this.otherTeamStandingsPosition(HENS) + "\n";
-        output += "int otherTeamStandingsPosition(CLIPPERS)\t:" + this.otherTeamStandingsPosition(CLIPPERS) + "\n";
+        output += "int otherTeamStandingsPosition(HENS)\t\t:" + this.otherTeamStandingsPosition(HENS) + "\n\n";
+        output += "int otherTeamStandingsPosition(CLIPPERS)\t:" + this.otherTeamStandingsPosition(CLIPPERS) + "\n\n";
         
         /**
         * @param teamC
@@ -868,8 +881,8 @@ public class BaseballData implements ReportData
         *
         * @return The number of wins the team had before the game.
         */
-        output += "int otherTeamStandingsWins(HENS)\t:" + this.otherTeamStandingsWins(HENS) + "\n";
-        output += "int otherTeamStandingsWins(CLIPPERS)\t:" + this.otherTeamStandingsWins(CLIPPERS) + "\n";
+        output += "int otherTeamStandingsWins(HENS)\t\t:" + this.otherTeamStandingsWins(HENS) + "\n\n";
+        output += "int otherTeamStandingsWins(CLIPPERS)\t\t:" + this.otherTeamStandingsWins(CLIPPERS) + "\n\n";
             
         /**
         * @param teamC
@@ -878,8 +891,8 @@ public class BaseballData implements ReportData
         *
         * @return The team's streak before the game.
         */
-        output += "int otherTeamStandingsWins(HENS)\t:" + this.otherTeamStandingsWins(HENS) + "\n";
-        output += "int otherTeamStandingsWins(CLIPPERS)\t:" + this.otherTeamStandingsWins(CLIPPERS) + "\n";
+        output += "int otherTeamStandingsWins(HENS)\t\t:" + this.otherTeamStandingsWins(HENS) + "\n\n";
+        output += "int otherTeamStandingsWins(CLIPPERS)\t\t:" + this.otherTeamStandingsWins(CLIPPERS) + "\n\n";
         
         /**
         * @param teamC
@@ -888,8 +901,8 @@ public class BaseballData implements ReportData
         *
         * @return The number of losses the team had before the game.
         */
-        output += "int otherTeamStandingsLosses(HENS)\t:" + this.otherTeamStandingsLosses(HENS) + "\n";
-        output += "int otherTeamStandingsLosses(CLIPPERS)\t:" + this.otherTeamStandingsLosses(CLIPPERS) + "\n";
+        output += "int otherTeamStandingsLosses(HENS)\t\t:" + this.otherTeamStandingsLosses(HENS) + "\n\n";
+        output += "int otherTeamStandingsLosses(CLIPPERS)\t\t:" + this.otherTeamStandingsLosses(CLIPPERS) + "\n\n";
         
         return output;
     }
