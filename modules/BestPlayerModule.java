@@ -75,11 +75,7 @@ public class BestPlayerModule extends ReportModule<BaseballData>
      
   class Player
    {
-<<<<<<< HEAD
-    String name = "";
-=======
     String name;
->>>>>>> origin/master
     boolean team;
     int hits, atbats, hr, rbi;
     double rating;
@@ -149,13 +145,14 @@ public class BestPlayerModule extends ReportModule<BaseballData>
        return rating;
    }  
    
-   public boolean getTeamName()
+   public String getTeamName()
    {
        return data.teamName(team);
     }
     
    public String teamAsString()
    {
+       return ""; //FIXME!
     }
    public String toString()
    {
