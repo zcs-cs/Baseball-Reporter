@@ -6,9 +6,9 @@ public class StandingsModule extends ReportModule<BaseballData>
 {
      public StandingsModule(BaseballData data) { super(data); }
     /**
-     *  * * * * * *
-     * Incomplete *
-     *  * * * * * *
+     *  * * * * * * * *
+     *  Claire Berman *
+     *  * * * * * * * *
      */
     
     int teamAScore = data.teamScore(true);
@@ -38,7 +38,9 @@ public class StandingsModule extends ReportModule<BaseballData>
     String name;
     int function;
     Random generator = new Random();
-    
+    /**
+     * Generate a sentence to be returned
+     */
     public String generate()
     {
         int random = generator.nextInt(1);
@@ -77,7 +79,9 @@ public class StandingsModule extends ReportModule<BaseballData>
                 return "The standings are not available right now.";
         }
     }
-
+    /**
+     * Update wins, losses, and PCT based on score of game
+     */
     private void setScores ()
     {
         if (teamAScore > teamBScore) //Indians won
@@ -102,7 +106,9 @@ public class StandingsModule extends ReportModule<BaseballData>
             teamBPCT = (teamBWins / (teamBWins + teamBLosses)) + 100;
         }
     }
-
+    /**
+     * Find standings of each team based on PCT
+     */
     private void standings()
     {
         if (teamAPCT > teamBPCT)
