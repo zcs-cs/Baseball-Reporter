@@ -60,29 +60,29 @@ public class PitchAvBModule extends ReportModule<BaseballData>
         
         switch(select){
             case 0:
-                output = "Best pitchers for the game were " +Name1+ " of the " +Team1+ ", and " +Name2+ " pitching for the " +Team2+ "."; 
+                output = "Best pitchers for the game were " +Name1+ " of the " +Team1+ ", and " +Name2+ " pitching for the " +Team2+ ". "; 
                 break;
             case 1:
-                output = Team1+ "'s best pitcher, " +Name1+ ", went up against "+Name2+"of the " +Team2+ "s.";
+                output = Team1+ "'s best pitcher, " +Name1+ ", went up against "+Name2+"of the " +Team2+ "s. ";
                 break;
             case 2:
-                output = Team2+ "'s best pitcher, " +Name2+ ", went up against "+Name1+"of the " +Team1+ "s.";
+                output = Team2+ "'s best pitcher, " +Name2+ ", went up against "+Name1+"of the " +Team1+ "s. ";
                 break;
             case 3:
-                output = "Pitchers " +Name1+ " and " +Name2+ " faced off in the game between " +Team1+ " and " +Team2+ ".";
+                output = "Pitchers " +Name1+ " and " +Name2+ " faced off in the game between " +Team1+ " and " +Team2+ ". ";
                 break;
             case 4:
-                output = "Pitchers " +Name2+ " and " +Name1+ " faced off in the game between " +Team2+ " and " +Team1+ ".";
+                output = "Pitchers " +Name2+ " and " +Name1+ " faced off in the game between " +Team2+ " and " +Team1+ ". ";
                 break;
         }
         
         //////////////////////////////////////////////////////////////////////////////////
         
-        //next sentence
+        ////////////////////////////////next sentence/////////////////////////////////////
         
+        betterGame();
         
-        
-        //
+        //////////////////////////////////////////////////////////////////////////////////
         
         
         return output;
