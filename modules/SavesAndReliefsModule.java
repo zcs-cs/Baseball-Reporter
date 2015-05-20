@@ -22,14 +22,47 @@ import utilities.*;
  *          -He pitched for at least 3 innings (he entered in the 7th inning
  */
 public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
+    private int lastPitcherIndex, lastPitcherEnterInning;
+    
     public SavesAndReliefsModule (BaseballData data) {
         super(data);
     }
     
+    /**
+     * Generates a string describing the save status of the relief pitchers
+     * @return a string describing the save status of the relief pitchers
+     */
     public String generate () {
         
         
         return "Nothing of interest";
     }
     
+    /**
+     * Finds the last person to pitch in the game for the winning team
+     */
+    public int findLastPitcherIndex () {
+        //Find the winning team
+        boolean indianWin = data.teamResult(data.INDIANS);
+        
+        int[][] inningsPitched = data.teamPlayersInningsPitched(indianWin);
+        
+        int minInning = data.innings();
+        int minIndex = 0;
+        //Loop through the innings pitched array (through each player)
+        for (int i = 0; i < inningsPitched.length; i++) {
+            //Loop through the array for each pitcher
+            for (int j = 0; j < inningsPitched[i].length; i++) {
+                if (inningsPitched[i][j] < minInning) {
+                    minInning = inningsPitched[i][j];
+                    minIndex = i;
+                }
+            }
+        }
+        
+        lastPitcherIndex = minIndex;
+        lastPitcherEnterInning = minInning;
+        
+        return minIndex;
+    }
 }
