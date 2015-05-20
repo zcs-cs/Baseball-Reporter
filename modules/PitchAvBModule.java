@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * 
  * 
  * 
- *  by bryce josh and dan
+ *  by bryce bryce and dan
  */
 public class PitchAvBModule extends ReportModule<BaseballData>
 {
@@ -89,19 +89,56 @@ public class PitchAvBModule extends ReportModule<BaseballData>
     }
     public String betterGame()
     {
-        if (strikeouts1 > strikeouts2 && battersFaced1 > battersFaced2)
+        
+     String output = "";
+      if (strikeouts1 > strikeouts2 && battersFaced1 > battersFaced2)
+      {
+        if(strikeouts1 >= battersFaced1 / 2)
         {
-            
+            output += Name1 + " destroyed the " + Team2 + ", with more than half of the batters faced being struck out.";
         }
-        else if (strikeouts1 < strikeouts2 && battersFaced1 < battersFaced2)
+        else if(strikeouts1 >= battersFaced1 / 3)
         {
-            
+            output += Name1 + "Had a good game against" + Team2 + ".";
         }
-        else 
+        else
         {
-            
+            output += Name1 + "had a better game than " + Name2 + ".";
         }
-        return "";
+     }
+     
+     else if (strikeouts1 < strikeouts2 && battersFaced1 < battersFaced2)
+        {
+            if(strikeouts2 >= battersFaced2 / 2)
+        {
+            output += Name2 + " destroyed the " + Team1 + ", with more than half of the batters faced being struck out.";
+        }
+        else if(strikeouts1 >= battersFaced1 / 3)
+        {
+            output += Name2 + "Had a good game against" + Team1 + ".";
+        }
+        else
+        {
+            output += Name2 + "had a better game than " + Name1 + ".";
+        }
+      }
+     else 
+     {
+        if(strikeouts1 > strikeouts2)
+        {
+            output += Name1 + " struck out the most batters";
+        }
+        else if(strikeouts1 < strikeouts2)
+        {
+            output += Name2 + "Struck out the most batters";
+        }
+        else
+        {
+            output += "The two best pitchers in the game were absolutely incomperable.";
+        }
+        }
+     return output;
+    
     }
     public String moreRuns()
     {
