@@ -7,6 +7,8 @@ public interface ReportData
 {
     public static final boolean INDIANS = true;
     public static final boolean BATS = false;
+    public static final boolean HENS = true;
+    public static final boolean CLIPPERS = false;
 
     /**
      * @return The location of the game (field).
@@ -170,6 +172,15 @@ public interface ReportData
      *        Get information from first team (true) or second team (false).
      *        Use the constants defined above (INDIANS & BATS).
      *
+     * @return An array of HRs for each player, for each inning.
+     */
+    public abstract int[] teamPlayersHRs(boolean teamA);
+    
+    /**
+     * @param teamA
+     *        Get information from first team (true) or second team (false).
+     *        Use the constants defined above (INDIANS & BATS).
+     *
      * @return A 2D array of pitches for each player, for each inning.
      */
     public abstract int[][] teamPlayersInningsPitched(boolean teamA);
@@ -245,4 +256,40 @@ public interface ReportData
      * @return Number of runs for each player on a team.
      */
     public abstract int[] teamPlayersRuns(boolean teamA);
+    
+    /**
+     * @param teamC
+     *        Get information from third team (true) or fourth team (false).
+     *        Use the constants defined above (HENS & CLIPPERS)
+     *
+     * @return The position of the team.
+     */
+    public abstract int otherTeamStandingsPosition(boolean teamC);
+    
+    /**
+     * @param teamC
+     *        Get information from third team (true) or fourth team (false).
+     *        Use the constants defined above (HENS & CLIPPERS)
+     *
+     * @return The number of wins the team had before the game.
+     */
+    public abstract int otherTeamStandingsWins(boolean teamC);
+        
+    /**
+     * @param teamC
+     *        Get information from third team (true) or fourth team (false).
+     *        Use the constants defined above (HENS & CLIPPERS)
+     *
+     * @return The team's streak before the game.
+     */
+    public abstract int otherTeamStandingsStreak(boolean teamC);
+    
+    /**
+     * @param teamC
+     *        Get information from third team (true) or fourth team (false).
+     *        Use the constants defined above (HENS & CLIPPERS)
+     *
+     * @return The number of losses the team had before the game.
+     */
+    public abstract int otherTeamStandingsLosses(boolean teamC);
 }

@@ -6,12 +6,7 @@ import data.BaseballData;
  */
 public class BigInningModule extends ReportModule<BaseballData>
 {
-   
-    // Constructor
-    public BigInningModule(BaseballData data)
-    {
-       super(data);
-    }
+    public BigInningModule(BaseballData data) { super(data); }
     
     public String generate()
     {

@@ -1,250 +1,166 @@
 {
   "location": "Victory Field",
   "city": "Indianapolis, Indiana",
-  "temperature": 0.1,
-  "rainfall": 0.1,
+  "temperature": 61.3,
+  "rainfall": 0.14,
   "date": "04/30/2015",
   "startTime": 1105,
-  "minutes": 0,
-  "innings": 0,
+  "minutes": 200,
+  "innings": 9,
   "teams": {
     "teamA": {
       "name": "Indianapolis Indians",
       "demonym": "Indians",
       "homecity": "Indianapolis, Indiana",
       "standings": {
-        "position": 0,
-        "wins": 0,
-        "streak": 0,
-        "losses": 0
+        "position": 4,
+        "wins": 3,
+        "streak": 1,
+        "losses": 5,
+        "PCT": 37
       },
       "inningScores": [
-        0,
-        0
+        0,0,2,0,0,0,0,0,0
       ],
       "score": 2,
       "result": false,
       "players": [
         {
-          "name": "A. Hanson",
-          "bats": 0,
+          "name": "Alen Hanson",
+          "bats": 3,
           "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
           ],
           "runsInnings": [
-            0,
-            0
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
           ],
           "injuries": [
           ]
         },
         {
-          "name": "P. Florimon",
-          "bats": 0,
+          "name": "Pedro Florimon",
+          "bats": 4,
           "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
           ],
           "runsInnings": [
-            0,
-            0
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
           ],
           "injuries": [
           ]
         },
         {
-          "name": "S. Lombardozzi",
-          "bats": 0,
+          "name": "Steve Lombardozzi",
+          "bats": 3,
           "hits": [
             {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
+              "description": "single",
               "RBI": 0
             }
           ],
           "runsInnings": [
-            0,
-            0
+            3
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
           ],
           "injuries": [
           ]
         },
         {
-          "name": "T. Sanchez",
-          "bats": 0,
+          "name": "Tony Sanchez",
+          "bats": 3,
           "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
           ],
           "runsInnings": [
-            0,
-            0
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
           ],
           "injuries": [
           ]
         },
         {
-          "name": "D. Romero",
-          "bats": 0,
+          "name": "Deibinson Romero",
+          "bats": 1,
           "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
           ],
           "runsInnings": [
-            0,
-            0
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
           ],
           "injuries": [
           ]
         },
         {
-          "name": "B. Morel",
-          "bats": 0,
+          "name": "Brent Morel",
+          "bats": 4,
           "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
           ],
           "runsInnings": [
-            0,
-            0
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
           ],
           "injuries": [
           ]
         },
         {
-          "name": "M. Rojas Jr.",
-          "bats": 0,
+          "name": "Mel Rojas Jr.",
+          "bats": 4,
           "hits": [
             {
-              "description": "aa",
+              "description": "single",
               "RBI": 0
             },
             {
-              "description": "aa",
+              "description": "single",
               "RBI": 0
             }
           ],
           "runsInnings": [
-            0,
-            0
           ],
+          "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
           ],
           "injuries": [
           ]
         },
         {
-          "name": "G. Hernandez",
-          "bats": 0,
+          "name": "Gorkys Hernandez",
+          "bats": 4,
           "hits": [
             {
-              "description": "aa",
+              "description": "single",
               "RBI": 0
             },
             {
-              "description": "aa",
+              "description": "double",
               "RBI": 0
             }
           ],
           "runsInnings": [
-            0,
-            0
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
           ],
           "injuries": [
           ]
         },
         {
-          "name": "N. Kingham",
-          "bats": 0,
+          "name": "Nick Kingham",
+          "bats": 1,
           "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
           ],
           "runsInnings": [
-            0,
-            0
+            3
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
+            1,2,3,4,5
           ],
           "injuries": [
           ]
@@ -263,63 +179,36 @@
             }
           ],
           "runsInnings": [
-            0,
-            0
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
           ],
           "injuries": [
           ]
         },
         {
-          "name": "N. Kingham",
-          "bats": 0,
+          "name": "Nick Kingham",
+          "bats": 1,
           "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
           ],
           "runsInnings": [
-            0,
-            0
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
           ],
           "injuries": [
           ]
         },
         {
-          "name": "H. Morris",
-          "bats": 0,
+          "name": "Hunter Morris",
+          "bats": 2,
           "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
           ],
           "runsInnings": [
-            0,
-            0
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
+            6,7,8
           ],
           "injuries": [
           ]
@@ -338,13 +227,10 @@
             }
           ],
           "runsInnings": [
-            0,
-            0
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
+            9
           ],
           "injuries": [
           ]
@@ -356,39 +242,252 @@
       "demonym": "Bats",
       "homecity": "Louisville, Kentucky",
       "standings": {
-        "position": 0,
-        "wins": 0,
-        "streak": 0,
-        "losses": 0
+        "position": 3,
+        "wins": 3,
+        "streak": 4,
+        "losses": 4,
+        "PCT": 43
       },
       "inningScores": [
-        0,
-        0
+        0,4,0,0,1,0,0,0,1
       ],
       "score": 6,
       "result": true,
       "players": [
         {
-          "name": "aa",
-          "bats": 0,
+          "name": "Ryan LaMarre",
+          "bats": 5,
           "hits": [
             {
-              "description": "aa",
+              "description": "single",
               "RBI": 0
             },
             {
-              "description": "aa",
+              "description": "single",
+              "RBI": 0
+            },
+            {
+              "description": "double",
               "RBI": 0
             }
           ],
           "runsInnings": [
-            0,
-            0
+            9
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
+          ],
+          "injuries": [
+          ]
+        },
+        {
+          "name": "Herman Iribarren",
+          "bats": 5,
+          "hits": [
+            {
+              "description": "single",
+              "RBI": 0
+            },
+            {
+              "description": "single",
+              "RBI": 0
+            },
+            {
+              "description": "single",
+              "RBI": 0
+            }
+          ],
+          "runsInnings": [
+            5
+          ],
+          "HRs": 0,
+          "inningsPitched": [
+          ],
+          "injuries": [
+          ]
+        },
+        {
+          "name": "Ivan De Jesus",
+          "bats": 5,
+          "hits": [
+            {
+              "description": "single",
+              "RBI": 0
+            }
+          ],
+          "runsInnings": [
+          ],
+          "HRs": 0,
+          "inningsPitched": [
+          ],
+          "injuries": [
+          ]
+        },
+        {
+          "name": "Steve Selsky",
+          "bats": 4,
+          "hits": [
+            {
+              "description": "single",
+              "RBI": 0
+            },
+            {
+              "description": "single",
+              "RBI": 0
+            },
+            {
+              "description": "single",
+              "RBI": 0
+            },
+            {
+              "description": "home run",
+              "RBI": 0
+            }
+          ],
+          "runsInnings": [
+            2
+          ],
+          "HRs": 1,
+          "inningsPitched": [
+          ],
+          "injuries": [
+          ]
+        },
+        {
+          "name": "Yorman Rodriguez",
+          "bats": 4,
+          "hits": [
+            {
+              "description": "single",
+              "RBI": 0
+            },
+            {
+              "description": "triple",
+              "RBI": 0
+            }
+          ],
+          "runsInnings": [
+            2
+          ],
+          "HRs": 0,
+          "inningsPitched": [
+          ],
+          "injuries": [
+          ]
+        },
+        {
+          "name": "Kyle Skipworth",
+          "bats": 2,
+          "hits": [
+          ],
+          "runsInnings": [
+          ],
+          "HRs": 0,
+          "inningsPitched": [
+          ],
+          "injuries": [
+          ]
+        },
+        {
+          "name": "Bryson Smith",
+          "bats": 3,
+          "hits": [
+          ],
+          "runsInnings": [
+            2
+          ],
+          "HRs": 0,
+          "inningsPitched": [
+          ],
+          "injuries": [
+          ]
+        },
+        {
+          "name": "Jermaine Curtis",
+          "bats": 4,
+          "hits": [
+            {
+              "description": "single",
+              "RBI": 0
+            },
+            {
+              "description": "double",
+              "RBI": 0
+            }
+          ],
+          "runsInnings": [
+            2
+          ],
+          "HRs": 0,
+          "inningsPitched": [
+          ],
+          "injuries": [
+          ]
+        },
+        {
+          "name": "Daniel Cabrera",
+          "bats": 1,
+          "hits": [
+          ],
+          "runsInnings": [
+          ],
+          "HRs": 0,
+          "inningsPitched": [
+            1,2,3
+          ],
+          "injuries": [
+          ]
+        },
+        {
+          "name": "Jon Moscot",
+          "bats": 1,
+          "hits": [
+          ],
+          "runsInnings": [
+          ],
+          "HRs": 0,
+          "inningsPitched": [
+          ],
+          "injuries": [
+          ]
+        },
+        {
+          "name": "Drew Hayes",
+          "bats": 1,
+          "hits": [
+          ],
+          "runsInnings": [
+          ],
+          "HRs": 0,
+          "inningsPitched": [
+            4,5,6
+          ],
+          "injuries": [
+          ]
+        },
+        {
+          "name": "Chris Dominguez",
+          "bats": 1,
+          "hits": [
+          ],
+          "runsInnings": [
+          ],
+          "HRs": 0,
+          "inningsPitched": [
+          ],
+          "injuries": [
+          ]
+        },
+        {
+          "name": "S. LeCure",
+          "bats": 0,
+          "hits": [
+          ],
+          "runsInnings": [
+          ],
+          "HRs": 0,
+          "inningsPitched": [
+            7,8,9
           ],
           "injuries": [
           ]
@@ -407,293 +506,34 @@
             }
           ],
           "runsInnings": [
-            0,
-            0
           ],
           "HRs": 0,
           "inningsPitched": [
-            0,
-	    0
-          ],
-          "injuries": [
-          ]
-        },
-        {
-          "name": "aa",
-          "bats": 0,
-          "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
-          ],
-          "runsInnings": [
-            0,
-            0
-          ],
-          "HRs": 0,
-          "inningsPitched": [
-            0,
-	    0
-          ],
-          "injuries": [
-          ]
-        },
-        {
-          "name": "aa",
-          "bats": 0,
-          "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
-          ],
-          "runsInnings": [
-            0,
-            0
-          ],
-          "HRs": 0,
-          "inningsPitched": [
-            0,
-	    0
-          ],
-          "injuries": [
-          ]
-        },
-        {
-          "name": "aa",
-          "bats": 0,
-          "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
-          ],
-          "runsInnings": [
-            0,
-            0
-          ],
-          "HRs": 0,
-          "inningsPitched": [
-            0,
-	    0
-          ],
-          "injuries": [
-          ]
-        },
-        {
-          "name": "aa",
-          "bats": 0,
-          "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
-          ],
-          "runsInnings": [
-            0,
-            0
-          ],
-          "HRs": 0,
-          "inningsPitched": [
-            0,
-	    0
-          ],
-          "injuries": [
-          ]
-        },
-        {
-          "name": "aa",
-          "bats": 0,
-          "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
-          ],
-          "runsInnings": [
-            0,
-            0
-          ],
-          "HRs": 0,
-          "inningsPitched": [
-            0,
-	    0
-          ],
-          "injuries": [
-          ]
-        },
-        {
-          "name": "aa",
-          "bats": 0,
-          "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
-          ],
-          "runsInnings": [
-            0,
-            0
-          ],
-          "HRs": 0,
-          "inningsPitched": [
-            0,
-	    0
-          ],
-          "injuries": [
-          ]
-        },
-        {
-          "name": "aa",
-          "bats": 0,
-          "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
-          ],
-          "runsInnings": [
-            0,
-            0
-          ],
-          "HRs": 0,
-          "inningsPitched": [
-            0,
-	    0
-          ],
-          "injuries": [
-          ]
-        },
-        {
-          "name": "aa",
-          "bats": 0,
-          "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
-          ],
-          "runsInnings": [
-            0,
-            0
-          ],
-          "HRs": 0,
-          "inningsPitched": [
-            0,
-	    0
-          ],
-          "injuries": [
-          ]
-        },
-        {
-          "name": "aa",
-          "bats": 0,
-          "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
-          ],
-          "runsInnings": [
-            0,
-            0
-          ],
-          "HRs": 0,
-          "inningsPitched": [
-            0,
-	    0
-          ],
-          "injuries": [
-          ]
-        },
-        {
-          "name": "aa",
-          "bats": 0,
-          "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
-          ],
-          "runsInnings": [
-            0,
-            0
-          ],
-          "HRs": 0,
-          "inningsPitched": [
-            0,
-	    0
-          ],
-          "injuries": [
-          ]
-        },
-        {
-          "name": "aa",
-          "bats": 0,
-          "hits": [
-            {
-              "description": "aa",
-              "RBI": 0
-            },
-            {
-              "description": "aa",
-              "RBI": 0
-            }
-          ],
-          "runsInnings": [
-            0,
-            0
-          ],
-          "HRs": 0,
-          "inningsPitched": [
-            0,
-	    0
           ],
           "injuries": [
           ]
         }
       ]
+    },
+    "teamC": {
+      "demonym": "Hens",
+      "standings": {
+        "position": 1,
+        "wins": 4,
+        "streak": 1,
+        "losses": 2,
+        "PCT": 67
+      }
+    },
+    "teamD": {
+      "demonym": "Clippers",
+      "standings": {
+        "position": 2,
+        "wins": 3,
+        "streak": 1,
+        "losses": 3,
+        "PCT": 50
+      }
     }
   }
 }
