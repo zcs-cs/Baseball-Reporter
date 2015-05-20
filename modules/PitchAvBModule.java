@@ -90,7 +90,6 @@ public class PitchAvBModule extends ReportModule<BaseballData>
     public String betterGame()
     {
         
-     String output = "";
       if (strikeouts1 > strikeouts2 && battersFaced1 > battersFaced2)
       {
         if(strikeouts1 >= battersFaced1 / 2)
@@ -99,11 +98,11 @@ public class PitchAvBModule extends ReportModule<BaseballData>
         }
         else if(strikeouts1 >= battersFaced1 / 3)
         {
-            output += Name1 + "Had a good game against" + Team2 + ".";
+            output += Name1 + " had a good game against" + Team2 + " with a total of " +strikeouts1+ ".";
         }
         else
         {
-            output += Name1 + "had a better game than " + Name2 + ".";
+            output += Name1 + " had a better game than " + Name2 + ".";
         }
      }
      
@@ -115,22 +114,22 @@ public class PitchAvBModule extends ReportModule<BaseballData>
         }
         else if(strikeouts1 >= battersFaced1 / 3)
         {
-            output += Name2 + "Had a good game against" + Team1 + ".";
+            output += Name2 + ", striking out " +strikeouts2+ " players,  had a good game against" + Team1 + ".";
         }
         else
         {
-            output += Name2 + "had a better game than " + Name1 + ".";
+            output += Name2 + " had a better game than " + Name1 + ".";
         }
       }
      else 
      {
         if(strikeouts1 > strikeouts2)
         {
-            output += Name1 + " struck out the most batters";
+            output += Name1 + " struck out the most batters.";
         }
         else if(strikeouts1 < strikeouts2)
         {
-            output += Name2 + "Struck out the most batters";
+            output += Name2 + " struck out the most batters.";
         }
         else
         {
