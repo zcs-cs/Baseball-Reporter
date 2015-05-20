@@ -5,10 +5,20 @@ import utilities.*;
 import java.util.ArrayList;
 
 /**
- * Write a description of class PitchAvB here.
+ *         ____  _ __       __       ___             ____ 
+ *        / __ \(_) /______/ /_     /   |_   _______/ __ )
+ *       / /_/ / / __/ ___/ __ \   / /| | | / / ___/ __  |
+ *      / ____/ / /_/ /__/ / / /  / ___ | |/ (__  ) /_/ / 
+ *     /_/   /_/\__/\___/_/ /_/  /_/  |_|___/____/_____/ 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ *  by bryce josh and dan
  */
 public class PitchAvBModule extends ReportModule<BaseballData>
 {
