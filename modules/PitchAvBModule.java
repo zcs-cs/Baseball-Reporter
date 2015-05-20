@@ -26,18 +26,20 @@ public class PitchAvBModule extends ReportModule<BaseballData>
     
     int runs1, runs2, strikeouts1, strikeouts2, battersFaced1, battersFaced2;
     String Name1, Name2, Team1, Team2, output;
-    ArrayList<PitcherPlayer> pitchers;
+    ArrayList<PitcherPlayer> aPitchers, bPitchers;
+    PitcherPlayer aBest, bBest;
     public String generate()
     {
         BaseballData d = (BaseballData)data;
         //This is a generic statement generator
         // populate pitcher list
-        pitchers = new ArrayList<PitcherPlayer>();
+        aPitchers = new ArrayList<PitcherPlayer>();
+        bPitchers = new ArrayList<PitcherPlayer>();
         int counter = 0;
         try{
-            while(counter < 10){
+            while(counter < 15){
                 PitcherPlayer p = new PitcherPlayer(d, 'a', counter);
-                pitchers.add(p);
+                aPitchers.add(p);
                 counter++;
             }
         }catch (Exception e){
@@ -45,13 +47,28 @@ public class PitchAvBModule extends ReportModule<BaseballData>
         }
         counter = 0;
         try{
-            while(counter < 10){
+            while(counter < 15){
                 PitcherPlayer p = new PitcherPlayer(d, 'b', counter);
-                pitchers.add(p);
+                bPitchers.add(p);
                 counter++;
             }
         }catch (Exception e){
             
+        }
+        // find the best pitchie
+        int numIn = 0;
+        for(PitcherPlayer pp : aPitchers){
+            if (numIn < pp.totalInningsPitched()){
+                aBest = pp;
+                numIn = pp.totalInningsPitched();
+            }
+        }
+        numIn = 0;
+        for(PitcherPlayer pp : bPitchers){
+            if (numIn < pp.totalInningsPitched()){
+                bBest = pp;
+                numIn = pp.totalInningsPitched();
+            }
         }
         
         ////////////////////opening sentence introducing best pitchers////////////////////
