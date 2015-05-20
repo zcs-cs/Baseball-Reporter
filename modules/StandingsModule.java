@@ -43,38 +43,41 @@ public class StandingsModule extends ReportModule<BaseballData>
      */
     public String generate()
     {
+        setScores();
         int random = generator.nextInt(1);
         if (random == 0)
         {
             if (function == 1)
-                return "Since the " + name + " won, " + teamCDemonym + "are in position " + teamCPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", " + teamADemonym + " are in position " + teamAPosition + ", and " + teamBDemonym + " are in position " + teamBPosition + ".";
+                return "Since the " + name + " won, the " + teamCDemonym + "remain in position " + teamCPosition + ", the " + teamDDemonym + " remain in position " + teamDPosition + ", the " + teamADemonym + " are in position " + teamAPosition + ", and the " + teamBDemonym + " are in position " + teamBPosition + ".";
             else if (function == 2)
-                return "Since the " + name + " won, " + teamCDemonym + "are in position " + teamCPosition + ", " + teamADemonym + " are in position " + teamAPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", and " + teamBDemonym + " are in position " + teamBPosition + ".";
+                return "Since the " + name + " won, the " + teamCDemonym + "remain in position " + teamCPosition + ", the " + teamADemonym + " are in position " + teamAPosition + ", the " + teamDDemonym + " are in position " + teamDPosition + ", and the " + teamBDemonym + " are in position " + teamBPosition + ".";
             else if (function == 3)
-                return "Since the " + name + " won, " + teamADemonym + "are in position " + teamAPosition + ", " + teamCDemonym + " are in position " + teamCPosition + ", " + teamADemonym + " are in position " + teamAPosition + ", and " + teamBDemonym + " are in position " + teamBPosition + ".";
+                return "Since the " + name + " won, the " + teamADemonym + "are in position " + teamAPosition + ", the " + teamCDemonym + " are in position " + teamCPosition + ", the " + teamADemonym + " are in position " + teamAPosition + ", and the " + teamBDemonym + " are in position " + teamBPosition + ".";
             else if (function == 4)
-                return "Since the " + name + " won, " + teamCDemonym + "are in position " + teamCPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", " + teamBDemonym + " are in position " + teamBPosition + ", and " + teamADemonym + " are in position " + teamAPosition + ".";
+                return "Although the " + name + " won, the standings continue to stay the same. The " + teamCDemonym + "remain in position " + teamCPosition + ", the " + teamDDemonym + " remain in position " + teamDPosition + ", the " + teamBDemonym + " remain in position " + teamBPosition + ", and the " + teamADemonym + " remain in position " + teamAPosition + ".";
             else if (function == 5)
-                return "Since the " + name + " won, " + teamCDemonym + "are in position " + teamCPosition + ", " + teamBDemonym + " are in position " + teamBPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", and " + teamADemonym + " are in position " + teamAPosition + ".";
+                return "Since the " + name + " won, the " + teamCDemonym + "remain in position " + teamCPosition + ", the " + teamBDemonym + " are in position " + teamBPosition + ", the " + teamDDemonym + " are in position " + teamDPosition + ", and the " + teamADemonym + " are in position " + teamAPosition + ".";
             else if (function == 6)
-                return "Since the " + name + " won, " + teamBDemonym + "are in position " + teamBPosition + ", " + teamCDemonym + " are in position " + teamCPosition + ", " + teamDDemonym + " are in position " + teamDPosition + ", and " + teamADemonym + " are in position " + teamAPosition + ".";
+                return "Since the " + name + " won, the " + teamBDemonym + "are in position " + teamBPosition + ", the " + teamCDemonym + " are in position " + teamCPosition + ", the " + teamDDemonym + " are in position " + teamDPosition + ", and the " + teamADemonym + " are in position " + teamAPosition + ".";
+            else if (function == 7)
+                return "The standings remained the same. Since the " + name + " won, the " + teamCDemonym + "remain in position " + teamCPosition + ", the " + teamDDemonym + " remain in position " + teamDPosition + ", the " + teamBDemonym + " are in position " + teamBPosition + ", and the " + teamADemonym + " are in position " + teamAPosition + ".";
             else
                 return "The standings can't be found at this time.";
         }
         else
         {
             if (function == 1)
-                return teamCDemonym + " stand in place " + teamCPosition + ", " + teamDDemonym + " stand in place " + teamDPosition + ", " + teamADemonym + " stand in place " + teamAPosition + ", and " + teamBDemonym + " stand in place " + teamBPosition + ", since the " + name + " won.";
+                return "The " + teamCDemonym + " stayed in place " + teamCPosition + ", the " + teamDDemonym + " stayed in place " + teamDPosition + ", the " + teamADemonym + " stand in place " + teamAPosition + ", and the " + teamBDemonym + " stand in place " + teamBPosition + ", since the " + name + " won.";
             else if (function == 2)
-                return teamCDemonym + " stand in place " + teamCPosition + ", " + teamADemonym + " stand in place " + teamAPosition + ", " + teamDDemonym + " stand in place " + teamDPosition + ", and " + teamBDemonym + " stand in place " + teamBPosition + ", since the " + name + " won.";
+                return "The " + teamCDemonym + " stayed in place " + teamCPosition + ", the " + teamADemonym + " stand in place " + teamAPosition + ", the " + teamDDemonym + " stand in place " + teamDPosition + ", and the " + teamBDemonym + " stand in place " + teamBPosition + ", since the " + name + " won.";
             else if (function == 3)
-                return teamADemonym + " stand in place " + teamAPosition + ", " + teamCDemonym + " stand in place " + teamCPosition + ", " + teamDDemonym + " stand in place " + teamDPosition + ", and " + teamBDemonym + " stand in place " + teamBPosition + ", since the " + name + " won.";
+                return "The " + teamADemonym + " stand in place " + teamAPosition + ", the " + teamCDemonym + " stand in place " + teamCPosition + ", the " + teamDDemonym + " stand in place " + teamDPosition + ", and the " + teamBDemonym + " stand in place " + teamBPosition + ", since the " + name + " won.";
             else if (function == 4)
-                return teamCDemonym + " stand in place " + teamCPosition + ", " + teamDDemonym + " stand in place " + teamDPosition + ", " + teamBDemonym + " stand in place " + teamBPosition + ", and " + teamADemonym + " stand in place " + teamAPosition + ", since the " + name + " won.";
+                return "The " + teamCDemonym + " stayed in place " + teamCPosition + ", the " + teamDDemonym + " stayed in place " + teamDPosition + ", the " + teamBDemonym + " stand in place " + teamBPosition + ", and the " + teamADemonym + " stand in place " + teamAPosition + ", since the " + name + " won.";
             else if (function == 5)
-                return teamCDemonym + " stand in place " + teamCPosition + ", " + teamBDemonym + " stand in place " + teamBPosition + ", " + teamDDemonym + " stand in place " + teamDPosition + ", and " + teamADemonym + " stand in place " + teamAPosition + ", since the " + name + " won.";
+                return "The " + teamCDemonym + " stayed in place " + teamCPosition + ", the " + teamBDemonym + " stand in place " + teamBPosition + ", the " + teamDDemonym + " stand in place " + teamDPosition + ", and the " + teamADemonym + " stand in place " + teamAPosition + ", since the " + name + " won.";
             else if (function == 6)
-                return teamBDemonym + " stand in place " + teamBPosition + ", " + teamCDemonym + " stand in place " + teamDPosition + ", " + teamCDemonym + " stand in place " + teamDPosition + ", and " + teamADemonym + " stand in place " + teamAPosition + ", since the " + name + " won.";
+                return "The " + teamBDemonym + " stand in place " + teamBPosition + ", the " + teamCDemonym + " stand in place " + teamDPosition + ", the " + teamCDemonym + " stand in place " + teamDPosition + ", and the " + teamADemonym + " stand in place " + teamAPosition + ", since the " + name + " won.";
             else
                 return "The standings are not available right now.";
         }
@@ -90,29 +93,18 @@ public class StandingsModule extends ReportModule<BaseballData>
             name = teamADemonym;
             teamAWins += 1; //indians standings win
             teamBLosses += 1;
-            teamAPCT = (teamAWins / (teamAWins + teamALosses)) + 100; //pctforindians
-            teamBPCT = (teamBWins / (teamBWins + teamBLosses)) + 100;
+            teamAPCT = (int)((teamAWins*100 / (teamAWins + teamALosses))); //pctforindians
+            teamBPCT = (int)((teamBWins*100 / (teamBWins + teamBLosses)));
         }
         else if (teamAScore < teamBScore) //Bats won
         {
             name = teamBDemonym;
-            teamBWins += 1; //indians standings win
+            teamBWins += 1; //bats standings win
             teamALosses += 1;
-            teamAPCT = (teamAWins / (teamAWins + teamALosses)) + 100; //pctforindians
-            teamBPCT = (teamBWins / (teamBWins + teamBLosses)) + 100;
+            teamAPCT = (int)((teamAWins*100 / (teamAWins + teamALosses))); //pctforindians
+            teamBPCT = (int)((teamBWins*100 / (teamBWins + teamBLosses)));
         }
-        else //tied
-        {
-            teamAPCT = (teamAWins / (teamAWins + teamALosses)) + 100; //pctforindians
-            teamBPCT = (teamBWins / (teamBWins + teamBLosses)) + 100;
-        }
-    }
 
-    /**
-     * Find standings of each team based on PCT
-     */
-    private void standings()
-    {
         if (teamAPCT > teamBPCT)
         {
             teamAPosition = 3;
@@ -148,5 +140,10 @@ public class StandingsModule extends ReportModule<BaseballData>
                 }
             }
         }
+        else
+        {
+            function = 7;
+        }
     }
+
 }
