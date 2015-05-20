@@ -5,10 +5,19 @@ import data.*;
 import org.json.*;
 
 /**
- * For use with the PitcherModule
+ *       ____  _ __       __              ____  __                     
+ *      / __ \(_) /______/ /_  ___  _____/ __ \/ /___ ___  _____  _____
+ *     / /_/ / / __/ ___/ __ \/ _ \/ ___/ /_/ / / __ `/ / / / _ \/ ___/
+ *    / ____/ / /_/ /__/ / / /  __/ /  / ____/ / /_/ / /_/ /  __/ /    
+ *   /_/   /_/\__/\___/_/ /_/\___/_/  /_/   /_/\__,_/\__, /\___/_/     
+ *      for use with the PitcherAvB module...       /____/             
+ *   
+ *  by josh bryce josh and josh and dan
  */
 public class PitcherPlayer
 {
+    boolean DEBUG = false;
+    
     // instance variables - replace the example below with your own
     private String name, firstName, lastName, teamName, teamDemonym;
     private int runs, era, strikeouts, batters;
@@ -29,6 +38,7 @@ public class PitcherPlayer
         } else {
             throw new IllegalArgumentException();
         }
+        dp("New pitcher player index "+i+" added for team "+( this.team?'a':'b' ));
         data = d;
         playaIndex = i;
         
@@ -38,35 +48,38 @@ public class PitcherPlayer
         String playerType = "";
         
         int[][] inningsPitched = data.teamPlayersInningsPitched(team);
-        
         for (int j = 0; j < inningsPitched.length; j++){ // player index
             // set player object
             // set playerType object
-            
             if(inningsPitched[j].length != 0){ // if the player is a pitcher
-                if (counter == j){ // is this the right pitcher?
+                if (counter == i){ // is this the right pitcher?
+                    dp("Found pitcher of index "+i+" from a list of "+inningsPitched.length+" players");
                     // set player data variables
                     name = data.teamPlayersNames(team)[j];
                     String[] tempName = name.trim().split(" ");
                     firstName = "";
+                    lastName = "";
                     for (int k = 1; k < tempName.length; k++){
                         lastName += tempName[k] + " ";
                     }
-                    lastName.trim();
                     firstName = tempName[0];
                     teamName = data.teamName(team);
                     teamDemonym = data.teamDemonym(team);
                     runs = data.teamPlayersHRs(team)[j];
                     this.inningsPitched = inningsPitched[j];
                     
+                    lastName = lastName.trim();
+                    firstName = firstName.trim();
                     
                     break;
-                }
+                } else {
+                    //dp("Not the right pitcher.");
                 counter++;
+                }
             }
-            if (j == numberOfPlayers-1){
-                throw new IllegalArgumentException(); // uuh no pitcher
-            }
+//             if (j == numberOfPlayers-1){
+//                 throw new IllegalArgumentException(); // uuh no pitcher
+//             }
         }
     }
     public PitcherPlayer() throws Exception{
@@ -102,5 +115,13 @@ public class PitcherPlayer
     }
     public int playerIndex(){
         return playaIndex;
+    }
+    public String toString(){
+        return (name + " - " + inningsPitched.length +" innings");
+    }
+    private void dp(String in){
+        if(DEBUG){
+            System.out.println("  PitcherPlayer: "+in);
+        }
     }
 }
