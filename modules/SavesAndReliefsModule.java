@@ -47,9 +47,19 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
         if (!((data.teamResult(data.INDIANS) && scoresAtEntry[0] > scoresAtEntry[1] + 3) ||
             (data.teamResult(data.BATS)    && scoresAtEntry[1] > scoresAtEntry[0] + 3))) {
              //The pitcher saved, because the lead was less than three when he entered
+             
+             
         }
         else if (lastPitcherEnterInning < data.innings() - 2) {
-            //The pitcher saved, because he pitched for at least 3 innings 
+            //The pitcher saved, because he pitched for at least 3 innings
+            
+            
+        }
+        //else if () { //"He enters the game, regardless of the count, with the potential tying run either on base, at bat or on deck"
+            //The number of people at bat, on deck (always 2), or on base is >= the difference in scores
+        //}
+        else {
+            //He didn't save
         }
         
         return "toReturn";
