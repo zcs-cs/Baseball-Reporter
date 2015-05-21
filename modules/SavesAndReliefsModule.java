@@ -23,6 +23,8 @@ import utilities.*;
  */
 public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
     private int lastPitcherIndex, lastPitcherEnterInning;
+    private int[] pitchers;
+    private int[] relievingPitchers;
     
     /**
      * Constructor that takes data and calls the constructor of the <code>ReportModule</code> interface
@@ -63,6 +65,37 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
         }
         
         return "toReturn";
+    }
+    
+    /**
+     * Finds all the pitchers of a team
+     * @return array of the indices of each pitcher
+     */
+    public int[] findAllPitchers (boolean team){
+        //The number of pitchers
+        int pitcherCount = 0;
+        //Temporary array to store pitcher indices as they are found
+        int[] temp = new int[25];
+        //Array of pitched innings retrieved from data
+        int[][] players = data.teamPlayersInningsPitched(team);
+        //loops through inningsPitched array
+        for (int i = 0; i < players.length; i++){
+            //finds all instances where a player has pitched more than 0 innings
+            if (players[i].length > 0){
+                //adds index to temporary array and increases count of pitchers
+                temp[pitcherCount] = i;
+                pitcherCount++;
+            }
+        }
+        
+        //creates return array of the appropriate length
+        int ret[] = new int[pitcherCount];
+        //copies data from temporary array to final array
+        for (int i = 0; i < pitcherCount; i++){
+            ret[i] = temp[i];
+        }
+        
+        return ret;
     }
     
     /**
