@@ -68,7 +68,23 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
     }
     
     /**
+     * Determines if a given player has pitched in a given inning
+     * @param the innings pitched array from retrieved data
+     * @param the particular inning being searched for
+     * @return whether or not the particular inning has been pitched
+     */
+    public boolean contains (int[] player, int inning){
+        for (int i = 0; i < player.length; i++){
+            if (player[i] == inning){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    /**
      * Finds all the pitchers of a team
+     * @param the team for which the information is being retrieved
      * @return array of the indices of each pitcher
      */
     public int[] findAllPitchers (boolean team){
@@ -96,6 +112,29 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
         }
         
         return ret;
+    }
+    
+    /**
+     * Finds which pitcher pitched in inning 1
+     * then if multiple have, which pitched did not also pitch in inning 2
+     * @param which team's pitcher is being searched
+     * @return the index of the starting pitcher
+     */
+    public int findStartingPitcher (boolean team){
+        int[] pitchers = findAllPitchers (team);
+        int ret = -1;
+        int[][] inningsPitched = data.teamPlayersInningsPitched(team);
+        
+        for (int i = 0; i < pitchers.length; i++){
+            if (contains(inningsPitched[i], 1) && ret == -1){
+                ret = i;
+            }
+            if (contains(inningsPitched[i], 1) && !(contains(inningsPitched[i], 1))){
+                ret = i;
+            }
+        }
+        
+        return pitchers[ret];
     }
     
     /**
