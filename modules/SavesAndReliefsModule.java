@@ -19,7 +19,7 @@ import utilities.*;
  *      2. If the team did not have the lead during that inning, he did not save
  *      3. If he satisfies one  of the following conditions, he saved:
  *          -When he entered, the lead was less than or equal to 3 runs
- *          -He pitched for at least 3 innings (he entered in the 7th inning
+ *          -He pitched for at least 3 innings (he entered in the 7th inning in a 9 inning game)
  */
 public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
     private int lastPitcherIndex, lastPitcherEnterInning;
@@ -33,9 +33,22 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
      * @return a string describing the save status of the relief pitchers
      */
     public String generate () {
+        String toReturn = "";
         
+        //Find the last pitcher to enter the game
+        findLastPitcherIndex();
         
-        return "Nothing of interest";
+        //Check the lead during the inning he entered
+        int[] scoresAtEntry = calcRunningScore(lastPitcherEnterInning);
+        if (!((data.teamResult(data.INDIANS) && scoresAtEntry[0] > scoresAtEntry[1] + 3) ||
+            (data.teamResult(data.BATS)    && scoresAtEntry[1] > scoresAtEntry[0] + 3))) {
+             //The pitcher saved, because the lead was less than three when he entered
+        }
+        else if (lastPitcherEnterInning < data.innings() - 2) {
+            //The pitcher saved, because he pitched for at least 3 innings 
+        }
+        
+        return "toReturn";
     }
     
     /**
@@ -43,9 +56,9 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
      */
     public int findLastPitcherIndex () {
         //Find the winning team
-        boolean indianWin = data.teamResult(data.INDIANS);
+        boolean aWin = data.teamResult(data.INDIANS);
         
-        int[][] inningsPitched = data.teamPlayersInningsPitched(indianWin);
+        int[][] inningsPitched = data.teamPlayersInningsPitched(aWin);
         
         int minInning = data.innings();
         int minIndex = 0;
@@ -64,5 +77,31 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
         lastPitcherEnterInning = minInning;
         
         return minIndex;
+    }
+    
+    /**
+     * Finds the total score for each team at the beginning of the given inning
+     * @param   inning  the innning up to which the inning scores will be summed
+     * @return          the total score at the beginning of the given inning
+     */
+    public int[] calcRunningScore (int inning) {
+        int[] toReturn = new int[2];
+        if (inning < 0 || inning > data.innings()) {
+            toReturn[0] = 0;
+            toReturn[1] = 0;
+            return toReturn;
+        }
+        
+        //Calculate team A
+        int[] teamAInningScores = data.teamInningScores(data.INDIANS);
+        for (int i = 0; i < inning - 1; i++) {
+            toReturn[0] += teamAInningScores[i];
+        }
+        
+        //Calculate team B
+        int[] teamBInningScores = data.teamInningScores(data.BATS);
+        for (int i = 0; i < inning - 1; i++) toReturn[1] += teamBInningScores[i];
+        
+        return toReturn;
     }
 }
