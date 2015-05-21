@@ -24,6 +24,10 @@ import utilities.*;
 public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
     private int lastPitcherIndex, lastPitcherEnterInning;
     
+    /**
+     * Constructor that takes data and calls the constructor of the <code>ReportModule</code> interface
+     * @param   data    the data of the game, used to generate the report
+     */
     public SavesAndReliefsModule (BaseballData data) {
         super(data);
     }
@@ -53,6 +57,7 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
     
     /**
      * Finds the last person to pitch in the game for the winning team
+     * @return  the index of the last pitcher to enter the game
      */
     public int findLastPitcherIndex () {
         //Find the winning team
