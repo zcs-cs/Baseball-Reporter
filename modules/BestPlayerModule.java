@@ -150,6 +150,10 @@ public class BestPlayerModule extends ReportModule<BaseballData>
        return data.teamName(team);
     }
     
+   public String teamAsString()
+   {
+       return ""; //FIXME!
+    }
    public String toString()
    {
      String intro = "", info = "";

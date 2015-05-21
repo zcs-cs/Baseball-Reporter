@@ -13,7 +13,7 @@
       "demonym": "Indians",
       "homecity": "Indianapolis, Indiana",
       "standings": {
-        "position": 2,
+        "position": 4,
         "wins": 3,
         "streak": 1,
         "losses": 5,
@@ -518,7 +518,7 @@
     "teamC": {
       "demonym": "Hens",
       "standings": {
-        "position": 2,
+        "position": 1,
         "wins": 4,
         "streak": 1,
         "losses": 2,
