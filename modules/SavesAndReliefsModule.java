@@ -40,7 +40,7 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
      */
     public String generate () {
         String toReturn = "";
-        
+        boolean save;
         //Find the last pitcher to enter the game
         findLastPitcherIndex();
         
@@ -49,20 +49,31 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
         if (!((data.teamResult(data.INDIANS) && scoresAtEntry[0] > scoresAtEntry[1] + 3) ||
             (data.teamResult(data.BATS)    && scoresAtEntry[1] > scoresAtEntry[0] + 3))) {
              //The pitcher saved, because the lead was less than three when he entered
-             
+             save = true;
              
         }
         else if (lastPitcherEnterInning < data.innings() - 2) {
             //The pitcher saved, because he pitched for at least 3 innings
-            
+            save = true;
             
         }
         //else if () { //"He enters the game, regardless of the count, with the potential tying run either on base, at bat or on deck"
             //The number of people at bat, on deck (always 2), or on base is >= the difference in scores
+            //save = true;
         //}
         else {
             //He didn't save
+            save = false;
         }
+        
+        if (save) {
+            String pitcherName = data.teamPlayersNames(data.teamResult(data.INDIANS))[lastPitcherIndex];
+            String winningName = data.teamName(data.teamResult(data.INDIANS));
+            toReturn += pitcherName + " of the " + winningName + " entered in the " + lastPitcherEnterInning + "th inning and went on to earn a save for the team. ";
+        }
+        
+        //Relief Pitchers
+        
         
         return "toReturn";
     }
