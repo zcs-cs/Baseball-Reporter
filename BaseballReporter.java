@@ -36,6 +36,7 @@ public class BaseballReporter
         modules.add(new ExtraInningsModule(data));
         modules.add(new InjuryModule(data));
         modules.add(new PitchAvBModule(data));
+        modules.add(new SavesAndReliefsModule(data));
         
         String output = "";
         for (ReportModule<BaseballData> module : modules)

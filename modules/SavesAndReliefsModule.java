@@ -80,7 +80,7 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
         toReturn += "Relief pitchers for the " + data.teamName(data.INDIANS) + " included " + printStringArray(findReliefPitchers(data.INDIANS)) + " ";
         toReturn += "Relief pitchers for the " + data.teamName(data.BATS)    + " included " + printStringArray(findReliefPitchers(data.BATS));
         
-        return "toReturn";
+        return toReturn;
     }
     
     public String printStringArray (String[] arr) {
@@ -152,10 +152,10 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
         int[][] inningsPitched = data.teamPlayersInningsPitched(team);
         
         for (int i = 0; i < pitchers.length; i++){
-            if (contains(inningsPitched[i], 1) && ret == -1){
+            if (contains(inningsPitched[pitchers[i]], 1) && ret == -1){
                 ret = i;
             }
-            if (contains(inningsPitched[i], 1) && !(contains(inningsPitched[i], 1))){
+            if (contains(inningsPitched[pitchers[i]], 1) && !(contains(inningsPitched[i], 1))){
                 ret = i;
             }
         }
