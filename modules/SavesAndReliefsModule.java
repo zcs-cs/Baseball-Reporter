@@ -66,6 +66,7 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
             save = false;
         }
         
+        //Saves
         if (save) {
             String pitcherName = data.teamPlayersNames(data.teamResult(data.INDIANS))[lastPitcherIndex];
             String winningName = data.teamName(data.teamResult(data.INDIANS));
@@ -76,9 +77,20 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
         }
         
         //Relief Pitchers
-        
+        toReturn += "Relief pitchers for the " + data.teamName(data.INDIANS) + " included " + printStringArray(findReliefPitchers(data.INDIANS)) + " ";
+        toReturn += "Relief pitchers for the " + data.teamName(data.BATS)    + " included " + printStringArray(findReliefPitchers(data.BATS));
         
         return "toReturn";
+    }
+    
+    public String printStringArray (String[] arr) {
+        String toReturn = "";
+        for (int i = 0; i < arr.length; i++) {
+            toReturn += arr[i];
+            if (i == arr.length - 1) toReturn += ".";
+            else toReturn += ", ";
+        }
+        return toReturn;
     }
     
     /**
@@ -149,6 +161,22 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
         }
         
         return pitchers[ret];
+    }
+    
+    public String[] findReliefPitchers (boolean team) {
+        int startingPitcher = findStartingPitcher (team);
+        int[] pitchers = findAllPitchers (team);
+        String[] reliefPitchers = new String[pitchers.length - 1];
+        int x = 0;
+        for (int i = 0; i < pitchers.length - 1; i++) {
+            if (pitchers[i] == startingPitcher){
+                x = 1;
+            }
+            else{
+                reliefPitchers[i] = data.teamPlayersNames(team)[pitchers[i + x]];
+            }
+        }
+        return reliefPitchers;
     }
     
     /**
