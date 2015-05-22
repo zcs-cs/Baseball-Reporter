@@ -71,6 +71,9 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
             String winningName = data.teamName(data.teamResult(data.INDIANS));
             toReturn += pitcherName + " of the " + winningName + " entered in the " + lastPitcherEnterInning + "th inning and went on to earn a save for the team. ";
         }
+        else {
+            toReturn += "There were no saves in this game. ";
+        }
         
         //Relief Pitchers
         
