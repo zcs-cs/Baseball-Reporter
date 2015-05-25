@@ -34,6 +34,7 @@ public class BaseballReporter
         modules.add(new BestPlayerModule(data));
         modules.add(new BigInningModule(data));
         modules.add(new ExtraInningsModule(data));
+        modules.add(new StandingsModule(data));
         modules.add(new InjuryModule(data));
         modules.add(new PitchAvBModule(data));
         modules.add(new SavesAndReliefsModule(data));
@@ -41,6 +42,7 @@ public class BaseballReporter
         String output = "";
         for (ReportModule<BaseballData> module : modules)
         {
+            output += module.getClass().getName() + ":\n";
             output += module.generate()+"\n\n";
         }
         System.out.print(output);
