@@ -5,11 +5,11 @@ package data;
  */
 public interface ReportData
 {
-    public static final boolean INDIANS = true;
-    public static final boolean BATS = false;
-    public static final boolean HENS = true;
-    public static final boolean CLIPPERS = false;
-
+    public static final boolean teamA = true;
+    public static final boolean teamB = false;
+    public static final boolean teamC = true;
+    public static final boolean teamD = false;
+    
     /**
      * @return The location of the game (field).
      */
@@ -46,14 +46,9 @@ public interface ReportData
     public abstract int minutes();
     
     /**
-     * @return The number of innings the game has.
-     */
-    public abstract int innings();
-    
-    /**
      * @param teamA
      *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
+     *        Use the constants defined above (teamA & teamB).
      *
      * @return The official team name.
      */
@@ -62,7 +57,7 @@ public interface ReportData
     /**
      * @param teamA
      *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
+     *        Use the constants defined above (teamA & teamB).
      *
      * @return The nickname of the team.
      */
@@ -71,7 +66,7 @@ public interface ReportData
     /**
      * @param teamA
      *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
+     *        Use the constants defined above (teamA & teamB).
      *
      * @return The home city of the team.
      */
@@ -80,16 +75,7 @@ public interface ReportData
     /**
      * @param teamA
      *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
-     *
-     * @return An array of scores a team made throughout the game, per inning.
-     */
-    public abstract int[] teamInningScores(boolean teamA);
-    
-    /**
-     * @param teamA
-     *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
+     *        Use the constants defined above (teamA & teamB).
      *
      * @return Final score for the team.
      */
@@ -98,7 +84,7 @@ public interface ReportData
     /**
      * @param teamA
      *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
+     *        Use the constants defined above (teamA & teamB).
      *
      * @return Win or loss of the game (true/false)
      */
@@ -107,7 +93,7 @@ public interface ReportData
     /**
      * @param teamA
      *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
+     *        Use the constants defined above (teamA & teamB).
      *
      * @return The position within the league of the team.
      */
@@ -116,7 +102,7 @@ public interface ReportData
     /**
      * @param teamA
      *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
+     *        Use the constants defined above (teamA & teamB).
      *
      * @return The number of wins the team has for the season.
      */
@@ -125,7 +111,7 @@ public interface ReportData
     /**
      * @param teamA
      *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
+     *        Use the constants defined above (teamA & teamB).
      *
      * @return The longest winning streak for the team.
      */
@@ -134,7 +120,7 @@ public interface ReportData
     /**
      * @param teamA
      *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
+     *        Use the constants defined above (teamA & teamB).
      *
      * @return The number of losses the team has for the season.
      */
@@ -143,7 +129,7 @@ public interface ReportData
     /**
      * @param teamA
      *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
+     *        Use the constants defined above (teamA & teamB).
      *
      * @return An array containing all player names on a given team.
      */
@@ -152,70 +138,7 @@ public interface ReportData
     /**
      * @param teamA
      *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
-     *
-     * @return An array of bats for each corresponding player.
-     */
-    public abstract int[] teamPlayersBats(boolean teamA);
-    
-    /**
-     * @param teamA
-     *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
-     *
-     * @return A 2D array of runs for each player, for each inning.
-     */
-    public abstract int[][] teamPlayersRunsInnings(boolean teamA);
-    
-    /**
-     * @param teamA
-     *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
-     *
-     * @return An array of HRs for each player, for each inning.
-     */
-    public abstract int[] teamPlayersHRs(boolean teamA);
-    
-    /**
-     * @param teamA
-     *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
-     *
-     * @return A 2D array of pitches for each player, for each inning.
-     */
-    public abstract int[][] teamPlayersInningsPitched(boolean teamA);
-    
-    /**
-     * @param teamA
-     *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
-     *
-     * @return A 2D array of hits for each player.
-     */
-    public abstract String[][] teamPlayersHitsDescriptions(boolean teamA);
-    
-    /**
-     * @param teamA
-     *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
-     *
-     * @return RBIs for each player on a team.
-     */
-    public abstract int[][] teamPlayersHitsRBIs(boolean teamA);
-    
-    /**
-     * @param teamA
-     *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
-     *
-     * @return Injuries for all players.
-     */
-    public abstract int[][] teamPlayersInjuriesGamesMissed(boolean teamA);
-    
-    /**
-     * @param teamA
-     *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
+     *        Use the constants defined above (teamA & teamB).
      *
      * @return Injury types for all players.
      */
@@ -224,43 +147,16 @@ public interface ReportData
     /**
      * @param teamA
      *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
+     *        Use the constants defined above (teamA & teamB).
      *
      * @return Locations for all player injuries.
      */
     public abstract String[][] teamPlayersInjuriesLocations(boolean teamA);
     
     /**
-     * @param teamA
-     *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
-     *
-     * @return All player RBIs on a team.
-     */
-    public abstract int[] teamPlayersRBIs(boolean teamA);
-    
-    /**
-     * @param teamA
-     *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
-     *
-     * @return Hit count for each player on a team.
-     */
-    public abstract int[] teamPlayersHits(boolean teamA);
-    
-    /**
-     * @param teamA
-     *        Get information from first team (true) or second team (false).
-     *        Use the constants defined above (INDIANS & BATS).
-     *
-     * @return Number of runs for each player on a team.
-     */
-    public abstract int[] teamPlayersRuns(boolean teamA);
-    
-    /**
      * @param teamC
      *        Get information from third team (true) or fourth team (false).
-     *        Use the constants defined above (HENS & CLIPPERS)
+     *        Use the constants defined above (teamC & teamD)
      *
      * @return The position of the team.
      */
@@ -269,7 +165,7 @@ public interface ReportData
     /**
      * @param teamC
      *        Get information from third team (true) or fourth team (false).
-     *        Use the constants defined above (HENS & CLIPPERS)
+     *        Use the constants defined above (teamC & teamD)
      *
      * @return The number of wins the team had before the game.
      */
@@ -278,7 +174,7 @@ public interface ReportData
     /**
      * @param teamC
      *        Get information from third team (true) or fourth team (false).
-     *        Use the constants defined above (HENS & CLIPPERS)
+     *        Use the constants defined above (teamC & teamD)
      *
      * @return The team's streak before the game.
      */
@@ -287,7 +183,7 @@ public interface ReportData
     /**
      * @param teamC
      *        Get information from third team (true) or fourth team (false).
-     *        Use the constants defined above (HENS & CLIPPERS)
+     *        Use the constants defined above (teamC & teamD)
      *
      * @return The number of losses the team had before the game.
      */

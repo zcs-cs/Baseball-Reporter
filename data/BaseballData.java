@@ -19,6 +19,7 @@ import java.util.ArrayList;
 //  [+] provides [public] specific and boolean-specified methods for accessing each JSON value (datum) using corresponding keys of the JSON object (container)
 public class BaseballData implements ReportData
 {
+    
     // [>] each BaseballData object requires a JSON object to reference ///////////////////////////////////
     private JSONObject data;
     
@@ -27,12 +28,6 @@ public class BaseballData implements ReportData
         this.data = data;
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    
-    
-    
-    
-
 
 
     // data retrieval methods (the assumed data type is text) ///////////////////////////////////////////
@@ -360,7 +355,7 @@ public class BaseballData implements ReportData
     {
         return teamPlayersPrimaryStatisticsArrays(teamA, "name");
     }
-    // [+] team player bats - integer array //
+    // [+] team player teamB - integer array //
     public int[] teamPlayersBats(boolean teamA)
     {
         return teamPlayersPrimaryStatisticsIntArrays(teamA, "bats");
@@ -637,272 +632,272 @@ public class BaseballData implements ReportData
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return The official team name.
         */
-        output += "String teamName(INDIANS)\t\t\t:" + this.teamName(INDIANS) + "\n\n";
-        output += "String teamName(BATS)\t\t\t\t:" + this.teamName(BATS) + "\n\n";
+        output += "String teamName(data.teamA)\t\t\t:" + this.teamName(teamA) + "\n\n";
+        output += "String teamName(data.teamB)\t\t\t\t:" + this.teamName(teamB) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return The nickname of the team.
         */
-        output += "String teamDemonym(INDIANS)\t\t\t:" + this.teamDemonym(INDIANS) + "\n\n";
-        output += "String teamDemonym(BATS)\t\t\t:" + this.teamDemonym(BATS) + "\n\n";
+        output += "String teamDemonym(teamA)\t\t\t:" + this.teamDemonym(teamA) + "\n\n";
+        output += "String teamDemonym(teamB)\t\t\t:" + this.teamDemonym(teamB) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return The home city of the team.
         */
-        output += "String teamHomecity(INDIANS)\t\t\t:" + this.teamHomecity(INDIANS) + "\n\n";
-        output += "String teamHomecity(BATS)\t\t\t:" + this. teamHomecity(BATS) + "\n\n";
+        output += "String teamHomecity(teamA)\t\t\t:" + this.teamHomecity(teamA) + "\n\n";
+        output += "String teamHomecity(teamB)\t\t\t:" + this. teamHomecity(teamB) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return An array of scores a team made throughout the game, per inning.
         */
-        output += "int[] teamInningScores(INDIANS)\t\t\t:" + intArray_toString( this.teamInningScores(INDIANS) ) + "\n\n";
-        output += "int[] teamInningScores(BATS)\t\t\t:" + intArray_toString( this.teamInningScores(BATS) ) + "\n\n";
+        output += "int[] teamInningScores(teamA)\t\t\t:" + intArray_toString( this.teamInningScores(teamA) ) + "\n\n";
+        output += "int[] teamInningScores(teamB)\t\t\t:" + intArray_toString( this.teamInningScores(teamB) ) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return Final score for the team.
         */
-        output += "int teamScore(INDIANS)\t\t\t\t:" + this.teamScore(INDIANS) + "\n\n";
-        output += "int teamScore(BATS)\t\t\t\t:" + this.teamScore(BATS) + "\n\n";
+        output += "int teamScore(teamA)\t\t\t\t:" + this.teamScore(teamA) + "\n\n";
+        output += "int teamScore(teamB)\t\t\t\t:" + this.teamScore(teamB) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return Win or loss of the game (true/false)
         */
-        output += "boolean teamResult(INDIANS)\t\t\t:" + this.teamResult(INDIANS) + "\n\n";
-        output += "boolean teamResult(BATS)\t\t\t:" + this.teamResult(BATS) + "\n\n";
+        output += "boolean teamResult(teamA)\t\t\t:" + this.teamResult(teamA) + "\n\n";
+        output += "boolean teamResult(teamB)\t\t\t:" + this.teamResult(teamB) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return The position within the league of the team.
         */
-        output += "int teamStandingsPosition(INDIANS)\t\t:" + this.teamStandingsPosition(INDIANS) + "\n\n";
-        output += "int teamStandingsPosition(BATS)\t\t\t:" + this.teamStandingsPosition(BATS) + "\n\n";
+        output += "int teamStandingsPosition(teamA)\t\t:" + this.teamStandingsPosition(teamA) + "\n\n";
+        output += "int teamStandingsPosition(teamB)\t\t\t:" + this.teamStandingsPosition(teamB) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return The number of wins the team has for the season.
         */
-        output += "int teamStandingsWins(INDIANS)\t\t\t:" + this.teamStandingsWins(INDIANS) + "\n\n";
-        output += "int teamStandingsWins(BATS)\t\t\t:" + this.teamStandingsWins(BATS) + "\n\n";
+        output += "int teamStandingsWins(teamA)\t\t\t:" + this.teamStandingsWins(teamA) + "\n\n";
+        output += "int teamStandingsWins(teamB)\t\t\t:" + this.teamStandingsWins(teamB) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return The longest winning streak for the team.
         */
-        output += "int teamStandingsStreak(INDIANS)\t\t:" + this.teamStandingsStreak(INDIANS) + "\n\n";
-        output += "int teamStandingsStreak(BATS)\t\t\t:" + this.teamStandingsStreak(BATS) + "\n\n";
+        output += "int teamStandingsStreak(teamA)\t\t:" + this.teamStandingsStreak(teamA) + "\n\n";
+        output += "int teamStandingsStreak(teamB)\t\t\t:" + this.teamStandingsStreak(teamB) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return The number of losses the team has for the season.
         */
-        output += "int teamStandingsLosses(INDIANS)\t\t:" + this.teamStandingsLosses(INDIANS) + "\n\n";
-        output += "int teamStandingsLosses(BATS)\t\t\t:" + this.teamStandingsLosses(BATS) + "\n\n";
+        output += "int teamStandingsLosses(teamA)\t\t:" + this.teamStandingsLosses(teamA) + "\n\n";
+        output += "int teamStandingsLosses(teamB)\t\t\t:" + this.teamStandingsLosses(teamB) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return An array containing all player names on a given team.
         */
-        output += "String[] teamPlayersNames(INDIANS)\t\t:" + StringArray_toString( this.teamPlayersNames(INDIANS) ) + "\n\n";
-        output += "String[] teamPlayersNames(BATS)\t\t\t:" + StringArray_toString( this.teamPlayersNames(BATS) ) + "\n\n";
+        output += "String[] teamPlayersNames(teamA)\t\t:" + StringArray_toString( this.teamPlayersNames(teamA) ) + "\n\n";
+        output += "String[] teamPlayersNames(teamB)\t\t\t:" + StringArray_toString( this.teamPlayersNames(teamB) ) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
-        * @return An array of bats for each corresponding player.
+        * @return An array of teamB for each corresponding player.
         */
-        output += "int[] teamPlayersBats(INDIANS)\t\t\t:" + intArray_toString( this.teamPlayersBats(INDIANS) ) + "\n\n";
-        output += "int[] teamPlayersBats(BATS)\t\t\t:" + intArray_toString( this.teamPlayersBats(BATS) ) + "\n\n";
+        output += "int[] teamPlayersBats(teamA)\t\t\t:" + intArray_toString( this.teamPlayersBats(teamA) ) + "\n\n";
+        output += "int[] teamPlayersBats(teamB)\t\t\t:" + intArray_toString( this.teamPlayersBats(teamB) ) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return A 2D array of runs for each player, for each inning.
         */
-        output += "int[][] teamPlayersRunsInnings(INDIANS)\t\t:" + intArrayArray_toString( this.teamPlayersRunsInnings(INDIANS) ) + "\n\n";
-        output += "int[][] teamPlayersRunsInnings(BATS)\t\t:" + intArrayArray_toString( this.teamPlayersRunsInnings(BATS) ) + "\n\n";
+        output += "int[][] teamPlayersRunsInnings(teamA)\t\t:" + intArrayArray_toString( this.teamPlayersRunsInnings(teamA) ) + "\n\n";
+        output += "int[][] teamPlayersRunsInnings(teamB)\t\t:" + intArrayArray_toString( this.teamPlayersRunsInnings(teamB) ) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return An array of HRs for each player, for each inning.
         */
-        output += "int[] teamPlayersHRs(INDIANS)\t\t\t:" + intArray_toString( this.teamPlayersHRs(INDIANS) ) + "\n\n";
-        output += "int[] teamPlayersHRs(BATS)\t\t\t:" + intArray_toString( this.teamPlayersHRs(BATS) ) + "\n\n";
+        output += "int[] teamPlayersHRs(teamA)\t\t\t:" + intArray_toString( this.teamPlayersHRs(teamA) ) + "\n\n";
+        output += "int[] teamPlayersHRs(teamB)\t\t\t:" + intArray_toString( this.teamPlayersHRs(teamB) ) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return A 2D array of pitches for each player, for each inning.
         */
-        output += "int[][] teamPlayersInningsPitched(INDIANS)\t:" + intArrayArray_toString( this.teamPlayersInningsPitched(INDIANS) ) + "\n\n";
-        output += "int[][] teamPlayersInningsPitched(BATS)\t\t:" + intArrayArray_toString( this.teamPlayersInningsPitched(BATS) ) + "\n\n";
+        output += "int[][] teamPlayersInningsPitched(teamA)\t:" + intArrayArray_toString( this.teamPlayersInningsPitched(teamA) ) + "\n\n";
+        output += "int[][] teamPlayersInningsPitched(teamB)\t\t:" + intArrayArray_toString( this.teamPlayersInningsPitched(teamB) ) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return A 2D array of hits for each player.
         */
-        output += "String[][] teamPlayersHitsDescriptions(INDIANS)\t:" + StringArrarArray_toString( this.teamPlayersHitsDescriptions(INDIANS) ) + "\n\n";
-        output += "String[][] teamPlayersHitsDescriptions(BATS)\t:" + StringArrarArray_toString( this.teamPlayersHitsDescriptions(BATS) ) + "\n\n";
+        output += "String[][] teamPlayersHitsDescriptions(teamA)\t:" + StringArrarArray_toString( this.teamPlayersHitsDescriptions(teamA) ) + "\n\n";
+        output += "String[][] teamPlayersHitsDescriptions(teamB)\t:" + StringArrarArray_toString( this.teamPlayersHitsDescriptions(teamB) ) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return RBIs for each player on a team.
         */
-        output += "int[][] teamPlayersHitsRBIs(INDIANS)\t\t:" + intArrayArray_toString( this.teamPlayersHitsRBIs(INDIANS) ) + "\n\n";
-        output += "int[][] teamPlayersHitsRBIs(BATS)\t\t:" + intArrayArray_toString( this.teamPlayersHitsRBIs(BATS) ) + "\n\n";
+        output += "int[][] teamPlayersHitsRBIs(teamA)\t\t:" + intArrayArray_toString( this.teamPlayersHitsRBIs(teamA) ) + "\n\n";
+        output += "int[][] teamPlayersHitsRBIs(teamB)\t\t:" + intArrayArray_toString( this.teamPlayersHitsRBIs(teamB) ) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return Injuries for all players.
         */
-        output += "int[][] teamPlayersInjuriesGamesMissed(INDIANS)\t:" + intArrayArray_toString( this.teamPlayersInjuriesGamesMissed(INDIANS) ) + "\n\n";
-        output += "int[][] teamPlayersInjuriesGamesMissed(BATS)\t:" + intArrayArray_toString( this.teamPlayersInjuriesGamesMissed(BATS) ) + "\n\n";
+        output += "int[][] teamPlayersInjuriesGamesMissed(teamA)\t:" + intArrayArray_toString( this.teamPlayersInjuriesGamesMissed(teamA) ) + "\n\n";
+        output += "int[][] teamPlayersInjuriesGamesMissed(teamB)\t:" + intArrayArray_toString( this.teamPlayersInjuriesGamesMissed(teamB) ) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return Injury types for all players.
         */
-        output += "String[][] teamPlayersInjuriesTypes(INDIANS)\t:" + StringArrarArray_toString( this.teamPlayersInjuriesTypes(INDIANS) ) + "\n\n";
-        output += "String[][] teamPlayersInjuriesTypes(BATS)\t:" + StringArrarArray_toString( this.teamPlayersInjuriesTypes(BATS) ) + "\n\n";
+        output += "String[][] teamPlayersInjuriesTypes(teamA)\t:" + StringArrarArray_toString( this.teamPlayersInjuriesTypes(teamA) ) + "\n\n";
+        output += "String[][] teamPlayersInjuriesTypes(teamB)\t:" + StringArrarArray_toString( this.teamPlayersInjuriesTypes(teamB) ) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return Locations for all player injuries.
         */
-        output += "String[][] teamPlayersInjuriesLocations(INDIANS):" + StringArrarArray_toString( this.teamPlayersInjuriesLocations(INDIANS) ) + "\n\n";
-        output += "String[][] teamPlayersInjuriesLocations(BATS)\t:" + StringArrarArray_toString( this.teamPlayersInjuriesLocations(BATS) ) + "\n\n";
+        output += "String[][] teamPlayersInjuriesLocations(teamA):" + StringArrarArray_toString( this.teamPlayersInjuriesLocations(teamA) ) + "\n\n";
+        output += "String[][] teamPlayersInjuriesLocations(teamB)\t:" + StringArrarArray_toString( this.teamPlayersInjuriesLocations(teamB) ) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return All player RBIs on a team.
         */
-        output += "int[] teamPlayersRBIs(INDIANS)\t\t\t:" + intArray_toString( this.teamPlayersRBIs(INDIANS) ) + "\n\n";
-        output += "int[] teamPlayersRBIs(BATS)\t\t\t:" + intArray_toString( this.teamPlayersRBIs(BATS) ) + "\n\n";
+        output += "int[] teamPlayersRBIs(teamA)\t\t\t:" + intArray_toString( this.teamPlayersRBIs(teamA) ) + "\n\n";
+        output += "int[] teamPlayersRBIs(teamB)\t\t\t:" + intArray_toString( this.teamPlayersRBIs(teamB) ) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return Hit count for each player on a team.
         */
-        output += "int[] teamPlayersHits(INDIANS)\t\t\t:" + intArray_toString( this.teamPlayersHits(INDIANS) ) + "\n\n";
-        output += "int[] teamPlayersHits(BATS)\t\t\t:" + intArray_toString( this.teamPlayersHits(BATS) ) + "\n\n";
+        output += "int[] teamPlayersHits(teamA)\t\t\t:" + intArray_toString( this.teamPlayersHits(teamA) ) + "\n\n";
+        output += "int[] teamPlayersHits(teamB)\t\t\t:" + intArray_toString( this.teamPlayersHits(teamB) ) + "\n\n";
         
         /**
         * @param teamA
         *        Get information from first team (true) or second team (false).
-        *        Use the constants defined above (INDIANS & BATS).
+        *        Use the constants defined above (teamA & teamB).
         *
         * @return Number of runs for each player on a team.
         */
-        output += "int[] teamPlayersRuns(INDIANS)\t\t\t:" + intArray_toString( this.teamPlayersRuns(INDIANS) ) + "\n\n";
-        output += "int[] teamPlayersRuns(BATS)\t\t\t:" + intArray_toString( this.teamPlayersRuns(BATS) ) + "\n\n";
+        output += "int[] teamPlayersRuns(teamA)\t\t\t:" + intArray_toString( this.teamPlayersRuns(teamA) ) + "\n\n";
+        output += "int[] teamPlayersRuns(teamB)\t\t\t:" + intArray_toString( this.teamPlayersRuns(teamB) ) + "\n\n";
         
         /**
         * @param teamC
         *        Get information from third team (true) or fourth team (false).
-        *        Use the constants defined above (HENS & CLIPPERS)
+        *        Use the constants defined above (teamC & teamD)
         *
         * @return The position of the team.
         */
-        output += "int otherTeamStandingsPosition(HENS)\t\t:" + this.otherTeamStandingsPosition(HENS) + "\n\n";
-        output += "int otherTeamStandingsPosition(CLIPPERS)\t:" + this.otherTeamStandingsPosition(CLIPPERS) + "\n\n";
+        output += "int otherTeamStandingsPosition(teamC)\t\t:" + this.otherTeamStandingsPosition(teamC) + "\n\n";
+        output += "int otherTeamStandingsPosition(teamD)\t:" + this.otherTeamStandingsPosition(teamD) + "\n\n";
         
         /**
         * @param teamC
         *        Get information from third team (true) or fourth team (false).
-        *        Use the constants defined above (HENS & CLIPPERS)
+        *        Use the constants defined above (teamC & teamD)
         *
         * @return The number of wins the team had before the game.
         */
-        output += "int otherTeamStandingsWins(HENS)\t\t:" + this.otherTeamStandingsWins(HENS) + "\n\n";
-        output += "int otherTeamStandingsWins(CLIPPERS)\t\t:" + this.otherTeamStandingsWins(CLIPPERS) + "\n\n";
+        output += "int otherTeamStandingsWins(teamC)\t\t:" + this.otherTeamStandingsWins(teamC) + "\n\n";
+        output += "int otherTeamStandingsWins(teamD)\t\t:" + this.otherTeamStandingsWins(teamD) + "\n\n";
             
         /**
         * @param teamC
         *        Get information from third team (true) or fourth team (false).
-        *        Use the constants defined above (HENS & CLIPPERS)
+        *        Use the constants defined above (teamC & teamD)
         *
         * @return The team's streak before the game.
         */
-        output += "int otherTeamStandingsWins(HENS)\t\t:" + this.otherTeamStandingsWins(HENS) + "\n\n";
-        output += "int otherTeamStandingsWins(CLIPPERS)\t\t:" + this.otherTeamStandingsWins(CLIPPERS) + "\n\n";
+        output += "int otherTeamStandingsWins(teamC)\t\t:" + this.otherTeamStandingsWins(teamC) + "\n\n";
+        output += "int otherTeamStandingsWins(teamD)\t\t:" + this.otherTeamStandingsWins(teamD) + "\n\n";
         
         /**
         * @param teamC
         *        Get information from third team (true) or fourth team (false).
-        *        Use the constants defined above (HENS & CLIPPERS)
+        *        Use the constants defined above (teamC & teamD)
         *
         * @return The number of losses the team had before the game.
         */
-        output += "int otherTeamStandingsLosses(HENS)\t\t:" + this.otherTeamStandingsLosses(HENS) + "\n\n";
-        output += "int otherTeamStandingsLosses(CLIPPERS)\t\t:" + this.otherTeamStandingsLosses(CLIPPERS) + "\n\n";
+        output += "int otherTeamStandingsLosses(teamC)\t\t:" + this.otherTeamStandingsLosses(teamC) + "\n\n";
+        output += "int otherTeamStandingsLosses(teamD)\t\t:" + this.otherTeamStandingsLosses(teamD) + "\n\n";
         
         return output;
     }

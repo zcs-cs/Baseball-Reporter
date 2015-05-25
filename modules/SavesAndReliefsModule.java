@@ -46,8 +46,8 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
         
         //Check the lead during the inning he entered
         int[] scoresAtEntry = calcRunningScore(lastPitcherEnterInning);
-        if (!((data.teamResult(data.INDIANS) && scoresAtEntry[0] > scoresAtEntry[1] + 3) ||
-            (data.teamResult(data.BATS)    && scoresAtEntry[1] > scoresAtEntry[0] + 3))) {
+        if (!((data.teamResult(data.TeamA) && scoresAtEntry[0] > scoresAtEntry[1] + 3) ||
+            (data.teamResult(data.TeamB)    && scoresAtEntry[1] > scoresAtEntry[0] + 3))) {
              //The pitcher saved, because the lead was less than three when he entered
              save = true;
              
@@ -68,8 +68,8 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
         
         //Saves
         if (save) {
-            String pitcherName = data.teamPlayersNames(data.teamResult(data.INDIANS))[lastPitcherIndex];
-            String winningName = data.teamName(data.teamResult(data.INDIANS));
+            String pitcherName = data.teamPlayersNames(data.teamResult(data.TeamA))[lastPitcherIndex];
+            String winningName = data.teamName(data.teamResult(data.TeamA));
             toReturn += pitcherName + " of the " + winningName + " entered in the " + lastPitcherEnterInning + "th inning and went on to earn a save for the team. ";
         }
         else {
@@ -77,8 +77,8 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
         }
         
         //Relief Pitchers
-        toReturn += "Relief pitchers for the " + data.teamName(data.INDIANS) + " included " + printStringArray(findReliefPitchers(data.INDIANS)) + " ";
-        toReturn += "Relief pitchers for the " + data.teamName(data.BATS)    + " included " + printStringArray(findReliefPitchers(data.BATS));
+        toReturn += "Relief pitchers for the " + data.teamName(data.TeamA) + " included " + printStringArray(findReliefPitchers(data.TeamA)) + " ";
+        toReturn += "Relief pitchers for the " + data.teamName(data.TeamB)    + " included " + printStringArray(findReliefPitchers(data.TeamB));
         
         return toReturn;
     }
@@ -185,7 +185,7 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
      */
     public int findLastPitcherIndex () {
         //Find the winning team
-        boolean aWin = data.teamResult(data.INDIANS);
+        boolean aWin = data.teamResult(data.TeamA);
         
         int[][] inningsPitched = data.teamPlayersInningsPitched(aWin);
         
@@ -222,13 +222,13 @@ public class SavesAndReliefsModule  extends ReportModule<BaseballData> {
         }
         
         //Calculate team A
-        int[] teamAInningScores = data.teamInningScores(data.INDIANS);
+        int[] teamAInningScores = data.teamInningScores(data.TeamA);
         for (int i = 0; i < inning - 1; i++) {
             toReturn[0] += teamAInningScores[i];
         }
         
         //Calculate team B
-        int[] teamBInningScores = data.teamInningScores(data.BATS);
+        int[] teamBInningScores = data.teamInningScores(data.TeamB);
         for (int i = 0; i < inning - 1; i++) toReturn[1] += teamBInningScores[i];
         
         return toReturn;

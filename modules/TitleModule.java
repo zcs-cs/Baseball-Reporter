@@ -14,18 +14,18 @@ public class TitleModule extends ReportModule<BaseballData>
     {
         String winnerTeamDemonym, loserTeamDemonym, scores;
         // prep ~"[Team A]s [Defeat] [Team B]s" output //
-        if (data.teamResult(true))
+        if (data.teamResult(data.teamA))
         {
-            winnerTeamDemonym = data.teamDemonym(true);
-            loserTeamDemonym = data.teamDemonym(false);
-            scores = data.teamScore(true)+"–"+data.teamScore(false);
+            winnerTeamDemonym = data.teamDemonym(data.teamA);
+            loserTeamDemonym = data.teamDemonym(data.teamB);
+            scores = data.teamScore(data.teamA) + "–" + data.teamScore(data.teamB);
         }
         // prep ~"[Team B]s Defeat [Team A]s" output //
-        else if (data.teamResult(false))
+        else if (data.teamResult(data.teamB))
         {
-            winnerTeamDemonym = data.teamDemonym(false);
-            loserTeamDemonym = data.teamDemonym(true);
-            scores = data.teamScore(false)+"–"+data.teamScore(true);
+            winnerTeamDemonym = data.teamDemonym(data.teamB);
+            loserTeamDemonym = data.teamDemonym(data.teamA);
+            scores = data.teamScore(data.teamB) + "–" + data.teamScore(data.teamA);
         }
         // return either "[Team A]s Tie [Team B]s" or versa //
         else
